@@ -64,21 +64,53 @@ float rewindTenTriangleDivY2 = DivY+(DivHeight*11/32);
 float rewindTenTriangleDivX3 = DivX+(DivWidth*5/16);
 float rewindTenTriangleDivY3 = DivY+(DivHeight*17/64);
 //
+float restartSongDivX = DivX+DivWidth*1/2;
+float restartSongDivY = DivY+DivHeight*1/2;
+float restartSongDivWidth = DivWidth*1/2;
+float restartSongDivHeight = DivHeight*1/2;
+float restartSongDivStart = PI+PI*1/2;
+float restartSongDivStop = PI+PI*2;
+float restartSongDivWidth2 = rewindTenDivWidth*7/8;
+float restartSongDivHeight2 = rewindTenDivHeight*7/8;
+float restartSongLineDivX1 = DivX+(DivWidth*1/4);
+float restartSongLineDivY1 = DivY+DivHeight*1/2;
+float restartSongLineDivX2 = DivX+DivWidth*1/4+(DivWidth*1/32);
+float restartSongLineDivY2 = DivY+DivHeight*1/2;
+float restartSongTriangleDivX1 = DivX+(DivWidth*1/2);
+float restartSongTriangleDivY1 = DivY+(DivHeight*3/16);
+float restartSongTriangleDivX2 = DivX+(DivWidth*1/2);
+float restartSongTriangleDivY2 = DivY+(DivHeight*11/32);
+float restartSongTriangleDivX3 = DivX+(DivWidth*5/16);
+float restartSongTriangleDivY3 = DivY+(DivHeight*17/64);
+float restartSongPauseDivX1 = DivX+DivWidth*25/64;
+float restartSongPauseDivY1 = DivY+DivHeight*3/8;
+float restartSongPauseDivWidth1 = DivWidth*1/16;
+float restartSongPauseDivHeight1 = DivHeight*1/4;
+float restartSongPauseDivX2 = DivX+DivWidth*35/64;
+float restartSongPauseDivY2 = DivY+DivHeight*3/8;
+float restartSongPauseDivWidth2 = DivWidth*1/16;
+float restartSongPauseDivHeight2 = DivHeight*1/4;
 //
 rect( DivX, DivY, DivWidth, DivHeight );
-//
 //
 //triangle( playSymbolDivX1, playSymbolDivY1, playSymbolDivX2, playSymbolDivY2, playSymbolDivX3, playSymbolDivY3);
 //
 //rect( pauseSymbolDivX1, pauseSymbolDivY1, pauseSymbolDivWidth1, pauseSymbolDivHeight1 );
 //rect( pauseSymbolDivX2, pauseSymbolDivY2, pauseSymbolDivWidth2, pauseSymbolDivHeight2 );
 //
-arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth, skipFifteenDivHeight, skipFifteenDivStart, skipFifteenDivStop );
-arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth2, skipFifteenDivHeight2, skipFifteenDivStart, skipFifteenDivStop );
-line( skipFifteenLineDivX1, skipFifteenLineDivY1, skipFifteenLineDivX2, skipFifteenLineDivY2 );
-triangle( skipFifteenTriangleDivX1, skipFifteenTriangleDivY1, skipFifteenTriangleDivX2, skipFifteenTriangleDivY2, skipFifteenTriangleDivX3, skipFifteenTriangleDivY3 );
-
+//arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth, skipFifteenDivHeight, skipFifteenDivStart, skipFifteenDivStop );
+//arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth2, skipFifteenDivHeight2, skipFifteenDivStart, skipFifteenDivStop );
+//line( skipFifteenLineDivX1, skipFifteenLineDivY1, skipFifteenLineDivX2, skipFifteenLineDivY2 );
+//triangle( skipFifteenTriangleDivX1, skipFifteenTriangleDivY1, skipFifteenTriangleDivX2, skipFifteenTriangleDivY2, skipFifteenTriangleDivX3, skipFifteenTriangleDivY3 );
+//
 //arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth, rewindTenDivHeight, rewindTenDivStart, rewindTenDivStop );
 //arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth2, rewindTenDivHeight2, rewindTenDivStart, rewindTenDivStop );
 //line( rewindTenLineDivX1, rewindTenLineDivY1, rewindTenLineDivX2, rewindTenLineDivY2 );
 //triangle( rewindTenTriangleDivX1, rewindTenTriangleDivY1, rewindTenTriangleDivX2, rewindTenTriangleDivY2, rewindTenTriangleDivX3, rewindTenTriangleDivY3 );
+//
+arc( restartSongDivX, restartSongDivY, restartSongDivWidth, restartSongDivHeight, restartSongDivStart, restartSongDivStop );
+arc( restartSongDivX, restartSongDivY, restartSongDivWidth2, restartSongDivHeight2, restartSongDivStart, restartSongDivStop );
+line( restartSongLineDivX1, restartSongLineDivY1, restartSongLineDivX2, restartSongLineDivY2 );
+triangle( restartSongTriangleDivX1, restartSongTriangleDivY1, restartSongTriangleDivX2, restartSongTriangleDivY2, restartSongTriangleDivX3, restartSongTriangleDivY3 );
+rect( restartSongPauseDivX1, restartSongPauseDivY1, restartSongPauseDivWidth1, restartSongPauseDivHeight1 );
+rect( restartSongPauseDivX2, restartSongPauseDivY2, restartSongPauseDivWidth2, restartSongPauseDivHeight2 );
