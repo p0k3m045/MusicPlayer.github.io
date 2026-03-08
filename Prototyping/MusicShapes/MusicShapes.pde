@@ -124,12 +124,39 @@ float loopOnceFirstArrowLineFiveDivX1 = loopOnceFirstArrowLineTwoDivX1;
 float loopOnceFirstArrowLineFiveDivY1 = loopOnceFirstArrowLineFourDivY1+(DivHeight*1/16);
 float loopOnceFirstArrowLineFiveDivX2 = DivX+DivWidth*5/8;
 float loopOnceFirstArrowLineFiveDivY2 = loopOnceFirstArrowLineFourDivY1+(DivHeight*1/16);
-float loopOnceFirstArrowTriangleDivX1 = ;
-float loopOnceFirstArrowTriangleDivY1 = ;
-float loopOnceFirstArrowTriangleDivX2 = ;
-float loopOnceFirstArrowTriangleDivY2 = ;
-float loopOnceFirstArrowTriangleDivX3 = ;
-float loopOnceFirstArrowTriangleDivY3 = ;
+float loopOnceFirstArrowTriangleDivX1 = loopOnceFirstArrowLineFiveDivX2;
+float loopOnceFirstArrowTriangleDivY1 = DivHeight*5/32+DivY;
+float loopOnceFirstArrowTriangleDivX2 = loopOnceFirstArrowLineFiveDivX2;
+float loopOnceFirstArrowTriangleDivY2 = DivHeight*13/32+DivY;
+float loopOnceFirstArrowTriangleDivX3 = loopOnceFirstArrowLineFiveDivX2+(DivWidth*3/16);
+float loopOnceFirstArrowTriangleDivY3 = (loopOnceFirstArrowLineFiveDivY1+loopOnceFirstArrowLineFourDivY1)*1/2;
+
+float loopOnceSecondArrowLineOneDivX1 = ;
+float loopOnceSecondArrowLineOneDivY1 = ;
+float loopOnceSecondArrowLineOneDivX2 = ;
+float loopOnceSecondArrowLineOneDivY2 = ;
+float loopOnceSecondArrowLineTwoDivX1 = ;
+float loopOnceSecondArrowLineTwoDivY1 = ;
+float loopOnceSecondArrowLineTwoDivX2 = ;
+float loopOnceSecondArrowLineTwoDivY2 = ;
+float loopOnceSecondArrowLineThreeDivX1 = ;
+float loopOnceSecondArrowLineThreeDivY1 = ;
+float loopOnceSecondArrowLineThreeDivX2 = ;
+float loopOnceSecondArrowLineThreeDivY2 = ;
+float loopOnceSecondArrowLineFourDivX1 = ;
+float loopOnceSecondArrowLineFourDivY1 = ;
+float loopOnceSecondArrowLineFourDivX2 = ;
+float loopOnceSecondArrowLineFourDivY2 = ;
+float loopOnceSecondArrowLineFiveDivX1 = ;
+float loopOnceSecondArrowLineFiveDivY1 = ;
+float loopOnceSecondArrowLineFiveDivX2 = ;
+float loopOnceSecondArrowLineFiveDivY2 = ;
+float loopOnceSecondArrowTriangleDivX1 = ;
+float loopOnceSecondArrowTriangleDivY1 = ;
+float loopOnceSecondArrowTriangleDivX2 = ;
+float loopOnceSecondArrowTriangleDivY2 = ;
+float loopOnceSecondArrowTriangleDivX3 = ;
+float loopOnceSecondArrowTriangleDivY3 = ;
 //
 rect( DivX, DivY, DivWidth, DivHeight );
 //
@@ -170,3 +197,11 @@ line( loopOnceFirstArrowLineTwoDivX1, loopOnceFirstArrowLineTwoDivY1, loopOnceFi
 line( loopOnceFirstArrowLineThreeDivX1, loopOnceFirstArrowLineThreeDivY1, loopOnceFirstArrowLineThreeDivX2, loopOnceFirstArrowLineThreeDivY2 );
 line( loopOnceFirstArrowLineFourDivX1, loopOnceFirstArrowLineFourDivY1, loopOnceFirstArrowLineFourDivX2, loopOnceFirstArrowLineFourDivY2 );
 line( loopOnceFirstArrowLineFiveDivX1, loopOnceFirstArrowLineFiveDivY1, loopOnceFirstArrowLineFiveDivX2, loopOnceFirstArrowLineFiveDivY2 );
+triangle( loopOnceFirstArrowTriangleDivX1, loopOnceFirstArrowTriangleDivY1, loopOnceFirstArrowTriangleDivX2, loopOnceFirstArrowTriangleDivY2, loopOnceFirstArrowTriangleDivX3, loopOnceFirstArrowTriangleDivY3 );
+
+line( loopOnceSecondArrowLineOneDivX1, loopOnceSecondArrowLineOneDivY1, loopOnceSecondArrowLineOneDivX2, loopOnceSecondArrowLineOneDivY2 );
+line( loopOnceSecondArrowLineTwoDivX1, loopOnceSecondArrowLineTwoDivY1, loopOnceSecondArrowLineTwoDivX2, loopOnceSecondArrowLineTwoDivY2 );
+line( loopOnceSecondArrowLineThreeDivX1, loopOnceSecondArrowLineThreeDivY1, loopOnceSecondArrowLineThreeDivX2, loopOnceSecondArrowLineThreeDivY2 );
+line( loopOnceSecondArrowLineFourDivX1, loopOnceSecondArrowLineFourDivY1, loopOnceSecondArrowLineFourDivX2, loopOnceSecondArrowLineFourDivY2 );
+line( loopOnceSecondArrowLineFiveDivX1, loopOnceSecondArrowLineFiveDivY1, loopOnceSecondArrowLineFiveDivX2, loopOnceSecondArrowLineFiveDivY2 );
+triangle( loopOnceSecondArrowTriangleDivX1, loopOnceSecondArrowTriangleDivY1, loopOnceSecondArrowTriangleDivX2, loopOnceSecondArrowTriangleDivY2, loopOnceSecondArrowTriangleDivX3, loopOnceSecondArrowTriangleDivY3 );
