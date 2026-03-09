@@ -4,7 +4,7 @@ print("S'up");
 print("Mr.Mercer");
 
 print("S'up");
-print("\tWorld");
+print("\tMr.Mercer");
 
 print("S'up");
 print("\nMr.Mercer");
