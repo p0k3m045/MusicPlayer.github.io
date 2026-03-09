@@ -1,13 +1,10 @@
-println("What's Up, World");
+println("S'up, World");
 
-print("What's");
-print("Up");
+print("S'up");
 print("World");
 
-print("What's");
-print("\tUp");
+print("S'up");
 print("\tWorld");
 
-print("What's");
-print("\nUp");
+print("S'up");
 print("\nWorld");
