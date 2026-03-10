@@ -266,8 +266,16 @@ float StopLoopingSecondArrowTriangleDivX2 = DivX+DivWidth*3/8;
 float StopLoopingSecondArrowTriangleDivY2 = DivHeight*19/32+DivY;
 float StopLoopingSecondArrowTriangleDivX3 = DivX+DivWidth*3/8;
 float StopLoopingSecondArrowTriangleDivY3 = DivHeight*27/32+DivY;
+
+float StopLoopingCrossLine1X1 = DivX+DivWidth*1/16;
+float StopLoopingCrossLine1Y1 = DivY+DivHeight*1/16;
+float StopLoopingCrossLine1X2 = DivX+DivWidth*15/16;
+float StopLoopingCrossLine1Y2 = DivY+DivHeight*15/16;
+
+//
 //
 rect( DivX, DivY, DivWidth, DivHeight );
+//
 //
 //PLAY BUTTON
 /*
@@ -361,3 +369,5 @@ line( StopLoopingSecondArrowLineThreeDivX1, StopLoopingSecondArrowLineThreeDivY1
 line( StopLoopingSecondArrowLineFourDivX1, StopLoopingSecondArrowLineFourDivY1, StopLoopingSecondArrowLineFourDivX2, StopLoopingSecondArrowLineFourDivY2 );
 line( StopLoopingSecondArrowLineFiveDivX1, StopLoopingSecondArrowLineFiveDivY1, StopLoopingSecondArrowLineFiveDivX2, StopLoopingSecondArrowLineFiveDivY2 );
 triangle( StopLoopingSecondArrowTriangleDivX1, StopLoopingSecondArrowTriangleDivY1, StopLoopingSecondArrowTriangleDivX2, StopLoopingSecondArrowTriangleDivY2, StopLoopingSecondArrowTriangleDivX3, StopLoopingSecondArrowTriangleDivY3 );
+
+line( StopLoopingCrossLine1X1, StopLoopingCrossLine1Y1, StopLoopingCrossLine1X2, StopLoopingCrossLine1Y2 );
