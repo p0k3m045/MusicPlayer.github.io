@@ -211,6 +211,61 @@ float loopForeverSecondArrowTriangleDivX2 = DivX+DivWidth*3/8;
 float loopForeverSecondArrowTriangleDivY2 = DivHeight*19/32+DivY;
 float loopForeverSecondArrowTriangleDivX3 = DivX+DivWidth*3/8;
 float loopForeverSecondArrowTriangleDivY3 = DivHeight*27/32+DivY;
+
+//Stop Looping Button
+float StopLoopingFirstArrowLineOneDivX1 = DivX+DivWidth*3/16;
+float StopLoopingFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;;
+float StopLoopingFirstArrowLineOneDivX2 = DivX+DivWidth*3/16;
+float StopLoopingFirstArrowLineOneDivY2 = DivY+DivHeight*1/2;
+float StopLoopingFirstArrowLineTwoDivX1 = DivX+DivWidth*1/4;
+float StopLoopingFirstArrowLineTwoDivY1 = StopLoopingFirstArrowLineOneDivY1+(DivHeight*1/16);
+float StopLoopingFirstArrowLineTwoDivX2 = DivX+DivWidth*1/4;
+float StopLoopingFirstArrowLineTwoDivY2 = DivY+DivHeight*1/2;
+float StopLoopingFirstArrowLineThreeDivX1 = StopLoopingFirstArrowLineOneDivX2;
+float StopLoopingFirstArrowLineThreeDivY1 = StopLoopingFirstArrowLineOneDivY2;
+float StopLoopingFirstArrowLineThreeDivX2 = StopLoopingFirstArrowLineTwoDivX2;
+float StopLoopingFirstArrowLineThreeDivY2 = StopLoopingFirstArrowLineTwoDivY2;
+float StopLoopingFirstArrowLineFourDivX1 = StopLoopingFirstArrowLineOneDivX1;
+float StopLoopingFirstArrowLineFourDivY1 = StopLoopingFirstArrowLineOneDivY1;
+float StopLoopingFirstArrowLineFourDivX2 = DivX+DivWidth*5/8;
+float StopLoopingFirstArrowLineFourDivY2 = StopLoopingFirstArrowLineOneDivY1;
+float StopLoopingFirstArrowLineFiveDivX1 = StopLoopingFirstArrowLineTwoDivX1;
+float StopLoopingFirstArrowLineFiveDivY1 = StopLoopingFirstArrowLineFourDivY1+(DivHeight*1/16);
+float StopLoopingFirstArrowLineFiveDivX2 = DivX+DivWidth*5/8;
+float StopLoopingFirstArrowLineFiveDivY2 = StopLoopingFirstArrowLineFourDivY1+(DivHeight*1/16);
+float StopLoopingFirstArrowTriangleDivX1 = StopLoopingFirstArrowLineFiveDivX2;
+float StopLoopingFirstArrowTriangleDivY1 = DivHeight*5/32+DivY;
+float StopLoopingFirstArrowTriangleDivX2 = StopLoopingFirstArrowLineFiveDivX2;
+float StopLoopingFirstArrowTriangleDivY2 = DivHeight*13/32+DivY;
+float StopLoopingFirstArrowTriangleDivX3 = StopLoopingFirstArrowLineFiveDivX2+(DivWidth*3/16);
+float StopLoopingFirstArrowTriangleDivY3 = (StopLoopingFirstArrowLineFiveDivY1+StopLoopingFirstArrowLineFourDivY1)*1/2;
+
+float StopLoopingSecondArrowLineOneDivX1 = DivX+DivWidth*3/4+DivWidth*1/16;
+float StopLoopingSecondArrowLineOneDivY1 = DivY+DivHeight*1/2;
+float StopLoopingSecondArrowLineOneDivX2 = DivX+DivWidth*3/4;
+float StopLoopingSecondArrowLineOneDivY2 = DivY+DivHeight*1/2;
+float StopLoopingSecondArrowLineTwoDivX1 = DivX+DivWidth*3/4+DivWidth*1/16;
+float StopLoopingSecondArrowLineTwoDivY1 = DivY+DivHeight*1/2;
+float StopLoopingSecondArrowLineTwoDivX2 = DivX+DivWidth*3/4+DivWidth*1/16;
+float StopLoopingSecondArrowLineTwoDivY2 = DivY+DivHeight*3/4;
+float StopLoopingSecondArrowLineThreeDivX1 = DivX+DivWidth*3/4;
+float StopLoopingSecondArrowLineThreeDivY1 = DivY+DivHeight*1/2;
+float StopLoopingSecondArrowLineThreeDivX2 = DivX+DivWidth*3/4;
+float StopLoopingSecondArrowLineThreeDivY2 = DivY+DivHeight*11/16;
+float StopLoopingSecondArrowLineFourDivX1 = DivX+DivWidth*3/8;
+float StopLoopingSecondArrowLineFourDivY1 = DivY+DivHeight*11/16;
+float StopLoopingSecondArrowLineFourDivX2 = StopLoopingSecondArrowLineThreeDivX2;
+float StopLoopingSecondArrowLineFourDivY2 = DivY+DivHeight*11/16;
+float StopLoopingSecondArrowLineFiveDivX1 = DivX+DivWidth*3/8;
+float StopLoopingSecondArrowLineFiveDivY1 = DivY+DivHeight*3/4;
+float StopLoopingSecondArrowLineFiveDivX2 = DivX+DivWidth*3/4+DivWidth*1/16;
+float StopLoopingSecondArrowLineFiveDivY2 = DivY+DivHeight*3/4;
+float StopLoopingSecondArrowTriangleDivX1 = StopLoopingFirstArrowLineOneDivX2;
+float StopLoopingSecondArrowTriangleDivY1 = (StopLoopingSecondArrowLineFiveDivY1+StopLoopingSecondArrowLineFourDivY1)*1/2;
+float StopLoopingSecondArrowTriangleDivX2 = DivX+DivWidth*3/8;
+float StopLoopingSecondArrowTriangleDivY2 = DivHeight*19/32+DivY;
+float StopLoopingSecondArrowTriangleDivX3 = DivX+DivWidth*3/8;
+float StopLoopingSecondArrowTriangleDivY3 = DivHeight*27/32+DivY;
 //
 rect( DivX, DivY, DivWidth, DivHeight );
 //
@@ -290,3 +345,19 @@ line( loopForeverSecondArrowLineFourDivX1, loopForeverSecondArrowLineFourDivY1, 
 line( loopForeverSecondArrowLineFiveDivX1, loopForeverSecondArrowLineFiveDivY1, loopForeverSecondArrowLineFiveDivX2, loopForeverSecondArrowLineFiveDivY2 );
 triangle( loopForeverSecondArrowTriangleDivX1, loopForeverSecondArrowTriangleDivY1, loopForeverSecondArrowTriangleDivX2, loopForeverSecondArrowTriangleDivY2, loopForeverSecondArrowTriangleDivX3, loopForeverSecondArrowTriangleDivY3 );
 */
+
+//STOP LOOPING BUTTON
+
+line( StopLoopingFirstArrowLineOneDivX1, StopLoopingFirstArrowLineOneDivY1, StopLoopingFirstArrowLineOneDivX2, StopLoopingFirstArrowLineOneDivY2 );
+line( StopLoopingFirstArrowLineTwoDivX1, StopLoopingFirstArrowLineTwoDivY1, StopLoopingFirstArrowLineTwoDivX2, StopLoopingFirstArrowLineTwoDivY2 );
+line( StopLoopingFirstArrowLineThreeDivX1, StopLoopingFirstArrowLineThreeDivY1, StopLoopingFirstArrowLineThreeDivX2, StopLoopingFirstArrowLineThreeDivY2 );
+line( StopLoopingFirstArrowLineFourDivX1, StopLoopingFirstArrowLineFourDivY1, StopLoopingFirstArrowLineFourDivX2, StopLoopingFirstArrowLineFourDivY2 );
+line( StopLoopingFirstArrowLineFiveDivX1, StopLoopingFirstArrowLineFiveDivY1, StopLoopingFirstArrowLineFiveDivX2, StopLoopingFirstArrowLineFiveDivY2 );
+triangle( StopLoopingFirstArrowTriangleDivX1, StopLoopingFirstArrowTriangleDivY1, StopLoopingFirstArrowTriangleDivX2, StopLoopingFirstArrowTriangleDivY2, StopLoopingFirstArrowTriangleDivX3, StopLoopingFirstArrowTriangleDivY3 );
+
+line( StopLoopingSecondArrowLineOneDivX1, StopLoopingSecondArrowLineOneDivY1, StopLoopingSecondArrowLineOneDivX2, StopLoopingSecondArrowLineOneDivY2 );
+line( StopLoopingSecondArrowLineTwoDivX1, StopLoopingSecondArrowLineTwoDivY1, StopLoopingSecondArrowLineTwoDivX2, StopLoopingSecondArrowLineTwoDivY2 );
+line( StopLoopingSecondArrowLineThreeDivX1, StopLoopingSecondArrowLineThreeDivY1, StopLoopingSecondArrowLineThreeDivX2, StopLoopingSecondArrowLineThreeDivY2 );
+line( StopLoopingSecondArrowLineFourDivX1, StopLoopingSecondArrowLineFourDivY1, StopLoopingSecondArrowLineFourDivX2, StopLoopingSecondArrowLineFourDivY2 );
+line( StopLoopingSecondArrowLineFiveDivX1, StopLoopingSecondArrowLineFiveDivY1, StopLoopingSecondArrowLineFiveDivX2, StopLoopingSecondArrowLineFiveDivY2 );
+triangle( StopLoopingSecondArrowTriangleDivX1, StopLoopingSecondArrowTriangleDivY1, StopLoopingSecondArrowTriangleDivX2, StopLoopingSecondArrowTriangleDivY2, StopLoopingSecondArrowTriangleDivX3, StopLoopingSecondArrowTriangleDivY3 );
