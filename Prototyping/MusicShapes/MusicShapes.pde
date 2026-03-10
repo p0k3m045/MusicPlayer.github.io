@@ -356,6 +356,7 @@ triangle( loopForeverSecondArrowTriangleDivX1, loopForeverSecondArrowTriangleDiv
 
 //STOP LOOPING BUTTON
 
+/*
 line( StopLoopingFirstArrowLineOneDivX1, StopLoopingFirstArrowLineOneDivY1, StopLoopingFirstArrowLineOneDivX2, StopLoopingFirstArrowLineOneDivY2 );
 line( StopLoopingFirstArrowLineTwoDivX1, StopLoopingFirstArrowLineTwoDivY1, StopLoopingFirstArrowLineTwoDivX2, StopLoopingFirstArrowLineTwoDivY2 );
 line( StopLoopingFirstArrowLineThreeDivX1, StopLoopingFirstArrowLineThreeDivY1, StopLoopingFirstArrowLineThreeDivX2, StopLoopingFirstArrowLineThreeDivY2 );
@@ -370,4 +371,6 @@ line( StopLoopingSecondArrowLineFourDivX1, StopLoopingSecondArrowLineFourDivY1, 
 line( StopLoopingSecondArrowLineFiveDivX1, StopLoopingSecondArrowLineFiveDivY1, StopLoopingSecondArrowLineFiveDivX2, StopLoopingSecondArrowLineFiveDivY2 );
 triangle( StopLoopingSecondArrowTriangleDivX1, StopLoopingSecondArrowTriangleDivY1, StopLoopingSecondArrowTriangleDivX2, StopLoopingSecondArrowTriangleDivY2, StopLoopingSecondArrowTriangleDivX3, StopLoopingSecondArrowTriangleDivY3 );
 
+
 line( StopLoopingCrossLine1X1, StopLoopingCrossLine1Y1, StopLoopingCrossLine1X2, StopLoopingCrossLine1Y2 );
+*/
