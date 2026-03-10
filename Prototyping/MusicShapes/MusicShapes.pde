@@ -215,62 +215,79 @@ float loopForeverSecondArrowTriangleDivY3 = DivHeight*27/32+DivY;
 rect( DivX, DivY, DivWidth, DivHeight );
 //
 //PLAY BUTTON
-//triangle( playSymbolDivX1, playSymbolDivY1, playSymbolDivX2, playSymbolDivY2, playSymbolDivX3, playSymbolDivY3);
-//
+/*
+triangle( playSymbolDivX1, playSymbolDivY1, playSymbolDivX2, playSymbolDivY2, playSymbolDivX3, playSymbolDivY3);
+*/
+
 //PAUSE BUTTON
-//rect( pauseSymbolDivX1, pauseSymbolDivY1, pauseSymbolDivWidth1, pauseSymbolDivHeight1 );
-//rect( pauseSymbolDivX2, pauseSymbolDivY2, pauseSymbolDivWidth2, pauseSymbolDivHeight2 );
-//
+/*
+rect( pauseSymbolDivX1, pauseSymbolDivY1, pauseSymbolDivWidth1, pauseSymbolDivHeight1 );
+rect( pauseSymbolDivX2, pauseSymbolDivY2, pauseSymbolDivWidth2, pauseSymbolDivHeight2 );
+*/
+
 //SKIP FIFTEEN SECONDS BUTTON
-//arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth, skipFifteenDivHeight, skipFifteenDivStart, skipFifteenDivStop );
-//arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth2, skipFifteenDivHeight2, skipFifteenDivStart, skipFifteenDivStop );
-//line( skipFifteenLineDivX1, skipFifteenLineDivY1, skipFifteenLineDivX2, skipFifteenLineDivY2 );
-//triangle( skipFifteenTriangleDivX1, skipFifteenTriangleDivY1, skipFifteenTriangleDivX2, skipFifteenTriangleDivY2, skipFifteenTriangleDivX3, skipFifteenTriangleDivY3 );
-//
+/*
+arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth, skipFifteenDivHeight, skipFifteenDivStart, skipFifteenDivStop );
+arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth2, skipFifteenDivHeight2, skipFifteenDivStart, skipFifteenDivStop );
+line( skipFifteenLineDivX1, skipFifteenLineDivY1, skipFifteenLineDivX2, skipFifteenLineDivY2 );
+triangle( skipFifteenTriangleDivX1, skipFifteenTriangleDivY1, skipFifteenTriangleDivX2, skipFifteenTriangleDivY2, skipFifteenTriangleDivX3, skipFifteenTriangleDivY3 );
+*/
+
 //REWIND TEN SECONDS BUTTON
-//arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth, rewindTenDivHeight, rewindTenDivStart, rewindTenDivStop );
-//arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth2, rewindTenDivHeight2, rewindTenDivStart, rewindTenDivStop );
-//line( rewindTenLineDivX1, rewindTenLineDivY1, rewindTenLineDivX2, rewindTenLineDivY2 );
-//triangle( rewindTenTriangleDivX1, rewindTenTriangleDivY1, rewindTenTriangleDivX2, rewindTenTriangleDivY2, rewindTenTriangleDivX3, rewindTenTriangleDivY3 );
-//
+/*
+arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth, rewindTenDivHeight, rewindTenDivStart, rewindTenDivStop );
+arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth2, rewindTenDivHeight2, rewindTenDivStart, rewindTenDivStop );
+line( rewindTenLineDivX1, rewindTenLineDivY1, rewindTenLineDivX2, rewindTenLineDivY2 );
+triangle( rewindTenTriangleDivX1, rewindTenTriangleDivY1, rewindTenTriangleDivX2, rewindTenTriangleDivY2, rewindTenTriangleDivX3, rewindTenTriangleDivY3 );
+*/
+
 //RESTART SONG BUTTON
+/*
 arc( restartSongDivX, restartSongDivY, restartSongDivWidth, restartSongDivHeight, restartSongDivStart, restartSongDivStop );
 arc( restartSongDivX, restartSongDivY, restartSongDivWidth2, restartSongDivHeight2, restartSongDivStart, restartSongDivStop );
 line( restartSongLineDivX1, restartSongLineDivY1, restartSongLineDivX2, restartSongLineDivY2 );
 triangle( restartSongTriangleDivX1, restartSongTriangleDivY1, restartSongTriangleDivX2, restartSongTriangleDivY2, restartSongTriangleDivX3, restartSongTriangleDivY3 );
 rect( restartSongPauseDivX1, restartSongPauseDivY1, restartSongPauseDivWidth1, restartSongPauseDivHeight1 );
 rect( restartSongPauseDivX2, restartSongPauseDivY2, restartSongPauseDivWidth2, restartSongPauseDivHeight2 );
-//
-//SKIP SONG BUTTON
-//triangle( skipSongTriangleOneDivX1, skipSongTriangleOneDivY1, skipSongTriangleOneDivX2, skipSongTriangleOneDivY2, skipSongTriangleOneDivX3, skipSongTriangleOneDivY3 );
-//triangle( skipSongTriangleTwoDivX1, skipSongTriangleTwoDivY1, skipSongTriangleTwoDivX2, skipSongTriangleTwoDivY2, skipSongTriangleTwoDivX3, skipSongTriangleTwoDivY3 );
-//
-//LOOP ONCE BUTTON
-//line( loopOnceFirstArrowLineOneDivX1, loopOnceFirstArrowLineOneDivY1, loopOnceFirstArrowLineOneDivX2, loopOnceFirstArrowLineOneDivY2 );
-//line( loopOnceFirstArrowLineTwoDivX1, loopOnceFirstArrowLineTwoDivY1, loopOnceFirstArrowLineTwoDivX2, loopOnceFirstArrowLineTwoDivY2 );
-//line( loopOnceFirstArrowLineThreeDivX1, loopOnceFirstArrowLineThreeDivY1, loopOnceFirstArrowLineThreeDivX2, loopOnceFirstArrowLineThreeDivY2 );
-//line( loopOnceFirstArrowLineFourDivX1, loopOnceFirstArrowLineFourDivY1, loopOnceFirstArrowLineFourDivX2, loopOnceFirstArrowLineFourDivY2 );
-//line( loopOnceFirstArrowLineFiveDivX1, loopOnceFirstArrowLineFiveDivY1, loopOnceFirstArrowLineFiveDivX2, loopOnceFirstArrowLineFiveDivY2 );
-//triangle( loopOnceFirstArrowTriangleDivX1, loopOnceFirstArrowTriangleDivY1, loopOnceFirstArrowTriangleDivX2, loopOnceFirstArrowTriangleDivY2, loopOnceFirstArrowTriangleDivX3, loopOnceFirstArrowTriangleDivY3 );
+*/
 
-//line( loopOnceSecondArrowLineOneDivX1, loopOnceSecondArrowLineOneDivY1, loopOnceSecondArrowLineOneDivX2, loopOnceSecondArrowLineOneDivY2 );
-//line( loopOnceSecondArrowLineTwoDivX1, loopOnceSecondArrowLineTwoDivY1, loopOnceSecondArrowLineTwoDivX2, loopOnceSecondArrowLineTwoDivY2 );
-//line( loopOnceSecondArrowLineThreeDivX1, loopOnceSecondArrowLineThreeDivY1, loopOnceSecondArrowLineThreeDivX2, loopOnceSecondArrowLineThreeDivY2 );
-//line( loopOnceSecondArrowLineFourDivX1, loopOnceSecondArrowLineFourDivY1, loopOnceSecondArrowLineFourDivX2, loopOnceSecondArrowLineFourDivY2 );
-//line( loopOnceSecondArrowLineFiveDivX1, loopOnceSecondArrowLineFiveDivY1, loopOnceSecondArrowLineFiveDivX2, loopOnceSecondArrowLineFiveDivY2 );
-//triangle( loopOnceSecondArrowTriangleDivX1, loopOnceSecondArrowTriangleDivY1, loopOnceSecondArrowTriangleDivX2, loopOnceSecondArrowTriangleDivY2, loopOnceSecondArrowTriangleDivX3, loopOnceSecondArrowTriangleDivY3 );
+//SKIP SONG BUTTON
+/*
+triangle( skipSongTriangleOneDivX1, skipSongTriangleOneDivY1, skipSongTriangleOneDivX2, skipSongTriangleOneDivY2, skipSongTriangleOneDivX3, skipSongTriangleOneDivY3 );
+triangle( skipSongTriangleTwoDivX1, skipSongTriangleTwoDivY1, skipSongTriangleTwoDivX2, skipSongTriangleTwoDivY2, skipSongTriangleTwoDivX3, skipSongTriangleTwoDivY3 );
+*/
+
+//LOOP ONCE BUTTON
+/*
+line( loopOnceFirstArrowLineOneDivX1, loopOnceFirstArrowLineOneDivY1, loopOnceFirstArrowLineOneDivX2, loopOnceFirstArrowLineOneDivY2 );
+line( loopOnceFirstArrowLineTwoDivX1, loopOnceFirstArrowLineTwoDivY1, loopOnceFirstArrowLineTwoDivX2, loopOnceFirstArrowLineTwoDivY2 );
+line( loopOnceFirstArrowLineThreeDivX1, loopOnceFirstArrowLineThreeDivY1, loopOnceFirstArrowLineThreeDivX2, loopOnceFirstArrowLineThreeDivY2 );
+line( loopOnceFirstArrowLineFourDivX1, loopOnceFirstArrowLineFourDivY1, loopOnceFirstArrowLineFourDivX2, loopOnceFirstArrowLineFourDivY2 );
+line( loopOnceFirstArrowLineFiveDivX1, loopOnceFirstArrowLineFiveDivY1, loopOnceFirstArrowLineFiveDivX2, loopOnceFirstArrowLineFiveDivY2 );
+triangle( loopOnceFirstArrowTriangleDivX1, loopOnceFirstArrowTriangleDivY1, loopOnceFirstArrowTriangleDivX2, loopOnceFirstArrowTriangleDivY2, loopOnceFirstArrowTriangleDivX3, loopOnceFirstArrowTriangleDivY3 );
+
+
+line( loopOnceSecondArrowLineOneDivX1, loopOnceSecondArrowLineOneDivY1, loopOnceSecondArrowLineOneDivX2, loopOnceSecondArrowLineOneDivY2 );
+line( loopOnceSecondArrowLineTwoDivX1, loopOnceSecondArrowLineTwoDivY1, loopOnceSecondArrowLineTwoDivX2, loopOnceSecondArrowLineTwoDivY2 );
+line( loopOnceSecondArrowLineThreeDivX1, loopOnceSecondArrowLineThreeDivY1, loopOnceSecondArrowLineThreeDivX2, loopOnceSecondArrowLineThreeDivY2 );
+line( loopOnceSecondArrowLineFourDivX1, loopOnceSecondArrowLineFourDivY1, loopOnceSecondArrowLineFourDivX2, loopOnceSecondArrowLineFourDivY2 );
+line( loopOnceSecondArrowLineFiveDivX1, loopOnceSecondArrowLineFiveDivY1, loopOnceSecondArrowLineFiveDivX2, loopOnceSecondArrowLineFiveDivY2 );
+triangle( loopOnceSecondArrowTriangleDivX1, loopOnceSecondArrowTriangleDivY1, loopOnceSecondArrowTriangleDivX2, loopOnceSecondArrowTriangleDivY2, loopOnceSecondArrowTriangleDivX3, loopOnceSecondArrowTriangleDivY3 );
+*/
 //
 //LOOP FOREVER BUTTON
-//line( loopForeverFirstArrowLineOneDivX1, loopForeverFirstArrowLineOneDivY1, loopForeverFirstArrowLineOneDivX2, loopForeverFirstArrowLineOneDivY2 );
-//line( loopForeverFirstArrowLineTwoDivX1, loopForeverFirstArrowLineTwoDivY1, loopForeverFirstArrowLineTwoDivX2, loopForeverFirstArrowLineTwoDivY2 );
-//line( loopForeverFirstArrowLineThreeDivX1, loopForeverFirstArrowLineThreeDivY1, loopForeverFirstArrowLineThreeDivX2, loopForeverFirstArrowLineThreeDivY2 );
-//line( loopForeverFirstArrowLineFourDivX1, loopForeverFirstArrowLineFourDivY1, loopForeverFirstArrowLineFourDivX2, loopForeverFirstArrowLineFourDivY2 );
-//line( loopForeverFirstArrowLineFiveDivX1, loopForeverFirstArrowLineFiveDivY1, loopForeverFirstArrowLineFiveDivX2, loopForeverFirstArrowLineFiveDivY2 );
-//triangle( loopForeverFirstArrowTriangleDivX1, loopForeverFirstArrowTriangleDivY1, loopForeverFirstArrowTriangleDivX2, loopForeverFirstArrowTriangleDivY2, loopForeverFirstArrowTriangleDivX3, loopForeverFirstArrowTriangleDivY3 );
+/*
+line( loopForeverFirstArrowLineOneDivX1, loopForeverFirstArrowLineOneDivY1, loopForeverFirstArrowLineOneDivX2, loopForeverFirstArrowLineOneDivY2 );
+line( loopForeverFirstArrowLineTwoDivX1, loopForeverFirstArrowLineTwoDivY1, loopForeverFirstArrowLineTwoDivX2, loopForeverFirstArrowLineTwoDivY2 );
+line( loopForeverFirstArrowLineThreeDivX1, loopForeverFirstArrowLineThreeDivY1, loopForeverFirstArrowLineThreeDivX2, loopForeverFirstArrowLineThreeDivY2 );
+line( loopForeverFirstArrowLineFourDivX1, loopForeverFirstArrowLineFourDivY1, loopForeverFirstArrowLineFourDivX2, loopForeverFirstArrowLineFourDivY2 );
+line( loopForeverFirstArrowLineFiveDivX1, loopForeverFirstArrowLineFiveDivY1, loopForeverFirstArrowLineFiveDivX2, loopForeverFirstArrowLineFiveDivY2 );
+triangle( loopForeverFirstArrowTriangleDivX1, loopForeverFirstArrowTriangleDivY1, loopForeverFirstArrowTriangleDivX2, loopForeverFirstArrowTriangleDivY2, loopForeverFirstArrowTriangleDivX3, loopForeverFirstArrowTriangleDivY3 );
 
-//line( loopForeverSecondArrowLineOneDivX1, loopForeverSecondArrowLineOneDivY1, loopForeverSecondArrowLineOneDivX2, loopForeverSecondArrowLineOneDivY2 );
-//line( loopForeverSecondArrowLineTwoDivX1, loopForeverSecondArrowLineTwoDivY1, loopForeverSecondArrowLineTwoDivX2, loopForeverSecondArrowLineTwoDivY2 );
-//line( loopForeverSecondArrowLineThreeDivX1, loopForeverSecondArrowLineThreeDivY1, loopForeverSecondArrowLineThreeDivX2, loopForeverSecondArrowLineThreeDivY2 );
-//line( loopForeverSecondArrowLineFourDivX1, loopForeverSecondArrowLineFourDivY1, loopForeverSecondArrowLineFourDivX2, loopForeverSecondArrowLineFourDivY2 );
-//line( loopForeverSecondArrowLineFiveDivX1, loopForeverSecondArrowLineFiveDivY1, loopForeverSecondArrowLineFiveDivX2, loopForeverSecondArrowLineFiveDivY2 );
-//triangle( loopForeverSecondArrowTriangleDivX1, loopForeverSecondArrowTriangleDivY1, loopForeverSecondArrowTriangleDivX2, loopForeverSecondArrowTriangleDivY2, loopForeverSecondArrowTriangleDivX3, loopForeverSecondArrowTriangleDivY3 );
+line( loopForeverSecondArrowLineOneDivX1, loopForeverSecondArrowLineOneDivY1, loopForeverSecondArrowLineOneDivX2, loopForeverSecondArrowLineOneDivY2 );
+line( loopForeverSecondArrowLineTwoDivX1, loopForeverSecondArrowLineTwoDivY1, loopForeverSecondArrowLineTwoDivX2, loopForeverSecondArrowLineTwoDivY2 );
+line( loopForeverSecondArrowLineThreeDivX1, loopForeverSecondArrowLineThreeDivY1, loopForeverSecondArrowLineThreeDivX2, loopForeverSecondArrowLineThreeDivY2 );
+line( loopForeverSecondArrowLineFourDivX1, loopForeverSecondArrowLineFourDivY1, loopForeverSecondArrowLineFourDivX2, loopForeverSecondArrowLineFourDivY2 );
+line( loopForeverSecondArrowLineFiveDivX1, loopForeverSecondArrowLineFiveDivY1, loopForeverSecondArrowLineFiveDivX2, loopForeverSecondArrowLineFiveDivY2 );
+triangle( loopForeverSecondArrowTriangleDivX1, loopForeverSecondArrowTriangleDivY1, loopForeverSecondArrowTriangleDivX2, loopForeverSecondArrowTriangleDivY2, loopForeverSecondArrowTriangleDivX3, loopForeverSecondArrowTriangleDivY3 );
+*/
