@@ -238,15 +238,21 @@ rect( lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight );
 rect( finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight );
 rect( intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight );
 rect( joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight );
+
 rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
+
 rect( nameofsongfinalcountdownDivX, nameofsongfinalcountdownDivY, nameofsongfinalcountdownDivWidth, nameofsongfinalcountdownDivHeight );
 rect( nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight );
 rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
+
 rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
+
 rect( nameofsongintheendDivX, nameofsongintheendDivY, nameofsongintheendDivWidth, nameofsongintheendDivHeight );
 rect( nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight );
 rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
+
 rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
+
 rect( nameofsongjoinusforabiteDivX, nameofsongjoinusforabiteDivY, nameofsongjoinusforabiteDivWidth, nameofsongjoinusforabiteDivHeight );
 rect( nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight );
 rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
