@@ -4,37 +4,59 @@
 //Display
 fullScreen();
 //
-String upArrow = "..";
-String dependenciesFolder = "Dependencies";
+println(displayWidth, displayHeight);
+
+int appWidth = displayWidth;
+int appHeight = displayHeight;
+
+int paperWidth = 279;
+int paperHeight = 216;
+
+String upArow = "..";
+String dependanciesFolder = "Dependencies";
 String imagesFolder = "Images";
-String imageName1 = "Europe TFC";
-String imageName2 = "Circle";
+String imageName1 = "Join Us For A Bite";
+String imageName2 = "Europe TFC";
 String imageName3 = "Hybrid Theory";
-String fileExtention = ".jpg";
+String fileExension = ".jpg";
 String open = "/";
 //
-///Concatenation
-/*
- - See Absolute Pathway: C:\Users\b.schile-nelson\Documents\GitHub\MusicPlayer.github.io\Dependencies\Images
- - See Reletave Pathway: Dependencies\Images
- */
-String imageDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + imagesFolder + open;
-String pathway1, pathway2, pathway3;
-String image1, image2, image3;
-for ( int i=1; i<=3; i++) { 
-  pathway[i] = imageDirectory + imageName[i] + fileExtention;
-  image[i] = loadImage( pathway[i] );
-}
-String pathway2 = imageDirectory + imageName2 + fileExtention;
-String pathway3 = imageDirectory + imageName3 + fileExtention;
+//Concatenation
+//Note, Cut Out, See Absolute Pathway:
+//See Relative Pathway: Dependencies\Images
+String imageDirectory = upArow + open + upArow + open + dependanciesFolder + open + imagesFolder + open;
+String pathway1 = imageDirectory + imageName1 + fileExension;
+String pathway2 = imageDirectory + imageName2 + fileExension;
+String pathway3 = imageDirectory + imageName3 + fileExension;
+//println(pathway);
 //
-//println( pathway );
+PImage image1 = loadImage( pathway1 );
+PImage image2 = loadImage( pathway2 );
+int imageWidth2 = 500;
+int imageHeight2 = 500;
+PImage image3 = loadImage( pathway3 );
 //
-image2 = loadImage( pathway2 );
-image3 = loadImage( pathway3 );
-//
-for (int i=1; i<=3; i++) {
-  image(image1, 0, 0);
-  image(image2, 0, 0);
-  image(image3, 0, 0);
-}
+//Population: DIVs
+//Image: Aspect Ratio Algorithm
+
+float albumcoverimagefinalcountdownDivX = appWidth * 167 / paperWidth;
+float albumcoverimagefinalcountdownDivY = appHeight *  47 / paperHeight;
+float albumcoverimagefinalcountdownDivWidth = appWidth * 20 / paperWidth;
+float albumcoverimagefinalcountdownDivHeight = appHeight * 20 / paperHeight ;
+
+float albumcoverimageintheendDivX = appWidth * 167 / paperWidth;
+float albumcoverimageintheendDivY = appHeight *  72 / paperHeight;
+float albumcoverimageintheendDivWidth = appWidth * 20 / paperWidth;
+float albumcoverimageintheendDivHeight = appHeight * 20 / paperHeight ;
+
+float albumcoverimagejoinusforabiteDivX = appWidth * 167 / paperWidth;
+float albumcoverimagejoinusforabiteDivY = appHeight *  97 / paperHeight;
+float albumcoverimagejoinusforabiteDivWidth = appWidth * 20 / paperWidth;
+float albumcoverimagejoinusforabiteDivHeight = appHeight * 20 / paperHeight ;
+
+rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
+rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
+rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
+image( image1, albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth+1, albumcoverimagejoinusforabiteDivHeight+1 );
+image( image2, albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth+1, albumcoverimagefinalcountdownDivHeight+1 );
+image( image3, albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth+1, albumcoverimageintheendDivHeight+1 );
