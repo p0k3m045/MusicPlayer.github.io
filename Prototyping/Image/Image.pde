@@ -36,8 +36,6 @@ int imageWidth2 = 500;
 int imageHeight2 = 500;
 PImage image3 = loadImage( pathway3 );
 //
-//Population: DIVs
-//Image: Aspect Ratio Algorithm
 
 float albumcoverimagefinalcountdownDivX = appWidth * 167 / paperWidth;
 float albumcoverimagefinalcountdownDivY = appHeight *  47 / paperHeight;
@@ -53,6 +51,15 @@ float albumcoverimagejoinusforabiteDivX = appWidth * 167 / paperWidth;
 float albumcoverimagejoinusforabiteDivY = appHeight *  97 / paperHeight;
 float albumcoverimagejoinusforabiteDivWidth = appWidth * 20 / paperWidth;
 float albumcoverimagejoinusforabiteDivHeight = appHeight * 20 / paperHeight ;
+
+//Population: DIVs
+//Image: Aspect Ratio Algorithm
+//println( float (imageWidth2) / float (imageHeight2) );
+//Ternary Operator
+float image2AspectRatio_GreaterOne = ( imageWidth2 > imageHeight2 ) ? float (imageWidth2) / float (imageHeight2)  : float (imageHeight2) / float (imageWidth2);
+println(image2AspectRatio_GreaterOne);
+float imageWidthAdjusted2 = albumcoverimagefinalcountdownDivWidth;
+float imageHeightAdjusted2 = albumcoverimagefinalcountdownDivHeight;
 
 rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
 rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
