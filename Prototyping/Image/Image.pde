@@ -58,12 +58,17 @@ float albumcoverimagejoinusforabiteDivHeight = appHeight * 20 / paperHeight ;
 //Ternary Operator
 float image2AspectRatio_GreaterOne = ( imageWidth2 > imageHeight2 ) ? float (imageWidth2) / float (imageHeight2)  : float (imageHeight2) / float (imageWidth2);
 println(image2AspectRatio_GreaterOne);
-float imageWidthAdjusted2 = albumcoverimagefinalcountdownDivWidth;
-float imageHeightAdjusted2 = albumcoverimagefinalcountdownDivHeight;
+float imageWidthAdjusted = albumcoverimagefinalcountdownDivWidth;
+float imageHeightAdjusted = ( imageWidth2 >= albumcoverimageintheendDivWidth ) ? imageWidthAdjusted / image2AspectRatio_GreaterOne : imageWidthAdjusted * image2AspectRatio_GreaterOne ;
+
+while( imageHeightAdjusted > albumcoverimageintheendDivHeight) {
+  imageWidthAdjusted *= 0.99;
+  imageHeightAdjusted = imageWidthAdjusted / image2AspectRatio_GreaterOne;
+}
 
 rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
 rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
 rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
-image( image1, albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth+1, albumcoverimagejoinusforabiteDivHeight+1 );
-image( image2, albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth+1, albumcoverimagefinalcountdownDivHeight+1 );
-image( image3, albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth+1, albumcoverimageintheendDivHeight+1 );
+image( image1, albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, imageWidthAdjusted+1, imageWidthAdjusted+1 );
+image( image2, albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
+image( image3, albumcoverimageintheendDivX, albumcoverimageintheendDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
