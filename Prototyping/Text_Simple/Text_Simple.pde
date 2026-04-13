@@ -100,9 +100,44 @@ float fifteenDivHeight = appHeight * 5 / paperHeight ;
 rect( fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight );
 
 //String, Text, Literal
+String title = "Title";
 
 //Fonts from OS
+println("Start of Console");
+String[] fontList = PFont.list();
+printArray(fontList);
+
+//float fontSize = appHeight;
+float fontSize = appHeight;
+println( fontSize );
+//float fontSize = 25;
+PFont font;
+String PLBI = "Palatino Linotype Bold Italic";
+font = createFont(PLBI, fontSize);
+textFont(font, fontSize);
 
 //Aspect Ratio for Text
+float divHeightPLBI = songtitleDivHeight;
+float PLBIAspectRatio = fontSize / divHeightPLBI;
+fontSize = songtitleDivWidth * PLBIAspectRatio;
+println( fontSize );
 
 //Drawing Text
+color whiteInk = #FFFFFF;
+color blackInk = #000000;
+color resetInk = whiteInk;
+fill(blackInk);
+text( title, songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
+text( title, xDivX, xDivY, xDivWidth, xDivHeight);
+text( title, nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight);
+text( title, lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight);
+text( title, nameofsongfinalcountdownDivX, nameofsongfinalcountdownDivY, nameofsongfinalcountdownDivWidth, nameofsongfinalcountdownDivHeight);
+text( title, nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight);
+text( title, nameofsongintheendDivX, nameofsongintheendDivY, nameofsongintheendDivWidth, nameofsongintheendDivHeight);
+text( title, nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight);
+text( title, nameofsongjoinusforabiteDivX, nameofsongjoinusforabiteDivY, nameofsongjoinusforabiteDivWidth, nameofsongjoinusforabiteDivHeight);
+text( title, nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight);
+text( title, tenDivX, tenDivY, tenDivWidth, tenDivHeight);
+text( title, fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight);
+
+fill(resetInk);
