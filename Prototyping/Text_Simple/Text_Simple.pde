@@ -8,7 +8,7 @@ int appHeight = displayHeight;
 int paperWidth = 279;
 int paperHeight = 216;
 
-//------------------ DIVS ------------------//
+//DIVs
 
 float songtitleDivX = appWidth * 12.0 / paperWidth;
 float songtitleDivY = appHeight * 14.0 / paperHeight;
@@ -82,25 +82,77 @@ float fifteenDivWidth = appWidth * 5.0 / paperWidth;
 float fifteenDivHeight = appHeight * 5.0 / paperHeight;
 rect(fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight);
 
-//------------------ TEXT ------------------//
 
+//Strings, text, Literal
 String title = "Title";
 String x = "X";
 String ten = "10";
+String fifteen = "15";
+String nextUp = "Next Up";
 
+//Fonts From OS
+float fontSize1 = appHeight;
+float fontSize2 = appHeight;
+float fontSize3 = appHeight;
+float fontSize4 = appHeight;
 PFont font;
-font = createFont("Palatino Linotype Bold Italic", 100);
+String PLBI = "Palatino Linotype Bold Italic";
 
-fill(0);
-textAlign(CENTER, CENTER);
+font = createFont(PLBI, fontSize1);
 
-// FIX: scale text using HEIGHT of each box (not width)
+//Aspect ratio for "Title"
+float titleFontSize = 65;
+float titledivHeight = songtitleDivHeight;
+float titleAspectRatio = titleFontSize / titledivHeight;
 
-textFont(font, songtitleDivHeight * 0.8);
+//Aspect ratio for "X"
+float xFontSize = 32;
+float xdivHeight = xDivHeight;
+float xAspectRatio = xFontSize / xdivHeight;
+
+//Aspect ratio for "10"
+float tenFontSize = 20;
+float tendivHeight = tenDivHeight;
+float tenAspectRatio = tenFontSize / tendivHeight;
+//Aspect ratio for "15" is the same as Aspect ratio for "10"
+
+//Aspect ratio for "Next Up"
+float nextUpFontSize = 41;
+float nextUpdivHeight = nextupDivHeight;
+float nextUpAspectRatio = nextUpFontSize / nextUpdivHeight;
+
+
+float textAdjustment = 0.9;
+
+
+//Final Font Sizes
+fontSize1 = songtitleDivHeight*titleAspectRatio * textAdjustment;
+fontSize2 = xDivHeight*xAspectRatio * textAdjustment;
+fontSize3 = tenDivHeight*tenAspectRatio * textAdjustment;
+fontSize4 = nextupDivHeight*nextUpAspectRatio * textAdjustment;
+
+
+//Drawing Text
+color blackInk = #000000;
+color whiteInk = #FFFFFF;
+color resetInk = whiteInk;
+
+fill(blackInk);
+textAlign(CENTER, TOP);
+
+textFont(font, fontSize1);
 text(title, songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight);
 
-textFont(font, xDivHeight * 0.8);
+textFont(font, fontSize2);
 text(x, xDivX, xDivY, xDivWidth, xDivHeight);
 
-textFont(font, tenDivHeight * 0.8);
+textFont(font, fontSize3);
 text(ten, tenDivX, tenDivY, tenDivWidth, tenDivHeight);
+
+textFont(font, fontSize3);
+text(fifteen, fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight);
+
+textFont(font, fontSize4);
+text(nextUp, nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight);
+
+fill(resetInk);
