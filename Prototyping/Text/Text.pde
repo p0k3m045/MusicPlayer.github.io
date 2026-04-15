@@ -152,7 +152,7 @@ fontSize2 = xDivHeight*xAspectRatio * textAdjustment;
 fontSize3 = tenDivHeight*tenAspectRatio * textAdjustment;
 fontSize4 = nextupDivHeight*nextUpAspectRatio * textAdjustment;
 fontSize5 = theFinalCountdowndivHeight*theFinalCountdownAspectRatio * textAdjustment;
-fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;;
+fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;
 
 //Drawing Text
 color blackInk = #000000;
