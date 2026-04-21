@@ -11,7 +11,7 @@ import ddf.minim.ugens.*;
 //Global Variables
 Minim minim;
 int numberOfSongs = 3;
-int numberOfSoundEffects = 0;
+int numberOfSoundEffects = 1;
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
 int currentSong = numberOfSongs - numberOfSongs;
