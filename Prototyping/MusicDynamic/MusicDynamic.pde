@@ -60,8 +60,7 @@ void setup() {
   soundEffects[currentSong] = minim.loadFile( file );
 
   for ( int i = 0; i<numberOfSongs; i++) {
-    if ( playList[i]==null ) { //ERROR, play list is NULL
-      //See FILE or minim.loadFile
+    if ( playList[i]==null ) { 
       println("The Play List or Sound Effects did not load properly");
       printArray(playList);
       exit();
