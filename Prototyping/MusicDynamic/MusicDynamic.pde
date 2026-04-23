@@ -31,39 +31,51 @@ void setup() {
   String dependenciesFolder = "Dependencies";
 
   String[] songName = new String[numberOfSongs];
-  songName[0] = "The Final Countdown";
-  songName[1] = "In The End";
-  songName[2] = "Join Us For A Bite";
-  
-  
-  String songName1 = "The Final Countdown";
-  String songName2 = "In The End";
-  String songName3 = "Join Us For A Bite";
+  songName[currentSong] = "The Final Countdown";
+  currentSong++;
+  songName[currentSong] = "In The End";
+  currentSong++;
+  songName[currentSong] = "Join Us For A Bite";
+  currentSong = 0;
+
+  /*
+   String songName1 = "The Final Countdown";
+   String songName2 = "In The End";
+   String songName3 = "Join Us For A Bite";
+   */
+
   String soundEffect = "Click";
   String fileExtention = ".mp3";
 
   String musicDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + musicFolder + open;
   String soundEffectsDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + soundEffectsFolder + open;
-  String file = musicDirectory +songName1 + fileExtention;
-  playList[ currentSong ] = minim.loadFile( file );
+  String file;
+
+  for ( int i = 0; i<numberOfSongs; i++) {
+    file = musicDirectory + songName[i] + fileExtention;
+    playList[ currentSong ] = minim.loadFile( file );
+  }
+
   file = soundEffectsDirectory + soundEffect + fileExtention;
   soundEffects[currentSong] = minim.loadFile( file );
-  if ( playList[currentSong]==null || soundEffects[currentSong]==null ) { //ERROR, play list is NULL
-    //See FILE or minim.loadFile
+
+  for ( int i = 0; i<numberOfSongs; i++) {
+    if ( playList[i]==null ) { //ERROR, play list is NULL
+      //See FILE or minim.loadFile
+      println("The Play List or Sound Effects did not load properly");
+      printArray(playList);
+      exit();
+    }
+  }
+  if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
     println("The Play List or Sound Effects did not load properly");
-    printArray(playList);
     printArray(soundEffects);
-    /*
-  println("Music Pathway", musicDirectory);
-     println("Full Music File Pathway", file);
-     */
-  } else {
-    playList[currentSong].play();
-    printArray(playList);
+    exit();
   }
 }//End Setup
 
 void draw() {
+  playList[currentSong].play(); //No Loop Built In
 }
 
 void mousePressed() {
