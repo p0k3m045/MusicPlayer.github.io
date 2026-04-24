@@ -52,8 +52,12 @@ void setup() {
   String file;
 
   for ( int i = 0; i<numberOfSongs; i++) {
-    file = musicDirectory + songName[i] + fileExtention;
-    playList[ currentSong ] = minim.loadFile( file );
+  //CAUTION: remove ReadMe.txt
+  file = musicDirectory + songName[i] + fileExtention;
+    println("Inside FOR, Pathway:", file);
+    playList[ i ] = minim.loadFile( file );
+    //CAUTION; not currentSong var
+    println(currentSong);
   }
 
   file = soundEffectsDirectory + soundEffect + fileExtention;
