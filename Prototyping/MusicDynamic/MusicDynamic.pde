@@ -16,6 +16,8 @@ AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
 int currentSong = numberOfSongs - numberOfSongs;
+String[] songName = new String[numberOfSongs];
+
 
 //Void
 void setup() {
@@ -278,7 +280,6 @@ void setup() {
   String soundEffectsFolder = "Sound Effects";
   String dependenciesFolder = "Dependencies";
 
-  String[] songName = new String[numberOfSongs];
   songName[currentSong] = "The Final Countdown";
   currentSong++;
   songName[currentSong] = "In The End";
@@ -318,7 +319,12 @@ void setup() {
     if ( playList[i]==null ) {
       println("The Play List or Sound Effects did not load properly");
       printArray(playList);
-      exit();
+      //exit();
+    }
+    if ( playListMetaData[i]==null ) {
+      println("The Play List or Sound Effects did not load properly");
+      printArray(playList);
+      //exit();
     }
   }
   if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
@@ -326,7 +332,6 @@ void setup() {
     printArray(soundEffects);
     exit();
   }
-
 
   //rect(height) is biggest font is word is the smallest
   float fontSize1 = songtitleDivHeight; //1:1 Font Height to rectHeight
@@ -353,7 +358,7 @@ void setup() {
   float constantDecrease = 0.99;
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-  while ( textWidth(playListMetaData[currentSong].title()) > songtitleDivWidth ) {
+  while ( textWidth(playListMetaData[currentSong].fileName()) > songtitleDivWidth ) {
     //println("While #1"); //Infinite WHILE Check
     iWhile++;
     if ( iWhile>10000 ) { //>1000 means -1 text or i
@@ -363,13 +368,23 @@ void setup() {
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
-  text( playListMetaData[currentSong].title(), songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
+  println(fontSize1, songtitleDivHeight);
+  println("mETA dATA:", playListMetaData[currentSong].title() == null);
+  //textFont(font, 10); //fixes WHILE loop
+
+  if (playListMetaData[currentSong].title()=="") {
+
+    text(songName[currentSong], songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
+  } else {
+
+    text(playListMetaData[currentSong].title (), songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight);
+  }
+
   //
 }//End Setup
 
 void draw() {
   playList[currentSong].play(); //No Loop Built In
-  
 }
 
 void mousePressed() {
