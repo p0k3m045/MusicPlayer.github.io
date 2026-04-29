@@ -16,6 +16,8 @@ AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
 int currentSong = numberOfSongs - numberOfSongs;
+String[] songName = new String[numberOfSongs];
+
 
 //Void
 void setup() {
@@ -143,10 +145,10 @@ void setup() {
   float albumcoverimagefinalcountdownDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimagefinalcountdownDivHeight = appHeight * 20 / paperHeight ;
 
-  float nameofsongfinalcountdownDivX = appWidth * 187 / paperWidth;
-  float nameofsongfinalcountdownDivY = appHeight *  47 / paperHeight;
-  float nameofsongfinalcountdownDivWidth = appWidth * 50 / paperWidth;
-  float nameofsongfinalcountdownDivHeight = appHeight * 10 / paperHeight ;
+  float songNamefinalcountdownDivX = appWidth * 187 / paperWidth;
+  float songNamefinalcountdownDivY = appHeight *  47 / paperHeight;
+  float songNamefinalcountdownDivWidth = appWidth * 50 / paperWidth;
+  float songNamefinalcountdownDivHeight = appHeight * 10 / paperHeight ;
 
   float nameofartisteuropeDivX = appWidth * 187 / paperWidth;
   float nameofartisteuropeDivY = appHeight *  57 / paperHeight;
@@ -163,10 +165,10 @@ void setup() {
   float albumcoverimageintheendDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimageintheendDivHeight = appHeight * 20 / paperHeight ;
 
-  float nameofsongintheendDivX = appWidth * 187 / paperWidth;
-  float nameofsongintheendDivY = appHeight *  72 / paperHeight;
-  float nameofsongintheendDivWidth = appWidth * 50 / paperWidth;
-  float nameofsongintheendDivHeight = appHeight * 10 / paperHeight ;
+  float songNameintheendDivX = appWidth * 187 / paperWidth;
+  float songNameintheendDivY = appHeight *  72 / paperHeight;
+  float songNameintheendDivWidth = appWidth * 50 / paperWidth;
+  float songNameintheendDivHeight = appHeight * 10 / paperHeight ;
 
   float nameofartistlinkinparkDivX = appWidth * 187 / paperWidth;
   float nameofartistlinkinparkDivY = appHeight *  82 / paperHeight;
@@ -183,10 +185,10 @@ void setup() {
   float albumcoverimagejoinusforabiteDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimagejoinusforabiteDivHeight = appHeight * 20 / paperHeight ;
 
-  float nameofsongjoinusforabiteDivX = appWidth * 187 / paperWidth;
-  float nameofsongjoinusforabiteDivY = appHeight *  97 / paperHeight;
-  float nameofsongjoinusforabiteDivWidth = appWidth * 50 / paperWidth;
-  float nameofsongjoinusforabiteDivHeight = appHeight * 10 / paperHeight ;
+  float songNamejoinusforabiteDivX = appWidth * 187 / paperWidth;
+  float songNamejoinusforabiteDivY = appHeight *  97 / paperHeight;
+  float songNamejoinusforabiteDivWidth = appWidth * 50 / paperWidth;
+  float songNamejoinusforabiteDivHeight = appHeight * 10 / paperHeight ;
 
   float nameofartistjtmusicDivX = appWidth * 187 / paperWidth;
   float nameofartistjtmusicDivY = appHeight *  107 / paperHeight;
@@ -252,19 +254,19 @@ void setup() {
 
   rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
 
-  rect( nameofsongfinalcountdownDivX, nameofsongfinalcountdownDivY, nameofsongfinalcountdownDivWidth, nameofsongfinalcountdownDivHeight );
+  rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
   rect( nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight );
   rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
 
   rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
 
-  rect( nameofsongintheendDivX, nameofsongintheendDivY, nameofsongintheendDivWidth, nameofsongintheendDivHeight );
+  rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
   rect( nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight );
   rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
 
   rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
 
-  rect( nameofsongjoinusforabiteDivX, nameofsongjoinusforabiteDivY, nameofsongjoinusforabiteDivWidth, nameofsongjoinusforabiteDivHeight );
+  rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
   rect( nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight );
   rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
   rect( tenDivX, tenDivY, tenDivWidth, tenDivHeight );
@@ -275,10 +277,9 @@ void setup() {
   String upArrow = "..";
   String open = "/";
   String musicFolder = "Music";
-  String soundEffectsFolder = "Sound Effects";
+  String soundEffectsFolder = "Sound effects";
   String dependenciesFolder = "Dependencies";
 
-  String[] songName = new String[numberOfSongs];
   songName[currentSong] = "The Final Countdown";
   currentSong++;
   songName[currentSong] = "In The End";
@@ -294,7 +295,7 @@ void setup() {
 
   String title = "Title";
 
-  String soundEffect = "Click";
+  String soundEffect = "click";
   String fileExtention = ".mp3";
 
   String musicDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + musicFolder + open;
@@ -318,7 +319,12 @@ void setup() {
     if ( playList[i]==null ) {
       println("The Play List or Sound Effects did not load properly");
       printArray(playList);
-      exit();
+      //exit();
+    }
+    if ( playListMetaData[i]==null ) {
+      println("The Play List or Sound Effects did not load properly");
+      printArray(playList);
+      //exit();
     }
   }
   if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
@@ -327,13 +333,12 @@ void setup() {
     exit();
   }
 
-
   //rect(height) is biggest font is word is the smallest
   float fontSize1 = songtitleDivHeight; //1:1 Font Height to rectHeight
   float fontSize2 = xDivHeight;
   float fontSize3 = tenDivHeight;
   float fontSize4 = nextupDivHeight;
-  float fontSize5 = nameofsongfinalcountdownDivHeight;
+  float fontSize5 = songNamefinalcountdownDivHeight;
   float fontSize6 = nameofartisteuropeDivHeight;
 
   PFont font; //Font Varaible Name, able to have more than one Font
@@ -353,7 +358,7 @@ void setup() {
   float constantDecrease = 0.99;
   int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
-  while ( textWidth(playListMetaData[currentSong].title()) > songtitleDivWidth ) {
+  while ( textWidth(playListMetaData[currentSong].fileName()) > songtitleDivWidth ) {
     //println("While #1"); //Infinite WHILE Check
     iWhile++;
     if ( iWhile>10000 ) { //>1000 means -1 text or i
@@ -363,15 +368,25 @@ void setup() {
     fontSize1 *= constantDecrease;
     textFont(font, fontSize1);
   }
-  text( playListMetaData[currentSong].title(), songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
+  println(fontSize1, songtitleDivHeight);
+  println("mETA dATA:", playListMetaData[currentSong].title() == null);
+  //textFont(font, 10); //fixes WHILE loop
+
+  if (playListMetaData[currentSong].title()=="") {
+
+    text(songName[currentSong], songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
+  } else {
+
+    text(playListMetaData[currentSong].title (), songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight);
+  }
   //
 }//End Setup
 
 void draw() {
-  playList[currentSong].play(); //No Loop Built In
-  
+  if (!playList[currentSong].isPlaying()) {
+    playList[currentSong].play();
+  }
 }
-
 void mousePressed() {
   soundEffects[currentSong].play();
   soundEffects[currentSong].rewind();
@@ -462,7 +477,7 @@ void keyPressed() {
       playList[currentSong].mute();
     }
   }
-  if ( key==CODED || keyCode==ESC ) exit(); // QUIT // UP
+  if ( keyCode==ESC ) exit(); // QUIT // UP
   if ( key=='Q' || key=='q' ) exit(); // QUIT
   //
   if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
@@ -512,7 +527,14 @@ void keyPressed() {
     }
   }
   //
-  if ( key=='Y' || key=='y' ) currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)
+  if ( key=='Y' || key=='y' ) {
+    if ( playList[currentSong].isPlaying() )
+    {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+    }
+  }
+  currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)}
   //
   //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
   //Note: will randomize the currentSong number
