@@ -535,8 +535,8 @@ void keyPressed() {
       playList[currentSong].pause();
       playList[currentSong].rewind();
     }
+    currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)}
   }
-  currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)}
   //
   //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
   //Note: will randomize the currentSong number
