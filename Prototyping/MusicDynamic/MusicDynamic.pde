@@ -277,7 +277,7 @@ void setup() {
   String upArrow = "..";
   String open = "/";
   String musicFolder = "Music";
-  String soundEffectsFolder = "Sound effects";
+  String soundEffectsFolder = "Sound Effects";
   String dependenciesFolder = "Dependencies";
 
   songName[currentSong] = "The Final Countdown";
@@ -295,7 +295,7 @@ void setup() {
 
   String title = "Title";
 
-  String soundEffect = "click";
+  String soundEffect = "Click";
   String fileExtention = ".mp3";
 
   String musicDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + musicFolder + open;
@@ -372,7 +372,7 @@ void setup() {
   println("mETA dATA:", playListMetaData[currentSong].title() == null);
   //textFont(font, 10); //fixes WHILE loop
 
-  if (playListMetaData[currentSong].title()=="") {
+  if (playListMetaData[currentSong].title().equals("")) {
 
     text(songName[currentSong], songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
   } else {
