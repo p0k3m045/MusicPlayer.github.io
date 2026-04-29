@@ -388,7 +388,7 @@ void draw() {
   if (!playList[currentSong].isPlaying()) {
     playList[currentSong].play();
   }
-  playList[currentSong].play(); //No Loop Built In
+
 
 }
 void mousePressed() {
