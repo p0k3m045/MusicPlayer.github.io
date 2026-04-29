@@ -388,8 +388,6 @@ void draw() {
   if (!playList[currentSong].isPlaying()) {
     playList[currentSong].play();
   }
-
-
 }
 void mousePressed() {
   soundEffects[currentSong].play();
