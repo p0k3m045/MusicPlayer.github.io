@@ -379,21 +379,17 @@ void setup() {
 
     text(playListMetaData[currentSong].title (), songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight);
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> 2769af0ae7fd9ac17c83737d26e6ad206d66b5c7
   //
 }//End Setup
 
 void draw() {
-<<<<<<< HEAD
+
   if (!playList[currentSong].isPlaying()) {
     playList[currentSong].play();
   }
-=======
   playList[currentSong].play(); //No Loop Built In
->>>>>>> 2769af0ae7fd9ac17c83737d26e6ad206d66b5c7
+
 }
 void mousePressed() {
   soundEffects[currentSong].play();
