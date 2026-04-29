@@ -384,10 +384,7 @@ void setup() {
 }//End Setup
 
 void draw() {
-
-  if (!playList[currentSong].isPlaying()) {
-    playList[currentSong].play();
-  }
+  playList[currentSong].play();
 }
 void mousePressed() {
   soundEffects[currentSong].play();
