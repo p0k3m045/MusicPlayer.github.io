@@ -22,6 +22,7 @@ boolean isPaused = false;
 //Void
 void setup() {
   fullScreen();
+  background(#D1B95B);
   println(displayWidth, displayHeight);
   int appWidth = displayWidth;
   int appHeight = displayHeight;
