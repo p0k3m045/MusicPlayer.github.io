@@ -17,7 +17,7 @@ AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
 int currentSong = numberOfSongs - numberOfSongs;
 String[] songName = new String[numberOfSongs];
-
+boolean isPaused = false;
 
 //Void
 void setup() {
@@ -384,11 +384,14 @@ void setup() {
 }//End Setup
 
 void draw() {
-  playList[currentSong].play();
+  if (!playList[currentSong].isPlaying() && !isPaused) {
+    playList[currentSong].play();
+  }
 }
+
 void mousePressed() {
-  soundEffects[currentSong].play();
-  soundEffects[currentSong].rewind();
+  soundEffects[0].play();
+  soundEffects[0].rewind();
 }//End Mouse Pressed
 
 void keyPressed() {
@@ -450,11 +453,13 @@ void keyPressed() {
   }
   //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
   //
-  if ( key=='S' | key=='s' ) {
+  if ( key=='S' || key=='s' ) {
     if ( playList[currentSong].isPlaying() ) {
-      playList[currentSong].pause(); //single tap
+      playList[currentSong].pause();
+      isPaused = true;
     } else {
-      playList[currentSong].rewind(); //double tap
+      playList[currentSong].play();
+      isPaused = false;
     }
   }
   if ( key=='L' || key=='l' ) playList[currentSong].loop(1); // Loop ONCE: Plays, then plays again, then stops & rewinds
