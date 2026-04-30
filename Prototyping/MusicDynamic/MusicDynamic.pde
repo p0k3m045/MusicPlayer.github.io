@@ -17,8 +17,8 @@ AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
 int currentSong = numberOfSongs - numberOfSongs;
 String[] songName = new String[numberOfSongs];
-float songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight;
-color blackInk, whiteInk, resetInk;
+float songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight, greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight, redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight;
+color blackInk, whiteInk, resetInk, brownInk;
 boolean isPaused = false;
 boolean isMuted = false;
 
@@ -32,6 +32,10 @@ void setup() {
   int appHeight = displayHeight;
   int paperWidth = 279;
   int paperHeight = 216;
+
+  blackInk = #000000;
+  whiteInk = #FFFFFF; //Grey Scale is 255
+  resetInk = whiteInk;
 
   float songtitleboxDivX = appWidth * 10 / paperWidth;
   float songtitleboxDivY = appHeight *  12 / paperHeight;
@@ -49,15 +53,15 @@ void setup() {
   float recordplayerimageDivWidth = appWidth * 120 / paperWidth;
   float recordplayerimageDivHeight = appHeight * 90 / paperHeight ;
 
-  float greenlightDivX = appWidth * 95 / paperWidth;
-  float greenlightDivY = appHeight *  100 / paperHeight;
-  float greenlightDivWidth = appWidth * 5 / paperWidth;
-  float greenlightDivHeight = appHeight * 5 / paperHeight ;
+  greenlightDivX = appWidth * 95 / paperWidth;
+  greenlightDivY = appHeight *  100 / paperHeight;
+  greenlightDivWidth = appWidth * 5 / paperWidth;
+  greenlightDivHeight = appHeight * 5 / paperHeight ;
 
-  float redlightDivX = appWidth * 105 / paperWidth;
-  float redlightDivY = appHeight *  100 / paperHeight;
-  float redlightDivWidth = appWidth * 5 / paperWidth;
-  float redlightDivHeight = appHeight * 5 / paperHeight ;
+  redlightDivX = appWidth * 105 / paperWidth;
+  redlightDivY = appHeight *  100 / paperHeight;
+  redlightDivWidth = appWidth * 5 / paperWidth;
+  redlightDivHeight = appHeight * 5 / paperHeight ;
 
   float looponceDivX = appWidth * 10 / paperWidth;
   float looponceDivY = appHeight *  140 / paperHeight;
@@ -230,9 +234,14 @@ void setup() {
   float fifteenDivHeight = appHeight * 5 / paperHeight ;
 
   //rect( DivX, DivY, DivWidth, DivHeight );
+  brownInk = #834503;
+  fill(brownInk);
   rect( songtitleboxDivX, songtitleboxDivY, songtitleboxDivWidth, songtitleboxDivHeight );
   rect( songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
+  fill(resetInk);
   rect( recordplayerimageDivX, recordplayerimageDivY, recordplayerimageDivWidth, recordplayerimageDivHeight );
+  fill(brownInk);
+
   rect( greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight );
   rect( redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight );
   rect( uiboxDivX, uiboxDivY, uiboxDivWidth, uiboxDivHeight );
@@ -256,26 +265,33 @@ void setup() {
   rect( intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight );
   rect( joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight );
 
+  fill(resetInk);
   rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
 
+  fill(brownInk);
   rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
   rect( nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight );
   rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
 
+  fill(resetInk);
   rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
 
+  fill(brownInk);
   rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
   rect( nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight );
   rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
 
+  fill(resetInk);
   rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
 
+  fill(brownInk);
   rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
   rect( nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight );
   rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
   rect( tenDivX, tenDivY, tenDivWidth, tenDivHeight );
   rect( fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight );
 
+  fill(resetInk);
 
   minim = new Minim(this);
   String upArrow = "..";
@@ -351,9 +367,7 @@ void setup() {
   //
   //Drawing Text
   //AP MiniLesson on bit, 8-bit or byte (grey scale, 256), colour
-  blackInk = #000000;
-  whiteInk = #FFFFFF; //Grey Scale is 255
-  resetInk = whiteInk;
+
   fill(blackInk); //Ink, hexidecimal copied from Color Selector
   //Grey Scale 0-255
   textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
@@ -405,6 +419,17 @@ void draw() {
 
   if (!playList[currentSong].isPlaying() && !isPaused) {
     playList[currentSong].play();
+    fill(#066400);
+    rect( greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight );
+    fill(#E30004);
+    rect( redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight );
+    fill(resetInk);
+  } else {
+    fill(#0FCE02);
+    rect( greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight );
+    fill(#790103);
+    rect( redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight );
+    fill(resetInk);
   }
 
   if (isMuted) {
