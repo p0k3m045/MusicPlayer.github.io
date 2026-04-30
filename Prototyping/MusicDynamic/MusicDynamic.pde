@@ -446,116 +446,116 @@ void keyPressed() {
   }
 
 
-    /* Note: double tap is automatic rewind, no pause
-     Symbol is two triangles
-     This changes what the button might become after it is pressed
-     */
-    if ( key=='O' || key=='o' ) {
-      if ( playList[currentSong].isPlaying() ) {
-        playList[currentSong].pause();
-        isPaused = true;
-      } else {
-        playList[currentSong].play();
-        isPaused = false;
-      }
+  /* Note: double tap is automatic rewind, no pause
+   Symbol is two triangles
+   This changes what the button might become after it is pressed
+   */
+  if ( key=='O' || key=='o' ) {
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      isPaused = true;
+    } else {
+      playList[currentSong].play();
+      isPaused = false;
     }
-    //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
+  }
+  //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
+  //
+  if ( key=='S' || key=='s' ) {
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+      isPaused = true;
+    } else {
+      playList[currentSong].play();
+      isPaused = false;
+    }
+  }
+  if ( key=='L' || key=='l' ) playList[currentSong].loop(1); // Loop ONCE: Plays, then plays again, then stops & rewinds
+  if ( key=='K' || key=='k' ) playList[currentSong].loop(); // Loop Infinitely //Parameter: BLANK or -1
+  if ( key=='F' || key=='f' ) playList[currentSong].skip( 15000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
+  if ( key=='R' || key=='r' ) playList[currentSong].skip( -10000 ); // Fast Reverse & Play //Parameter: negative numbers
+  if ( key=='W' || key=='w' ) { // MUTE
     //
-    if ( key=='S' || key=='s' ) {
-      if ( playList[currentSong].isPlaying() ) {
-        playList[currentSong].pause();
-        playList[currentSong].rewind();
-        isPaused = true;
-      } else {
-        playList[currentSong].play();
-        isPaused = false;
-      }
+    //MUTE Behaviour: stops electricty to speakers, does not stop file
+    //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
+    //ERROR: if song near end of file, user will not know song is at the end
+    //Known ERROR: once song plays, MUTE acts like it doesn't work
+    if ( playList[currentSong].isMuted() ) {
+      //ERROR: song might not be playing
+      //CATCH: ask .isPlaying() or !.isPlaying()
+      playList[currentSong].unmute();
+    } else {
+      //Possible ERROR: Might rewind the song
+      playList[currentSong].mute();
     }
-    if ( key=='L' || key=='l' ) playList[currentSong].loop(1); // Loop ONCE: Plays, then plays again, then stops & rewinds
-    if ( key=='K' || key=='k' ) playList[currentSong].loop(); // Loop Infinitely //Parameter: BLANK or -1
-    if ( key=='F' || key=='f' ) playList[currentSong].skip( 15000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
-    if ( key=='R' || key=='r' ) playList[currentSong].skip( -10000 ); // Fast Reverse & Play //Parameter: negative numbers
-    if ( key=='W' || key=='w' ) { // MUTE
+  }
+  if ( keyCode==ESC ) exit(); // QUIT // UP
+  if ( key=='Q' || key=='q' ) exit(); // QUIT
+  //
+  if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
       //
-      //MUTE Behaviour: stops electricty to speakers, does not stop file
-      //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
-      //ERROR: if song near end of file, user will not know song is at the end
-      //Known ERROR: once song plays, MUTE acts like it doesn't work
-      if ( playList[currentSong].isMuted() ) {
-        //ERROR: song might not be playing
-        //CATCH: ask .isPlaying() or !.isPlaying()
-        playList[currentSong].unmute();
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
       } else {
-        //Possible ERROR: Might rewind the song
-        playList[currentSong].mute();
+        currentSong++;
       }
-    }
-    if ( keyCode==ESC ) exit(); // QUIT // UP
-    if ( key=='Q' || key=='q' ) exit(); // QUIT
-    //
-    if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
-      if ( playList[currentSong].isPlaying() ) {
-        playList[currentSong].pause();
-        playList[currentSong].rewind();
-        //
-        if ( currentSong==numberOfSongs-1 ) {
-          currentSong = 0;
-        } else {
-          currentSong++;
-        }
-        playList[currentSong].play();
+      playList[currentSong].play();
+    } else {
+      //
+      playList[currentSong].rewind();
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
       } else {
-        //
-        playList[currentSong].rewind();
-        //
-        if ( currentSong==numberOfSongs-1 ) {
-          currentSong = 0;
-        } else {
-          currentSong++;
-        }
-        // NEXT will not automatically play the song
-        //song[currentSong].play();
+        currentSong++;
       }
+      // NEXT will not automatically play the song
+      //song[currentSong].play();
     }
-    if ( key=='B' || key=='b' ) { // PREVIOUS
-      if ( playList[currentSong].isPlaying() ) {
-        playList[currentSong].pause();
-        playList[currentSong].rewind();
+  }
+  if ( key=='B' || key=='b' ) { // PREVIOUS
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
 
-        if ( currentSong==0 ) {
-          currentSong = numberOfSongs-1;
-        } else {
-          currentSong--;
-        }
-        playList[currentSong].play();
+      if ( currentSong==0 ) {
+        currentSong = numberOfSongs-1;
       } else {
-        playList[currentSong].rewind();
+        currentSong--;
+      }
+      playList[currentSong].play();
+    } else {
+      playList[currentSong].rewind();
 
-        if ( currentSong==0 ) {
-          currentSong = numberOfSongs-1;
-        } else {
-          currentSong--;
-        }
-        // does not auto-play if previously not playing
+      if ( currentSong==0 ) {
+        currentSong = numberOfSongs-1;
+      } else {
+        currentSong--;
       }
+      // does not auto-play if previously not playing
     }
-    //
-    if ( key=='Y' || key=='y' ) {
-      if ( playList[currentSong].isPlaying() )
-      {
-        playList[currentSong].pause();
-        playList[currentSong].rewind();
-      }
-      currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)}
+  }
+  //
+  if ( key=='Y' || key=='y' ) {
+    if ( playList[currentSong].isPlaying() )
+    {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
     }
-    //
-    //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
-    //Note: will randomize the currentSong number
-    //Caution: random() is used very often
-    //Question: how does truncating decimals affect returning random() floats
-    /*
+    currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)}
+  }
+  //
+  //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
+  //Note: will randomize the currentSong number
+  //Caution: random() is used very often
+  //Question: how does truncating decimals affect returning random() floats
+  /*
   if ( key=='' || key=='' ) ; // Play-Pause-STOP //Advanced, beyond single buttons
-     - need to have basic GUI complete first
-     */
-    //
-  }//End Key Pressed
+   - need to have basic GUI complete first
+   */
+  //
+}//End Key Pressed
