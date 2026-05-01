@@ -18,14 +18,15 @@ AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
 int currentSong = numberOfSongs - numberOfSongs;
 String[] songName = new String[numberOfSongs];
 float songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight, greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight, redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight;
-color blackInk, whiteInk, resetInk, brownInk;
+color blackInk, whiteInk, resetInk, brownInk, redInk, tanInk, buttonInk, textInk;
 boolean isPaused = false;
 boolean isMuted = false;
 
 //Void
 void setup() {
   fullScreen();
-  background(#D1B95B);
+  tanInk = #D1B95B;
+  background(tanInk);
   println(displayWidth, displayHeight);
 
   int appWidth = displayWidth;
@@ -34,6 +35,9 @@ void setup() {
   int paperHeight = 216;
 
   blackInk = #000000;
+  redInk = #FF0000;
+  buttonInk = #C66102;
+  textInk = #CE9E00;
   whiteInk = #FFFFFF; //Grey Scale is 255
   resetInk = whiteInk;
 
@@ -237,14 +241,14 @@ void setup() {
   brownInk = #834503;
   fill(brownInk);
   rect( songtitleboxDivX, songtitleboxDivY, songtitleboxDivWidth, songtitleboxDivHeight );
-  rect( songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
+
   fill(resetInk);
   rect( recordplayerimageDivX, recordplayerimageDivY, recordplayerimageDivWidth, recordplayerimageDivHeight );
-  fill(brownInk);
 
-  rect( greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight );
-  rect( redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight );
+  fill(brownInk);
   rect( uiboxDivX, uiboxDivY, uiboxDivWidth, uiboxDivHeight );
+
+  fill(buttonInk);
   rect( looponceDivX, looponceDivY, looponceDivWidth, looponceDivHeight );
   rect( loopforeverDivX, loopforeverDivY, loopforeverDivWidth, loopforeverDivHeight );
   rect( stoploopingDivX, stoploopingDivY, stoploopingDivWidth, stoploopingDivHeight );
@@ -254,13 +258,25 @@ void setup() {
   rect( playDivX, playDivY, playDivWidth, playDivHeight );
   rect( skipfifteenDivX, skipfifteenDivY, skipfifteenDivWidth, skipfifteenDivHeight );
   rect( nextsongDivX, nextsongDivY, nextsongDivWidth, nextsongDivHeight );
+
+  fill(brownInk);
   rect( searchbarDivX, searchbarDivY, searchbarDivWidth, searchbarDivHeight );
+
+  fill(resetInk);
   rect( magnifyingglassimageDivX, magnifyingglassimageDivY, magnifyingglassimageDivWidth, magnifyingglassimageDivHeight );
+
+  fill(redInk);
   rect( boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight );
   rect( xDivX, xDivY, xDivWidth, xDivHeight );
+
+  fill(brownInk);
   rect( nextupandlyricsboxDivX, nextupandlyricsboxDivY, nextupandlyricsboxDivWidth, nextupandlyricsboxDivHeight );
+
+  fill(buttonInk);
   rect( nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight );
   rect( lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight );
+
+  fill(brownInk);
   rect( finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight );
   rect( intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight );
   rect( joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight );
@@ -268,26 +284,33 @@ void setup() {
   fill(resetInk);
   rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
 
-  fill(brownInk);
+  fill(textInk);
   rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
   rect( nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight );
+  
+  fill(buttonInk);
   rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
 
   fill(resetInk);
   rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
 
-  fill(brownInk);
+  fill(textInk);
   rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
   rect( nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight );
+  
+  fill(buttonInk);
   rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
 
   fill(resetInk);
   rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
 
-  fill(brownInk);
+  fill(textInk);
   rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
   rect( nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight );
+  
+  fill(buttonInk);
   rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
+
   rect( tenDivX, tenDivY, tenDivWidth, tenDivHeight );
   rect( fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight );
 
@@ -419,13 +442,16 @@ void draw() {
 
   if (!playList[currentSong].isPlaying() && !isPaused) {
     playList[currentSong].play();
-    fill(#066400);
+  }
+
+  if (isPaused) {
+    fill(#0C4800);
     rect( greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight );
-    fill(#E30004);
+    fill(redInk);
     rect( redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight );
     fill(resetInk);
   } else {
-    fill(#0FCE02);
+    fill(#22C602);
     rect( greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight );
     fill(#790103);
     rect( redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight );
@@ -489,9 +515,9 @@ void keyPressed() {
   //if ( key=='P' || key=='p' ) playList[currentSong].play(); //Simple Play, no double tap possible
   //
   if ( key=='P' || key=='p' ) {//Simple Play, double tap possible
-    if ( playList[currentSong].isPlaying() ) {
-    } else {
+    if ( !playList[currentSong].isPlaying() ) {
       playList[currentSong].loop(0);
+      isPaused=false;
     }
   }
 
