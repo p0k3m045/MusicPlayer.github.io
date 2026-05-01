@@ -18,7 +18,7 @@ AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
 int currentSong = numberOfSongs - numberOfSongs;
 String[] songName = new String[numberOfSongs];
 float songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight, greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight, redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight;
-color blackInk, whiteInk, resetInk, brownInk, redInk, tanInk, buttonInk, textInk;
+color blackInk, whiteInk, resetInk, brownInk, redInk, greenInk, tanInk, buttonInk, textInk;
 boolean isPaused = false;
 boolean isMuted = false;
 
@@ -36,59 +36,60 @@ void setup() {
 
   blackInk = #000000;
   redInk = #FF0000;
+  greenInk = #00FF00;
   buttonInk = #C66102;
   textInk = #CE9E00;
   whiteInk = #FFFFFF; //Grey Scale is 255
   resetInk = whiteInk;
 
   float songtitleboxDivX = appWidth * 10 / paperWidth;
-  float songtitleboxDivY = appHeight *  12 / paperHeight;
+  float songtitleboxDivY = appHeight * 12 / paperHeight;
   float songtitleboxDivWidth = appWidth * 80 / paperWidth;
   float songtitleboxDivHeight = appHeight * 20 / paperHeight;
 
   songtitleDivX = appWidth * 12 / paperWidth;
-  songtitleDivY = appHeight *  14 / paperHeight;
+  songtitleDivY = appHeight * 14 / paperHeight;
   songtitleDivWidth = appWidth * 76 / paperWidth;
   songtitleDivHeight = appHeight * 16 / paperHeight;
 
 
   float recordplayerimageDivX = appWidth * 10 / paperWidth;
-  float recordplayerimageDivY = appHeight *  40 / paperHeight;
+  float recordplayerimageDivY = appHeight * 40 / paperHeight;
   float recordplayerimageDivWidth = appWidth * 120 / paperWidth;
   float recordplayerimageDivHeight = appHeight * 90 / paperHeight;
 
   greenlightDivX = appWidth * 95 / paperWidth;
-  greenlightDivY = appHeight *  100 / paperHeight;
+  greenlightDivY = appHeight * 100 / paperHeight;
   greenlightDivWidth = appWidth * 5 / paperWidth;
   greenlightDivHeight = appHeight * 5 / paperHeight;
 
   redlightDivX = appWidth * 105 / paperWidth;
-  redlightDivY = appHeight *  100 / paperHeight;
+  redlightDivY = appHeight * 100 / paperHeight;
   redlightDivWidth = appWidth * 5 / paperWidth;
   redlightDivHeight = appHeight * 5 / paperHeight;
 
   float looponceDivX = appWidth * 10 / paperWidth;
-  float looponceDivY = appHeight *  140 / paperHeight;
+  float looponceDivY = appHeight * 140 / paperHeight;
   float looponceDivWidth = appWidth * 10 / paperWidth;
   float looponceDivHeight = appHeight * 10 / paperHeight;
 
   float loopforeverDivX = appWidth * 30 / paperWidth;
-  float loopforeverDivY = appHeight *  140 / paperHeight;
+  float loopforeverDivY = appHeight * 140 / paperHeight;
   float loopforeverDivWidth = appWidth * 10 / paperWidth;
   float loopforeverDivHeight = appHeight * 10 / paperHeight;
 
   float stoploopingDivX = appWidth * 50 / paperWidth;
-  float stoploopingDivY = appHeight *  140 / paperHeight;
+  float stoploopingDivY = appHeight * 140 / paperHeight;
   float stoploopingDivWidth = appWidth * 10 / paperWidth;
   float stoploopingDivHeight = appHeight * 10 / paperHeight;
 
   float restartDivX = appWidth * 9 / paperWidth;
-  float restartDivY = appHeight *  170 / paperHeight;
+  float restartDivY = appHeight * 170 / paperHeight;
   float restartDivWidth = appWidth * 15 / paperWidth;
   float restartDivHeight = appHeight * 15 / paperHeight;
 
   float rewindtenDivX = appWidth * 32 / paperWidth;
-  float rewindtenDivY = appHeight *  170 / paperHeight;
+  float rewindtenDivY = appHeight * 170 / paperHeight;
   float rewindtenDivWidth = appWidth * 15 / paperWidth;
   float rewindtenDivHeight = appHeight * 15 / paperHeight;
 
@@ -98,147 +99,147 @@ void setup() {
   float pauseDivHeight = appHeight * 15 / paperHeight;
 
   float playDivX = appWidth * 79 / paperWidth;
-  float playDivY = appHeight *  170 / paperHeight;
+  float playDivY = appHeight * 170 / paperHeight;
   float playDivWidth = appWidth * 15 / paperWidth;
   float playDivHeight = appHeight * 15 / paperHeight;
 
   float skipfifteenDivX = appWidth * 103 / paperWidth;
-  float skipfifteenDivY = appHeight *  170 / paperHeight;
+  float skipfifteenDivY = appHeight * 170 / paperHeight;
   float skipfifteenDivWidth = appWidth * 15 / paperWidth;
   float skipfifteenDivHeight = appHeight * 15 / paperHeight;
 
   float nextsongDivX = appWidth * 126 / paperWidth;
-  float nextsongDivY = appHeight *  170 / paperHeight;
+  float nextsongDivY = appHeight * 170 / paperHeight;
   float nextsongDivWidth = appWidth * 15 / paperWidth;
   float nextsongDivHeight = appHeight * 15 / paperHeight;
 
   float uiboxDivX = appWidth * 0 / paperWidth;
-  float uiboxDivY = appHeight *  135 / paperHeight;
+  float uiboxDivY = appHeight * 135 / paperHeight;
   float uiboxDivWidth = appWidth * 150 / paperWidth;
   float uiboxDivHeight = appHeight * 81 / paperHeight;
 
   float searchbarDivX = appWidth * 215 / paperWidth;
-  float searchbarDivY = appHeight *  5 / paperHeight;
+  float searchbarDivY = appHeight * 5 / paperHeight;
   float searchbarDivWidth = appWidth * 45 / paperWidth;
   float searchbarDivHeight = appHeight * 10 / paperHeight;
 
   float magnifyingglassimageDivX = appWidth * 217 / paperWidth;
-  float magnifyingglassimageDivY = appHeight *  7 / paperHeight;
+  float magnifyingglassimageDivY = appHeight * 7 / paperHeight;
   float magnifyingglassimageDivWidth = appWidth * 6 / paperWidth;
   float magnifyingglassimageDivHeight = appHeight * 6 / paperHeight;
 
   float boxforxDivX = appWidth * (paperWidth - 10) / paperWidth;
-  float boxforxDivY = appHeight *  0 / paperHeight;
+  float boxforxDivY = appHeight * 0 / paperHeight;
   float boxforxDivWidth = appWidth * 10 / paperWidth;
   float boxforxDivHeight = appHeight * 10 / paperHeight;
 
   float xDivX = appWidth * (paperWidth - 8) / paperWidth;
-  float xDivY = appHeight *  0 / paperHeight;
+  float xDivY = appHeight * 0 / paperHeight;
   float xDivWidth = appWidth * 8 / paperWidth;
   float xDivHeight = appHeight * 8 / paperHeight;
 
   float nextupandlyricsboxDivX = appWidth * 165 / paperWidth;
-  float nextupandlyricsboxDivY = appHeight *  20 / paperHeight;
+  float nextupandlyricsboxDivY = appHeight * 20 / paperHeight;
   float nextupandlyricsboxDivWidth = appWidth * 105 / paperWidth;
   float nextupandlyricsboxDivHeight = appHeight * 180 / paperHeight;
 
   float nextupDivX = appWidth * 175 / paperWidth;
-  float nextupDivY = appHeight *  27.5 / paperHeight;
+  float nextupDivY = appHeight * 27.5 / paperHeight;
   float nextupDivWidth = appWidth * 35 / paperWidth;
   float nextupDivHeight = appHeight * 10 / paperHeight;
 
   float lyricsDivX = appWidth * 225 / paperWidth;
-  float lyricsDivY = appHeight *  27.5 / paperHeight;
+  float lyricsDivY = appHeight * 27.5 / paperHeight;
   float lyricsDivWidth = appWidth * 35 / paperWidth;
   float lyricsDivHeight = appHeight * 10 / paperHeight;
 
   float albumcoverimagefinalcountdownDivX = appWidth * 167 / paperWidth;
-  float albumcoverimagefinalcountdownDivY = appHeight *  47 / paperHeight;
+  float albumcoverimagefinalcountdownDivY = appHeight * 47 / paperHeight;
   float albumcoverimagefinalcountdownDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimagefinalcountdownDivHeight = appHeight * 20 / paperHeight;
 
   float songNamefinalcountdownDivX = appWidth * 187 / paperWidth;
-  float songNamefinalcountdownDivY = appHeight *  47 / paperHeight;
+  float songNamefinalcountdownDivY = appHeight * 47 / paperHeight;
   float songNamefinalcountdownDivWidth = appWidth * 50 / paperWidth;
   float songNamefinalcountdownDivHeight = appHeight * 10 / paperHeight;
 
   float nameofartisteuropeDivX = appWidth * 187 / paperWidth;
-  float nameofartisteuropeDivY = appHeight *  57 / paperHeight;
+  float nameofartisteuropeDivY = appHeight * 57 / paperHeight;
   float nameofartisteuropeDivWidth = appWidth * 30 / paperWidth;
   float nameofartisteuropeDivHeight = appHeight * 5 / paperHeight;
 
   float playnextfinalcountdownDivX = appWidth * 252 / paperWidth;
-  float playnextfinalcountdownDivY = appHeight *  52 / paperHeight;
+  float playnextfinalcountdownDivY = appHeight * 52 / paperHeight;
   float playnextfinalcountdownDivWidth = appWidth * 10 / paperWidth;
   float playnextfinalcountdownDivHeight = appHeight * 10 / paperHeight;
 
   float albumcoverimageintheendDivX = appWidth * 167 / paperWidth;
-  float albumcoverimageintheendDivY = appHeight *  72 / paperHeight;
+  float albumcoverimageintheendDivY = appHeight * 72 / paperHeight;
   float albumcoverimageintheendDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimageintheendDivHeight = appHeight * 20 / paperHeight;
 
   float songNameintheendDivX = appWidth * 187 / paperWidth;
-  float songNameintheendDivY = appHeight *  72 / paperHeight;
+  float songNameintheendDivY = appHeight * 72 / paperHeight;
   float songNameintheendDivWidth = appWidth * 50 / paperWidth;
   float songNameintheendDivHeight = appHeight * 10 / paperHeight;
 
   float nameofartistlinkinparkDivX = appWidth * 187 / paperWidth;
-  float nameofartistlinkinparkDivY = appHeight *  82 / paperHeight;
+  float nameofartistlinkinparkDivY = appHeight * 82 / paperHeight;
   float nameofartistlinkinparkDivWidth = appWidth * 30 / paperWidth;
   float nameofartistlinkinparkDivHeight = appHeight * 5 / paperHeight;
 
   float playnextintheendDivX = appWidth * 252 / paperWidth;
-  float playnextintheendDivY = appHeight *  77 / paperHeight;
+  float playnextintheendDivY = appHeight * 77 / paperHeight;
   float playnextintheendDivWidth = appWidth * 10 / paperWidth;
   float playnextintheendDivHeight = appHeight * 10 / paperHeight;
 
   float albumcoverimagejoinusforabiteDivX = appWidth * 167 / paperWidth;
-  float albumcoverimagejoinusforabiteDivY = appHeight *  97 / paperHeight;
+  float albumcoverimagejoinusforabiteDivY = appHeight * 97 / paperHeight;
   float albumcoverimagejoinusforabiteDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimagejoinusforabiteDivHeight = appHeight * 20 / paperHeight;
 
   float songNamejoinusforabiteDivX = appWidth * 187 / paperWidth;
-  float songNamejoinusforabiteDivY = appHeight *  97 / paperHeight;
+  float songNamejoinusforabiteDivY = appHeight * 97 / paperHeight;
   float songNamejoinusforabiteDivWidth = appWidth * 50 / paperWidth;
   float songNamejoinusforabiteDivHeight = appHeight * 10 / paperHeight;
 
   float nameofartistjtmusicDivX = appWidth * 187 / paperWidth;
-  float nameofartistjtmusicDivY = appHeight *  107 / paperHeight;
+  float nameofartistjtmusicDivY = appHeight * 107 / paperHeight;
   float nameofartistjtmusicDivWidth = appWidth * 30 / paperWidth;
   float nameofartistjtmusicDivHeight = appHeight * 5 / paperHeight;
 
   float playnextjoinusforabiteDivX = appWidth * 252 / paperWidth;
-  float playnextjoinusforabiteDivY = appHeight *  102 / paperHeight;
+  float playnextjoinusforabiteDivY = appHeight * 102 / paperHeight;
   float playnextjoinusforabiteDivWidth = appWidth * 10 / paperWidth;
   float playnextjoinusforabiteDivHeight = appHeight * 10 / paperHeight;
 
   float finalcountdownuiboxDivX = appWidth * 165 / paperWidth;
-  float finalcountdownuiboxDivY = appHeight *  45 / paperHeight;
+  float finalcountdownuiboxDivY = appHeight * 45 / paperHeight;
   float finalcountdownuiboxDivWidth = appWidth * 105 / paperWidth;
   float finalcountdownuiboxDivHeight = appHeight * 25 / paperHeight;
 
   float intheenduiboxDivX = appWidth * 165 / paperWidth;
-  float intheenduiboxDivY = appHeight *  70 / paperHeight;
+  float intheenduiboxDivY = appHeight * 70 / paperHeight;
   float intheenduiboxDivWidth = appWidth * 105 / paperWidth;
   float intheenduiboxDivHeight = appHeight * 25 / paperHeight;
 
   float joinusforabiteuiboxDivX = appWidth * 165 / paperWidth;
-  float joinusforabiteuiboxDivY = appHeight *  95 / paperHeight;
+  float joinusforabiteuiboxDivY = appHeight * 95 / paperHeight;
   float joinusforabiteuiboxDivWidth = appWidth * 105 / paperWidth;
   float joinusforabiteuiboxDivHeight = appHeight * 25 / paperHeight;
 
   float tenDivX = appWidth * 37 / paperWidth;
-  float tenDivY = appHeight *  175 / paperHeight;
+  float tenDivY = appHeight * 175 / paperHeight;
   float tenDivWidth = appWidth * 5 / paperWidth;
   float tenDivHeight = appHeight * 5 / paperHeight;
 
   float fifteenDivX = appWidth * 108 / paperWidth;
-  float fifteenDivY = appHeight *  175 / paperHeight;
+  float fifteenDivY = appHeight * 175 / paperHeight;
   float fifteenDivWidth = appWidth * 5 / paperWidth;
   float fifteenDivHeight = appHeight * 5 / paperHeight;
-  
+
   float lyricWordsDivX = appWidth * 165 / paperWidth;
-  float lyricWordsDivY = appHeight *  45 / paperHeight;
+  float lyricWordsDivY = appHeight * 45 / paperHeight;
   float lyricWordsDivWidth = appWidth * 105 / paperWidth;
   float lyricWordsDivHeight = appHeight * 155 / paperHeight;
 
@@ -292,7 +293,7 @@ void setup() {
   fill(textInk);
   rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
   rect( nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight );
-  
+
   fill(buttonInk);
   rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
 
@@ -302,7 +303,7 @@ void setup() {
   fill(textInk);
   rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
   rect( nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight );
-  
+
   fill(buttonInk);
   rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
 
@@ -312,14 +313,14 @@ void setup() {
   fill(textInk);
   rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
   rect( nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight );
-  
+
   fill(buttonInk);
   rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
 
   rect( tenDivX, tenDivY, tenDivWidth, tenDivHeight );
   rect( fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight );
 
-//  rect ( lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight);
+  // rect ( lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight);
 
   fill(resetInk);
 
@@ -338,7 +339,7 @@ void setup() {
   currentSong = 0;
 
   /*
-   String songName1 = "The Final Countdown";
+  String songName1 = "The Final Countdown";
    String songName2 = "In The End";
    String songName3 = "Join Us For A Bite";
    */
@@ -458,7 +459,7 @@ void draw() {
     rect( redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight );
     fill(resetInk);
   } else {
-    fill(#22C602);
+    fill(greenInk);
     rect( greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight );
     fill(#790103);
     rect( redlightDivX, redlightDivY, redlightDivWidth, redlightDivHeight );
@@ -639,7 +640,7 @@ void keyPressed() {
   //Caution: random() is used very often
   //Question: how does truncating decimals affect returning random() floats
   /*
-  if ( key=='' || key=='' ); // Play-Pause-STOP //Advanced, beyond single buttons
+ if ( key=='' || key=='' ); // Play-Pause-STOP //Advanced, beyond single buttons
    - need to have basic GUI complete first
    */
   //
