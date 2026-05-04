@@ -10,7 +10,8 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 //Global Variables
-//
+
+
 //VOID
 void setup() {
 }
