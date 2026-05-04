@@ -1,5 +1,5 @@
 /* Music App, Final Project
-*/
+ */
 //
 //Minim Library
 import ddf.minim.*;
@@ -9,3 +9,17 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+//Global Variables
+//
+//VOID
+void setup() {
+}
+
+void draw() {
+}
+
+void mousePressed() {
+}
+
+void keyPressed() {
+}
