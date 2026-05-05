@@ -24,12 +24,12 @@ String open = "/";
 //Concatenation
 //Note, Cut Out, See Absolute Pathway:
 //See Relative Pathway: Dependencies\Images
-String imageDirectory = upArow + open + upArow + open + dependanciesFolder + open + imagesFolder + open;
-String pathway1 = imageDirectory + imageName1 + fileExension;
-String pathway2 = imageDirectory + imageName2 + fileExension;
-String pathway3 = imageDirectory + imageName3 + fileExension;
-//println(pathway);
-//
+  String imageDirectory = upArow + open + upArow + open + dependanciesFolder + open + imagesFolder + open;
+  String pathway1 = imageDirectory + imageName1 + fileExension;
+  String pathway2 = imageDirectory + imageName2 + fileExension;
+  String pathway3 = imageDirectory + imageName3 + fileExension;
+  //println(pathway);
+  //
 PImage image1 = loadImage( pathway1 );
 PImage image2 = loadImage( pathway2 );
 int imageWidth2 = 500;
