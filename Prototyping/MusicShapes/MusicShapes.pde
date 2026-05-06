@@ -105,7 +105,7 @@ float skipSongTriangleTwoDivX3 = DivX+DivWidth*3/4;
 float skipSongTriangleTwoDivY3 = DivY+DivHeight*1/2;
 //
 float loopOnceFirstArrowLineOneDivX1 = DivX+DivWidth*3/16;
-float loopOnceFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;;
+float loopOnceFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;
 float loopOnceFirstArrowLineOneDivX2 = DivX+DivWidth*3/16;
 float loopOnceFirstArrowLineOneDivY2 = DivY+DivHeight*1/2;
 float loopOnceFirstArrowLineTwoDivX1 = DivX+DivWidth*1/4;
@@ -159,7 +159,7 @@ float loopOnceSecondArrowTriangleDivX3 = DivX+DivWidth*3/8;
 float loopOnceSecondArrowTriangleDivY3 = DivHeight*27/32+DivY;
 //
 float loopForeverFirstArrowLineOneDivX1 = DivX+DivWidth*3/16;
-float loopForeverFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;;
+float loopForeverFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;
 float loopForeverFirstArrowLineOneDivX2 = DivX+DivWidth*3/16;
 float loopForeverFirstArrowLineOneDivY2 = DivY+DivHeight*1/2;
 float loopForeverFirstArrowLineTwoDivX1 = DivX+DivWidth*1/4;
@@ -214,7 +214,7 @@ float loopForeverSecondArrowTriangleDivY3 = DivHeight*27/32+DivY;
 
 //Stop Looping Button
 float StopLoopingFirstArrowLineOneDivX1 = DivX+DivWidth*3/16;
-float StopLoopingFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;;
+float StopLoopingFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;
 float StopLoopingFirstArrowLineOneDivX2 = DivX+DivWidth*3/16;
 float StopLoopingFirstArrowLineOneDivY2 = DivY+DivHeight*1/2;
 float StopLoopingFirstArrowLineTwoDivX1 = DivX+DivWidth*1/4;
