@@ -543,82 +543,84 @@ void draw() {
   float skipFifteenTriangleDivX3 = skipfifteenDivX+(skipfifteenDivWidth*11/16);
   float skipFifteenTriangleDivY3 = skipfifteenDivY+(skipfifteenDivHeight*17/64);
   //
-  /*
-   float rewindTenDivX = DivX+DivWidth*1/2;
-   float rewindTenDivY = DivY+DivHeight*1/2;
-   float rewindTenDivWidth = DivWidth*1/2;
-   float rewindTenDivHeight = DivHeight*1/2;
-   float rewindTenDivStart = PI+PI*1/2;
-   float rewindTenDivStop = PI+PI*2;
-   float rewindTenDivWidth2 = rewindTenDivWidth*7/8;
-   float rewindTenDivHeight2 = rewindTenDivHeight*7/8;
-   float rewindTenLineDivX1 = DivX+(DivWidth*1/4);
-   float rewindTenLineDivY1 = DivY+DivHeight*1/2;
-   float rewindTenLineDivX2 = DivX+DivWidth*1/4+(DivWidth*1/32);
-   float rewindTenLineDivY2 = DivY+DivHeight*1/2;
-   float rewindTenTriangleDivX1 = DivX+(DivWidth*1/2);
-   float rewindTenTriangleDivY1 = DivY+(DivHeight*3/16);
-   float rewindTenTriangleDivX2 = DivX+(DivWidth*1/2);
-   float rewindTenTriangleDivY2 = DivY+(DivHeight*11/32);
-   float rewindTenTriangleDivX3 = DivX+(DivWidth*5/16);
-   float rewindTenTriangleDivY3 = DivY+(DivHeight*17/64);
+
+  float rewindTenDivX = rewindtenDivX+rewindtenDivWidth*1/2;
+  float rewindTenDivY = rewindtenDivY+rewindtenDivHeight*1/2;
+  float rewindTenDivWidth = rewindtenDivWidth*1/2;
+  float rewindTenDivHeight = rewindtenDivHeight*1/2;
+  float rewindTenDivStart = PI+PI*1/2;
+  float rewindTenDivStop = PI+PI*2;
+  float rewindTenDivWidth2 = rewindTenDivWidth*7/8;
+  float rewindTenDivHeight2 = rewindTenDivHeight*7/8;
+  float rewindTenLineDivX1 = rewindtenDivX+(rewindtenDivWidth*1/4);
+  float rewindTenLineDivY1 = rewindtenDivY+rewindtenDivHeight*1/2;
+  float rewindTenLineDivX2 = rewindtenDivX+rewindtenDivWidth*1/4+(rewindtenDivWidth*1/32);
+  float rewindTenLineDivY2 = rewindtenDivY+rewindtenDivHeight*1/2;
+  float rewindTenTriangleDivX1 = rewindtenDivX+(rewindtenDivWidth*1/2);
+  float rewindTenTriangleDivY1 = rewindtenDivY+(rewindtenDivHeight*3/16);
+  float rewindTenTriangleDivX2 = rewindtenDivX+(rewindtenDivWidth*1/2);
+  float rewindTenTriangleDivY2 = rewindtenDivY+(rewindtenDivHeight*11/32);
+  float rewindTenTriangleDivX3 = rewindtenDivX+(rewindtenDivWidth*5/16);
+  float rewindTenTriangleDivY3 = rewindtenDivY+(rewindtenDivHeight*17/64);
+  //
+
+  float restartSongDivX = restartDivX+restartDivWidth*1/2;
+  float restartSongDivY = restartDivY+restartDivHeight*1/2;
+  float restartSongDivWidth = restartDivWidth*1/2;
+  float restartSongDivHeight = restartDivHeight*1/2;
+  float restartSongDivStart = PI+PI*1/2;
+  float restartSongDivStop = PI+PI*2;
+  float restartSongDivWidth2 = rewindTenDivWidth*7/8;
+  float restartSongDivHeight2 = rewindTenDivHeight*7/8;
+  float restartSongLineDivX1 = restartDivX+(restartDivWidth*1/4);
+  float restartSongLineDivY1 = restartDivY+restartDivHeight*1/2;
+  float restartSongLineDivX2 = restartDivX+restartDivWidth*1/4+(restartDivWidth*1/32);
+  float restartSongLineDivY2 = restartDivY+restartDivHeight*1/2;
+  float restartSongTriangleDivX1 = restartDivX+(restartDivWidth*1/2);
+  float restartSongTriangleDivY1 = restartDivY+(restartDivHeight*3/16);
+  float restartSongTriangleDivX2 = restartDivX+(restartDivWidth*1/2);
+  float restartSongTriangleDivY2 = restartDivY+(restartDivHeight*11/32);
+  float restartSongTriangleDivX3 = restartDivX+(restartDivWidth*5/16);
+  float restartSongTriangleDivY3 = restartDivY+(restartDivHeight*17/64);
+  float restartSongPauseDivX1 = restartDivX+restartDivWidth*25/64;
+  float restartSongPauseDivY1 = restartDivY+restartDivHeight*3/8;
+  float restartSongPauseDivWidth1 = restartDivWidth*1/16;
+  float restartSongPauseDivHeight1 = restartDivHeight*1/4;
+  float restartSongPauseDivX2 = restartDivX+restartDivWidth*35/64;
+  float restartSongPauseDivY2 = restartDivY+restartDivHeight*3/8;
+  float restartSongPauseDivWidth2 = restartDivWidth*1/16;
+  float restartSongPauseDivHeight2 = restartDivHeight*1/4;
+  //
+  
+   float skipSongTriangleOneDivX1 = nextsongDivX+nextsongDivWidth*1/4;
+   float skipSongTriangleOneDivY1 = nextsongDivY+nextsongDivHeight*1/4;
+   float skipSongTriangleOneDivX2 = nextsongDivX+nextsongDivWidth*1/4;
+   float skipSongTriangleOneDivY2 = nextsongDivY+nextsongDivHeight*3/4;
+   float skipSongTriangleOneDivX3 = nextsongDivX+nextsongDivWidth*1/2;
+   float skipSongTriangleOneDivY3 = nextsongDivY+nextsongDivHeight*1/2;
+   float skipSongTriangleTwoDivX1 = nextsongDivX+nextsongDivWidth*1/2;
+   float skipSongTriangleTwoDivY1 = nextsongDivY+nextsongDivHeight*1/4;
+   float skipSongTriangleTwoDivX2 = nextsongDivX+nextsongDivWidth*1/2;
+   float skipSongTriangleTwoDivY2 = nextsongDivY+nextsongDivHeight*3/4;
+   float skipSongTriangleTwoDivX3 = nextsongDivX+nextsongDivWidth*3/4;
+   float skipSongTriangleTwoDivY3 = nextsongDivY+nextsongDivHeight*1/2;
    //
-   float restartSongDivX = DivX+DivWidth*1/2;
-   float restartSongDivY = DivY+DivHeight*1/2;
-   float restartSongDivWidth = DivWidth*1/2;
-   float restartSongDivHeight = DivHeight*1/2;
-   float restartSongDivStart = PI+PI*1/2;
-   float restartSongDivStop = PI+PI*2;
-   float restartSongDivWidth2 = rewindTenDivWidth*7/8;
-   float restartSongDivHeight2 = rewindTenDivHeight*7/8;
-   float restartSongLineDivX1 = DivX+(DivWidth*1/4);
-   float restartSongLineDivY1 = DivY+DivHeight*1/2;
-   float restartSongLineDivX2 = DivX+DivWidth*1/4+(DivWidth*1/32);
-   float restartSongLineDivY2 = DivY+DivHeight*1/2;
-   float restartSongTriangleDivX1 = DivX+(DivWidth*1/2);
-   float restartSongTriangleDivY1 = DivY+(DivHeight*3/16);
-   float restartSongTriangleDivX2 = DivX+(DivWidth*1/2);
-   float restartSongTriangleDivY2 = DivY+(DivHeight*11/32);
-   float restartSongTriangleDivX3 = DivX+(DivWidth*5/16);
-   float restartSongTriangleDivY3 = DivY+(DivHeight*17/64);
-   float restartSongPauseDivX1 = DivX+DivWidth*25/64;
-   float restartSongPauseDivY1 = DivY+DivHeight*3/8;
-   float restartSongPauseDivWidth1 = DivWidth*1/16;
-   float restartSongPauseDivHeight1 = DivHeight*1/4;
-   float restartSongPauseDivX2 = DivX+DivWidth*35/64;
-   float restartSongPauseDivY2 = DivY+DivHeight*3/8;
-   float restartSongPauseDivWidth2 = DivWidth*1/16;
-   float restartSongPauseDivHeight2 = DivHeight*1/4;
-   //
-   float skipSongTriangleOneDivX1 = DivX+DivWidth*1/4;
-   float skipSongTriangleOneDivY1 = DivY+DivHeight*1/4;
-   float skipSongTriangleOneDivX2 = DivX+DivWidth*1/4;
-   float skipSongTriangleOneDivY2 = DivY+DivHeight*3/4;
-   float skipSongTriangleOneDivX3 = DivX+DivWidth*1/2;
-   float skipSongTriangleOneDivY3 = DivY+DivHeight*1/2;
-   float skipSongTriangleTwoDivX1 = DivX+DivWidth*1/2;
-   float skipSongTriangleTwoDivY1 = DivY+DivHeight*1/4;
-   float skipSongTriangleTwoDivX2 = DivX+DivWidth*1/2;
-   float skipSongTriangleTwoDivY2 = DivY+DivHeight*3/4;
-   float skipSongTriangleTwoDivX3 = DivX+DivWidth*3/4;
-   float skipSongTriangleTwoDivY3 = DivY+DivHeight*1/2;
-   //
-   float loopOnceFirstArrowLineOneDivX1 = DivX+DivWidth*3/16;
-   float loopOnceFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;
-   ;
-   float loopOnceFirstArrowLineOneDivX2 = DivX+DivWidth*3/16;
-   float loopOnceFirstArrowLineOneDivY2 = DivY+DivHeight*1/2;
-   float loopOnceFirstArrowLineTwoDivX1 = DivX+DivWidth*1/4;
-   float loopOnceFirstArrowLineTwoDivY1 = loopOnceFirstArrowLineOneDivY1+(DivHeight*1/16);
-   float loopOnceFirstArrowLineTwoDivX2 = DivX+DivWidth*1/4;
-   float loopOnceFirstArrowLineTwoDivY2 = DivY+DivHeight*1/2;
+   
+   float loopOnceFirstArrowLineOneDivX1 = looponceDivX+looponceDivWidth*3/16;
+   float loopOnceFirstArrowLineOneDivY1 = looponceDivY+looponceDivHeight*1/4;
+   float loopOnceFirstArrowLineOneDivX2 = looponceDivX+looponceDivWidth*3/16;
+   float loopOnceFirstArrowLineOneDivY2 = looponceDivY+looponceDivHeight*1/2;
+   float loopOnceFirstArrowLineTwoDivX1 = looponceDivX+looponceDivWidth*1/4;
+   float loopOnceFirstArrowLineTwoDivY1 = loopOnceFirstArrowLineOneDivY1+(looponceDivHeight*1/16);
+   float loopOnceFirstArrowLineTwoDivX2 = looponceDivX+looponceDivWidth*1/4;
+   float loopOnceFirstArrowLineTwoDivY2 = looponceDivY+looponceDivHeight*1/2;
    float loopOnceFirstArrowLineThreeDivX1 = loopOnceFirstArrowLineOneDivX2;
    float loopOnceFirstArrowLineThreeDivY1 = loopOnceFirstArrowLineOneDivY2;
    float loopOnceFirstArrowLineThreeDivX2 = loopOnceFirstArrowLineTwoDivX2;
    float loopOnceFirstArrowLineThreeDivY2 = loopOnceFirstArrowLineTwoDivY2;
    float loopOnceFirstArrowLineFourDivX1 = loopOnceFirstArrowLineOneDivX1;
    float loopOnceFirstArrowLineFourDivY1 = loopOnceFirstArrowLineOneDivY1;
-   float loopOnceFirstArrowLineFourDivX2 = DivX+DivWidth*5/8;
+   float loopOnceFirstArrowLineFourDivX2 = looponceDivX+looponceDivWidth*5/8;
    float loopOnceFirstArrowLineFourDivY2 = loopOnceFirstArrowLineOneDivY1;
    float loopOnceFirstArrowLineFiveDivX1 = loopOnceFirstArrowLineTwoDivX1;
    float loopOnceFirstArrowLineFiveDivY1 = loopOnceFirstArrowLineFourDivY1+(DivHeight*1/16);
@@ -658,9 +660,10 @@ void draw() {
    float loopOnceSecondArrowTriangleDivX3 = DivX+DivWidth*3/8;
    float loopOnceSecondArrowTriangleDivY3 = DivHeight*27/32+DivY;
    //
+   /*
+   //LOOP FOREVER
    float loopForeverFirstArrowLineOneDivX1 = DivX+DivWidth*3/16;
    float loopForeverFirstArrowLineOneDivY1 = DivY+DivHeight*1/4;
-   ;
    float loopForeverFirstArrowLineOneDivX2 = DivX+DivWidth*3/16;
    float loopForeverFirstArrowLineOneDivY2 = DivY+DivHeight*1/2;
    float loopForeverFirstArrowLineTwoDivX1 = DivX+DivWidth*1/4;
@@ -794,32 +797,42 @@ void draw() {
   arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth, skipFifteenDivHeight, skipFifteenDivStart, skipFifteenDivStop );
   arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth2, skipFifteenDivHeight2, skipFifteenDivStart, skipFifteenDivStop );
   line( skipFifteenLineDivX1, skipFifteenLineDivY1, skipFifteenLineDivX2, skipFifteenLineDivY2 );
+  fill(buttonInk);
+  arc( skipFifteenDivX, skipFifteenDivY, skipFifteenDivWidth-5, skipFifteenDivHeight-5, skipFifteenDivStart, skipFifteenDivStop );
+  fill(resetInk);
   triangle( skipFifteenTriangleDivX1, skipFifteenTriangleDivY1, skipFifteenTriangleDivX2, skipFifteenTriangleDivY2, skipFifteenTriangleDivX3, skipFifteenTriangleDivY3 );
 
-  /*
-   //REWIND TEN SECONDS BUTTON
-   
-   arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth, rewindTenDivHeight, rewindTenDivStart, rewindTenDivStop );
-   arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth2, rewindTenDivHeight2, rewindTenDivStart, rewindTenDivStop );
-   line( rewindTenLineDivX1, rewindTenLineDivY1, rewindTenLineDivX2, rewindTenLineDivY2 );
-   triangle( rewindTenTriangleDivX1, rewindTenTriangleDivY1, rewindTenTriangleDivX2, rewindTenTriangleDivY2, rewindTenTriangleDivX3, rewindTenTriangleDivY3 );
-   
-   
-   //RESTART SONG BUTTON
-   
-   arc( restartSongDivX, restartSongDivY, restartSongDivWidth, restartSongDivHeight, restartSongDivStart, restartSongDivStop );
-   arc( restartSongDivX, restartSongDivY, restartSongDivWidth2, restartSongDivHeight2, restartSongDivStart, restartSongDivStop );
-   line( restartSongLineDivX1, restartSongLineDivY1, restartSongLineDivX2, restartSongLineDivY2 );
-   triangle( restartSongTriangleDivX1, restartSongTriangleDivY1, restartSongTriangleDivX2, restartSongTriangleDivY2, restartSongTriangleDivX3, restartSongTriangleDivY3 );
-   rect( restartSongPauseDivX1, restartSongPauseDivY1, restartSongPauseDivWidth1, restartSongPauseDivHeight1 );
-   rect( restartSongPauseDivX2, restartSongPauseDivY2, restartSongPauseDivWidth2, restartSongPauseDivHeight2 );
-   
-   
+
+  //REWIND TEN SECONDS BUTTON
+
+  arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth, rewindTenDivHeight, rewindTenDivStart, rewindTenDivStop );
+  arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth2, rewindTenDivHeight2, rewindTenDivStart, rewindTenDivStop );
+  fill(buttonInk);
+  arc( rewindTenDivX, rewindTenDivY, rewindTenDivWidth-5, rewindTenDivHeight-5, rewindTenDivStart, rewindTenDivStop );
+  fill(resetInk);
+  line( rewindTenLineDivX1, rewindTenLineDivY1, rewindTenLineDivX2, rewindTenLineDivY2 );
+  triangle( rewindTenTriangleDivX1, rewindTenTriangleDivY1, rewindTenTriangleDivX2, rewindTenTriangleDivY2, rewindTenTriangleDivX3, rewindTenTriangleDivY3 );
+
+
+  //RESTART SONG BUTTON
+
+  arc( restartSongDivX, restartSongDivY, restartSongDivWidth, restartSongDivHeight, restartSongDivStart, restartSongDivStop );
+  arc( restartSongDivX, restartSongDivY, restartSongDivWidth2, restartSongDivHeight2, restartSongDivStart, restartSongDivStop );
+  line( restartSongLineDivX1, restartSongLineDivY1, restartSongLineDivX2, restartSongLineDivY2 );
+  fill(buttonInk);
+  arc( restartSongDivX, restartSongDivY, restartSongDivWidth-5, restartSongDivHeight-5, restartSongDivStart, restartSongDivStop );
+  fill(resetInk);
+  triangle( restartSongTriangleDivX1, restartSongTriangleDivY1, restartSongTriangleDivX2, restartSongTriangleDivY2, restartSongTriangleDivX3, restartSongTriangleDivY3 );
+  rect( restartSongPauseDivX1, restartSongPauseDivY1, restartSongPauseDivWidth1, restartSongPauseDivHeight1 );
+  rect( restartSongPauseDivX2, restartSongPauseDivY2, restartSongPauseDivWidth2, restartSongPauseDivHeight2 );
+
+
+  
    //SKIP SONG BUTTON
    triangle( skipSongTriangleOneDivX1, skipSongTriangleOneDivY1, skipSongTriangleOneDivX2, skipSongTriangleOneDivY2, skipSongTriangleOneDivX3, skipSongTriangleOneDivY3 );
    triangle( skipSongTriangleTwoDivX1, skipSongTriangleTwoDivY1, skipSongTriangleTwoDivX2, skipSongTriangleTwoDivY2, skipSongTriangleTwoDivX3, skipSongTriangleTwoDivY3 );
    
-   
+   /*
    //LOOP ONCE BUTTON
    
    line( loopOnceFirstArrowLineOneDivX1, loopOnceFirstArrowLineOneDivY1, loopOnceFirstArrowLineOneDivX2, loopOnceFirstArrowLineOneDivY2 );
