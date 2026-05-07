@@ -340,6 +340,114 @@ void setup() {
 
   fill(resetInk);
 
+  float fontSize1 = songtitleDivHeight; //1:1 Font Height to rectHeight
+  float fontSize2 = appHeight;
+  float fontSize3 = appHeight;
+  float fontSize4 = appHeight;
+  float fontSize5 = appHeight;
+  float fontSize6 = appHeight;
+  PFont font;
+  String PLBI = "Palatino Linotype Bold Italic";
+  String x = "X";
+  String nextUp = "Next Up";
+  String lyrics = "Lyrics";
+  String TFC = "The Final Countdown";
+  String ITE = "In The End";
+  String JUFAB = "Join Us For A Bite";
+  String europe = "Europe";
+  String linkinPark = "Linkin Park";
+  String JTMusic = "JT Music";
+
+//Aspect ratio for "X"
+float xFontSize = 32;
+float xdivHeight = xDivHeight;
+float xAspectRatio = xFontSize / xdivHeight;
+
+//Aspect ratio for "Next Up"
+float nextUpFontSize = 41;
+float nextUpdivHeight = nextupDivHeight;
+float nextUpAspectRatio = nextUpFontSize / nextUpdivHeight;
+//Aspect ratio for "Lyrics" is the same as Aspect ratio for "next Up"
+
+//Aspect ratio for "The  Final Countdown"
+float theFinalCountdownFontSize = 41;
+float theFinalCountdowndivHeight = nameofsongfinalcountdownDivHeight;
+float theFinalCountdownAspectRatio = theFinalCountdownFontSize / theFinalCountdowndivHeight;
+//Aspect ratio for "In The End" and "Join Us For A Bite" are the same as Aspect ratio for "The  Final Countdown"
+
+//Aspect ratio for "Artists"
+float artistsFontSize = 20;
+float artistsdivHeight = nameofartisteuropeDivHeight;
+float artistsAspectRatio = artistsFontSize / artistsdivHeight;
+
+
+float textAdjustment = 0.9;
+
+
+//Final Font Sizes
+fontSize2 = xDivHeight*xAspectRatio * textAdjustment;
+fontSize3 = tenDivHeight*tenAspectRatio * textAdjustment;
+fontSize4 = nextupDivHeight*nextUpAspectRatio * textAdjustment;
+fontSize5 = theFinalCountdowndivHeight*theFinalCountdownAspectRatio * textAdjustment;
+fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;
+
+//Drawing Text
+color blackInk = #000000;
+color whiteInk = #FFFFFF;
+color resetInk = whiteInk;
+
+fill(blackInk);
+textAlign(CENTER, TOP);
+
+textFont(font, fontSize2);
+text(x, xDivX, xDivY, xDivWidth, xDivHeight);
+
+textFont(font, fontSize3);
+text(ten, tenDivX, tenDivY, tenDivWidth, tenDivHeight);
+
+textFont(font, fontSize3);
+text(fifteen, fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight);
+
+textFont(font, fontSize4);
+text(nextUp, nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight);
+
+textFont(font, fontSize4);
+text(lyrics, lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight);
+
+textAlign(LEFT, TOP);
+
+float constantDecrease = 0.99;
+int iWhile = 0;
+textFont(font, fontSize5);
+while (textWidth(TFC) > nameofsongfinalcountdownDivWidth) {
+  iWhile++;
+  if (iWhile>100) {
+    println ("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize5 *= constantDecrease;
+  textFont(font, fontSize5);
+}
+text(TFC, nameofsongfinalcountdownDivX, nameofsongfinalcountdownDivY, nameofsongfinalcountdownDivWidth, nameofsongfinalcountdownDivHeight);
+
+textFont(font, fontSize5);
+text(ITE, nameofsongintheendDivX, nameofsongintheendDivY, nameofsongintheendDivWidth, nameofsongintheendDivHeight);
+
+textFont(font, fontSize5);
+text(JUFAB, nameofsongjoinusforabiteDivX, nameofsongjoinusforabiteDivY, nameofsongjoinusforabiteDivWidth, nameofsongjoinusforabiteDivHeight);
+
+textFont(font, fontSize6);
+text(europe, nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight);
+
+textFont(font, fontSize6);
+text(linkinPark, nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight);
+
+textFont(font, fontSize6);
+text(JTMusic, nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight);
+
+fill(resetInk);
+
+
   minim = new Minim(this);
 
   songName[currentSong] = "The Final Countdown";
@@ -396,15 +504,7 @@ void setup() {
   }
 
   //rect(height) is biggest font is word is the smallest
-  float fontSize1 = songtitleDivHeight; //1:1 Font Height to rectHeight
-  fontSize2 = xDivHeight;
-  fontSize3 = tenDivHeight;
-  fontSize4 = nextupDivHeight;
-  fontSize5 = songNamefinalcountdownDivHeight;
-  fontSize6 = nameofartisteuropeDivHeight;
 
-  PFont font; //Font Varaible Name, able to have more than one Font
-  String PLBI = "Palatino Linotype Bold Italic";
   font = createFont(PLBI, fontSize1);
   //
   //Drawing Text
