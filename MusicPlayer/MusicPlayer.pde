@@ -21,6 +21,12 @@ float songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight, green
 float loopforeverDivX, loopforeverDivY, loopforeverDivWidth, loopforeverDivHeight, stopLoopingDivX, stopLoopingDivY, stopLoopingDivWidth, stopLoopingDivHeight, restartDivX, restartDivY, restartDivWidth, restartDivHeight;
 float rewindtenDivX, rewindtenDivY, rewindtenDivWidth, rewindtenDivHeight, pauseDivX, pauseDivY, pauseDivWidth, pauseDivHeight, playDivX, playDivY, playDivWidth, playDivHeight;
 float skipfifteenDivX, skipfifteenDivY, skipfifteenDivWidth, skipfifteenDivHeight, nextsongDivX, nextsongDivY, nextsongDivWidth, nextsongDivHeight, fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight, tenDivX, tenDivY, tenDivWidth, tenDivHeight;
+float songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight, xDivX, xDivY, xDivWidth, xDivHeight, nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight, lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight;
+float artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight, songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight, artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight;
+float songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight, artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight;
+float playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight;
+float playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight;
+float playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight;
 float fontSize2, fontSize3, fontSize4, fontSize5, fontSize6;
 color blackInk, whiteInk, resetInk, brownInk, redInk, greenInk, tanInk, buttonInk, textInk;
 boolean isPaused = false;
@@ -149,85 +155,85 @@ void setup() {
   float boxforxDivWidth = appWidth * 10 / paperWidth;
   float boxforxDivHeight = appHeight * 10 / paperHeight;
 
-  float xDivX = appWidth * (paperWidth - 8) / paperWidth;
-  float xDivY = appHeight * 0 / paperHeight;
-  float xDivWidth = appWidth * 8 / paperWidth;
-  float xDivHeight = appHeight * 8 / paperHeight;
+  xDivX = appWidth * (paperWidth - 8) / paperWidth;
+  xDivY = appHeight * 0 / paperHeight;
+  xDivWidth = appWidth * 8 / paperWidth;
+  xDivHeight = appHeight * 8 / paperHeight;
 
   float nextupandlyricsboxDivX = appWidth * 165 / paperWidth;
   float nextupandlyricsboxDivY = appHeight * 20 / paperHeight;
   float nextupandlyricsboxDivWidth = appWidth * 105 / paperWidth;
   float nextupandlyricsboxDivHeight = appHeight * 180 / paperHeight;
 
-  float nextupDivX = appWidth * 175 / paperWidth;
-  float nextupDivY = appHeight * 27.5 / paperHeight;
-  float nextupDivWidth = appWidth * 35 / paperWidth;
-  float nextupDivHeight = appHeight * 10 / paperHeight;
+  nextupDivX = appWidth * 175 / paperWidth;
+  nextupDivY = appHeight * 27.5 / paperHeight;
+  nextupDivWidth = appWidth * 35 / paperWidth;
+  nextupDivHeight = appHeight * 10 / paperHeight;
 
-  float lyricsDivX = appWidth * 225 / paperWidth;
-  float lyricsDivY = appHeight * 27.5 / paperHeight;
-  float lyricsDivWidth = appWidth * 35 / paperWidth;
-  float lyricsDivHeight = appHeight * 10 / paperHeight;
+  lyricsDivX = appWidth * 225 / paperWidth;
+  lyricsDivY = appHeight * 27.5 / paperHeight;
+  lyricsDivWidth = appWidth * 35 / paperWidth;
+  lyricsDivHeight = appHeight * 10 / paperHeight;
 
   float albumcoverimagefinalcountdownDivX = appWidth * 167 / paperWidth;
   float albumcoverimagefinalcountdownDivY = appHeight * 47 / paperHeight;
   float albumcoverimagefinalcountdownDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimagefinalcountdownDivHeight = appHeight * 20 / paperHeight;
 
-  float songNamefinalcountdownDivX = appWidth * 187 / paperWidth;
-  float songNamefinalcountdownDivY = appHeight * 47 / paperHeight;
-  float songNamefinalcountdownDivWidth = appWidth * 50 / paperWidth;
-  float songNamefinalcountdownDivHeight = appHeight * 10 / paperHeight;
+  songNamefinalcountdownDivX = appWidth * 187 / paperWidth;
+  songNamefinalcountdownDivY = appHeight * 47 / paperHeight;
+  songNamefinalcountdownDivWidth = appWidth * 50 / paperWidth;
+  songNamefinalcountdownDivHeight = appHeight * 10 / paperHeight;
 
-  float nameofartisteuropeDivX = appWidth * 187 / paperWidth;
-  float nameofartisteuropeDivY = appHeight * 57 / paperHeight;
-  float nameofartisteuropeDivWidth = appWidth * 30 / paperWidth;
-  float nameofartisteuropeDivHeight = appHeight * 5 / paperHeight;
+  artistNameeuropeDivX = appWidth * 187 / paperWidth;
+  artistNameeuropeDivY = appHeight * 57 / paperHeight;
+  artistNameeuropeDivWidth = appWidth * 30 / paperWidth;
+  artistNameeuropeDivHeight = appHeight * 5 / paperHeight;
 
-  float playnextfinalcountdownDivX = appWidth * 252 / paperWidth;
-  float playnextfinalcountdownDivY = appHeight * 52 / paperHeight;
-  float playnextfinalcountdownDivWidth = appWidth * 10 / paperWidth;
-  float playnextfinalcountdownDivHeight = appHeight * 10 / paperHeight;
+  playnextfinalcountdownDivX = appWidth * 252 / paperWidth;
+  playnextfinalcountdownDivY = appHeight * 52 / paperHeight;
+  playnextfinalcountdownDivWidth = appWidth * 10 / paperWidth;
+  playnextfinalcountdownDivHeight = appHeight * 10 / paperHeight;
 
   float albumcoverimageintheendDivX = appWidth * 167 / paperWidth;
   float albumcoverimageintheendDivY = appHeight * 72 / paperHeight;
   float albumcoverimageintheendDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimageintheendDivHeight = appHeight * 20 / paperHeight;
 
-  float songNameintheendDivX = appWidth * 187 / paperWidth;
-  float songNameintheendDivY = appHeight * 72 / paperHeight;
-  float songNameintheendDivWidth = appWidth * 50 / paperWidth;
-  float songNameintheendDivHeight = appHeight * 10 / paperHeight;
+  songNameintheendDivX = appWidth * 187 / paperWidth;
+  songNameintheendDivY = appHeight * 72 / paperHeight;
+  songNameintheendDivWidth = appWidth * 50 / paperWidth;
+  songNameintheendDivHeight = appHeight * 10 / paperHeight;
 
-  float nameofartistlinkinparkDivX = appWidth * 187 / paperWidth;
-  float nameofartistlinkinparkDivY = appHeight * 82 / paperHeight;
-  float nameofartistlinkinparkDivWidth = appWidth * 30 / paperWidth;
-  float nameofartistlinkinparkDivHeight = appHeight * 5 / paperHeight;
+  artistNamelinkinparkDivX = appWidth * 187 / paperWidth;
+  artistNamelinkinparkDivY = appHeight * 82 / paperHeight;
+  artistNamelinkinparkDivWidth = appWidth * 30 / paperWidth;
+  artistNamelinkinparkDivHeight = appHeight * 5 / paperHeight;
 
-  float playnextintheendDivX = appWidth * 252 / paperWidth;
-  float playnextintheendDivY = appHeight * 77 / paperHeight;
-  float playnextintheendDivWidth = appWidth * 10 / paperWidth;
-  float playnextintheendDivHeight = appHeight * 10 / paperHeight;
+  playnextintheendDivX = appWidth * 252 / paperWidth;
+  playnextintheendDivY = appHeight * 77 / paperHeight;
+  playnextintheendDivWidth = appWidth * 10 / paperWidth;
+  playnextintheendDivHeight = appHeight * 10 / paperHeight;
 
   float albumcoverimagejoinusforabiteDivX = appWidth * 167 / paperWidth;
   float albumcoverimagejoinusforabiteDivY = appHeight * 97 / paperHeight;
   float albumcoverimagejoinusforabiteDivWidth = appWidth * 20 / paperWidth;
   float albumcoverimagejoinusforabiteDivHeight = appHeight * 20 / paperHeight;
 
-  float songNamejoinusforabiteDivX = appWidth * 187 / paperWidth;
-  float songNamejoinusforabiteDivY = appHeight * 97 / paperHeight;
-  float songNamejoinusforabiteDivWidth = appWidth * 50 / paperWidth;
-  float songNamejoinusforabiteDivHeight = appHeight * 10 / paperHeight;
+  songNamejoinusforabiteDivX = appWidth * 187 / paperWidth;
+  songNamejoinusforabiteDivY = appHeight * 97 / paperHeight;
+  songNamejoinusforabiteDivWidth = appWidth * 50 / paperWidth;
+  songNamejoinusforabiteDivHeight = appHeight * 10 / paperHeight;
 
-  float nameofartistjtmusicDivX = appWidth * 187 / paperWidth;
-  float nameofartistjtmusicDivY = appHeight * 107 / paperHeight;
-  float nameofartistjtmusicDivWidth = appWidth * 30 / paperWidth;
-  float nameofartistjtmusicDivHeight = appHeight * 5 / paperHeight;
+  artistNamejtmusicDivX = appWidth * 187 / paperWidth;
+  artistNamejtmusicDivY = appHeight * 107 / paperHeight;
+  artistNamejtmusicDivWidth = appWidth * 30 / paperWidth;
+  artistNamejtmusicDivHeight = appHeight * 5 / paperHeight;
 
-  float playnextjoinusforabiteDivX = appWidth * 252 / paperWidth;
-  float playnextjoinusforabiteDivY = appHeight * 102 / paperHeight;
-  float playnextjoinusforabiteDivWidth = appWidth * 10 / paperWidth;
-  float playnextjoinusforabiteDivHeight = appHeight * 10 / paperHeight;
+  playnextjoinusforabiteDivX = appWidth * 252 / paperWidth;
+  playnextjoinusforabiteDivY = appHeight * 102 / paperHeight;
+  playnextjoinusforabiteDivWidth = appWidth * 10 / paperWidth;
+  playnextjoinusforabiteDivHeight = appHeight * 10 / paperHeight;
 
   float finalcountdownuiboxDivX = appWidth * 165 / paperWidth;
   float finalcountdownuiboxDivY = appHeight * 45 / paperHeight;
@@ -308,7 +314,7 @@ void setup() {
 
   fill(textInk);
   rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
-  rect( nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight );
+  rect( artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight );
 
   fill(buttonInk);
   rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
@@ -318,7 +324,7 @@ void setup() {
 
   fill(textInk);
   rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
-  rect( nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight );
+  rect( artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight );
 
   fill(buttonInk);
   rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
@@ -328,7 +334,7 @@ void setup() {
 
   fill(textInk);
   rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
-  rect( nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight );
+  rect( artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight );
 
   fill(buttonInk);
   rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
@@ -342,7 +348,6 @@ void setup() {
 
   float fontSize1 = songtitleDivHeight; //1:1 Font Height to rectHeight
   float fontSize2 = appHeight;
-  float fontSize3 = appHeight;
   float fontSize4 = appHeight;
   float fontSize5 = appHeight;
   float fontSize6 = appHeight;
@@ -358,94 +363,90 @@ void setup() {
   String linkinPark = "Linkin Park";
   String JTMusic = "JT Music";
 
-//Aspect ratio for "X"
-float xFontSize = 32;
-float xdivHeight = xDivHeight;
-float xAspectRatio = xFontSize / xdivHeight;
 
-//Aspect ratio for "Next Up"
-float nextUpFontSize = 41;
-float nextUpdivHeight = nextupDivHeight;
-float nextUpAspectRatio = nextUpFontSize / nextUpdivHeight;
-//Aspect ratio for "Lyrics" is the same as Aspect ratio for "next Up"
+  font = createFont(PLBI, fontSize1);
 
-//Aspect ratio for "The  Final Countdown"
-float theFinalCountdownFontSize = 41;
-float theFinalCountdowndivHeight = nameofsongfinalcountdownDivHeight;
-float theFinalCountdownAspectRatio = theFinalCountdownFontSize / theFinalCountdowndivHeight;
-//Aspect ratio for "In The End" and "Join Us For A Bite" are the same as Aspect ratio for "The  Final Countdown"
+  //Aspect ratio for "X"
+  float xFontSize = 32;
+  float xdivHeight = xDivHeight;
+  float xAspectRatio = xFontSize / xdivHeight;
 
-//Aspect ratio for "Artists"
-float artistsFontSize = 20;
-float artistsdivHeight = nameofartisteuropeDivHeight;
-float artistsAspectRatio = artistsFontSize / artistsdivHeight;
+  //Aspect ratio for "Next Up"
+  float nextUpFontSize = 41;
+  float nextUpdivHeight = nextupDivHeight;
+  float nextUpAspectRatio = nextUpFontSize / nextUpdivHeight;
+  //Aspect ratio for "Lyrics" is the same as Aspect ratio for "next Up"
+
+  //Aspect ratio for "The  Final Countdown"
+  float theFinalCountdownFontSize = 41;
+  float theFinalCountdowndivHeight = songNamefinalcountdownDivHeight;
+  float theFinalCountdownAspectRatio = theFinalCountdownFontSize / theFinalCountdowndivHeight;
+  //Aspect ratio for "In The End" and "Join Us For A Bite" are the same as Aspect ratio for "The  Final Countdown"
+
+  //Aspect ratio for "Artists"
+  float artistsFontSize = 20;
+  float artistsdivHeight = artistNameeuropeDivHeight;
+  float artistsAspectRatio = artistsFontSize / artistsdivHeight;
 
 
-float textAdjustment = 0.9;
+  float textAdjustment = 0.9;
 
 
-//Final Font Sizes
-fontSize2 = xDivHeight*xAspectRatio * textAdjustment;
-fontSize3 = tenDivHeight*tenAspectRatio * textAdjustment;
-fontSize4 = nextupDivHeight*nextUpAspectRatio * textAdjustment;
-fontSize5 = theFinalCountdowndivHeight*theFinalCountdownAspectRatio * textAdjustment;
-fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;
+  //Final Font Sizes
+  fontSize2 = xDivHeight*xAspectRatio * textAdjustment;
+  fontSize4 = nextupDivHeight*nextUpAspectRatio * textAdjustment;
+  fontSize5 = theFinalCountdowndivHeight*theFinalCountdownAspectRatio * textAdjustment;
+  fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;
 
-//Drawing Text
-color blackInk = #000000;
-color whiteInk = #FFFFFF;
-color resetInk = whiteInk;
+  //Drawing Text
+  color blackInk = #000000;
+  color whiteInk = #FFFFFF;
+  color resetInk = whiteInk;
 
-fill(blackInk);
-textAlign(CENTER, TOP);
+  fill(blackInk);
+  textAlign(CENTER, CENTER);
 
-textFont(font, fontSize2);
-text(x, xDivX, xDivY, xDivWidth, xDivHeight);
+  textFont(font, fontSize2);
+  text(x, xDivX, xDivY, xDivWidth, xDivHeight);
 
-textFont(font, fontSize3);
-text(ten, tenDivX, tenDivY, tenDivWidth, tenDivHeight);
+  textFont(font, fontSize4);
+  text(nextUp, nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight);
 
-textFont(font, fontSize3);
-text(fifteen, fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight);
+  textFont(font, fontSize4);
+  text(lyrics, lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight);
 
-textFont(font, fontSize4);
-text(nextUp, nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight);
+  textAlign(LEFT, CENTER);
 
-textFont(font, fontSize4);
-text(lyrics, lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight);
-
-textAlign(LEFT, TOP);
-
-float constantDecrease = 0.99;
-int iWhile = 0;
-textFont(font, fontSize5);
-while (textWidth(TFC) > nameofsongfinalcountdownDivWidth) {
-  iWhile++;
-  if (iWhile>100) {
-    println ("Infinite WHILE Loop");
-    exit();
-  }
-  fontSize5 *= constantDecrease;
+  float constantDecrease = 0.99;
+  int iWhile = 0;
   textFont(font, fontSize5);
-}
-text(TFC, nameofsongfinalcountdownDivX, nameofsongfinalcountdownDivY, nameofsongfinalcountdownDivWidth, nameofsongfinalcountdownDivHeight);
+  while (textWidth(TFC) > songNamefinalcountdownDivWidth) {
+    iWhile++;
+    if (iWhile>100) {
+      println ("Infinite WHILE Loop");
+      exit();
+    }
+    fontSize5 *= constantDecrease;
+    textFont(font, fontSize5);
+  }
+  text(TFC, songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight);
 
-textFont(font, fontSize5);
-text(ITE, nameofsongintheendDivX, nameofsongintheendDivY, nameofsongintheendDivWidth, nameofsongintheendDivHeight);
+  textFont(font, fontSize5);
+  text(ITE, songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight);
 
-textFont(font, fontSize5);
-text(JUFAB, nameofsongjoinusforabiteDivX, nameofsongjoinusforabiteDivY, nameofsongjoinusforabiteDivWidth, nameofsongjoinusforabiteDivHeight);
+  textFont(font, fontSize5);
+  text(JUFAB, songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight);
 
-textFont(font, fontSize6);
-text(europe, nameofartisteuropeDivX, nameofartisteuropeDivY, nameofartisteuropeDivWidth, nameofartisteuropeDivHeight);
+  textFont(font, fontSize6);
+  text(europe, artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight);
 
-textFont(font, fontSize6);
-text(linkinPark, nameofartistlinkinparkDivX, nameofartistlinkinparkDivY, nameofartistlinkinparkDivWidth, nameofartistlinkinparkDivHeight);
+  textFont(font, fontSize6);
+  text(linkinPark, artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight);
 
-textFont(font, fontSize6);
-text(JTMusic, nameofartistjtmusicDivX, nameofartistjtmusicDivY, nameofartistjtmusicDivWidth, nameofartistjtmusicDivHeight);
+  textFont(font, fontSize6);
+  text(JTMusic, artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight);
 
-fill(resetInk);
+  fill(resetInk);
 
 
   minim = new Minim(this);
@@ -516,8 +517,6 @@ fill(resetInk);
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
   //
   // Procedure Passing RECT(#2) && fontSize(RECT#)
-  float constantDecrease = 0.99;
-  int iWhile=0;
   textFont(font, fontSize1); //must include textSize() before text() & textWidth()
   while ( textWidth(playListMetaData[currentSong].fileName()) > songtitleDivWidth ) {
     //println("While #1"); //Infinite WHILE Check
@@ -904,6 +903,26 @@ void draw() {
   float stopLoopingRectThreeDivX = stopLoopingFirstArrowLineOneDivX2;
   float stopLoopingRectFourDivX = stopLoopingDivX+stopLoopingDivWidth*5/8;
 
+  float playFinalCountdownDivX1 = playnextfinalcountdownDivX + playnextfinalcountdownDivWidth*1/4;
+  float playFinalCountdownDivY1 = playnextfinalcountdownDivY +  playnextfinalcountdownDivHeight*1/4;
+  float playFinalCountdownDivX2 = playnextfinalcountdownDivX + playnextfinalcountdownDivWidth*3/4;
+  float playFinalCountdownDivY2 = playnextfinalcountdownDivY + playnextfinalcountdownDivHeight*1/2;
+  float playFinalCountdownDivX3 = playnextfinalcountdownDivX + playnextfinalcountdownDivWidth*1/4;
+  float playFinalCountdownDivY3 = playnextfinalcountdownDivY +  playnextfinalcountdownDivHeight*3/4;
+  //
+  float playInTheEndDivX1 = playnextintheendDivX + playnextintheendDivWidth*1/4;
+  float playInTheEndDivY1 = playnextintheendDivY +  playnextintheendDivHeight*1/4;
+  float playInTheEndDivX2 = playnextintheendDivX + playnextintheendDivWidth*3/4;
+  float playInTheEndDivY2 = playnextintheendDivY + playnextintheendDivHeight*1/2;
+  float playInTheEndDivX3 = playnextintheendDivX + playnextintheendDivWidth*1/4;
+  float playInTheEndDivY3 = playnextintheendDivY + playnextintheendDivHeight*3/4;
+  //
+  float playJoinUsForABiteDivX1 = playnextjoinusforabiteDivX + playnextjoinusforabiteDivWidth*1/4;
+  float playJoinUsForABiteDivY1 = playnextjoinusforabiteDivY +  playnextjoinusforabiteDivHeight*1/4;
+  float playJoinUsForABiteDivX2 = playnextjoinusforabiteDivX + playnextjoinusforabiteDivWidth*3/4;
+  float playJoinUsForABiteDivY2 = playnextjoinusforabiteDivY +  playnextjoinusforabiteDivHeight*1/2;
+  float playJoinUsForABiteDivX3 = playnextjoinusforabiteDivX + playnextjoinusforabiteDivWidth*1/4;
+  float playJoinUsForABiteDivY3 = playnextjoinusforabiteDivY +  playnextjoinusforabiteDivHeight*3/4;
   //
   //
   //
@@ -961,13 +980,14 @@ void draw() {
 
 
   //LOOP ONCE BUTTON
-
+  stroke(buttonInk);
   rect(loopOnceRectOneDivX, loopOnceRectOneDivY, loopOnceRectOneDivWidth, loopOnceRectOneDivHeight);
   fill(buttonInk);
   rect(loopOnceRectThreeDivX, loopOnceRectThreeDivY, loopOnceRectThreeDivWidth, loopOnceRectThreeDivHeight);
   rect(loopOnceRectFourDivX, loopOnceRectFourDivY, loopOnceRectFourDivWidth, loopOnceRectFourDivHeight);
   rect(loopOnceRectTwoDivX, loopOnceRectTwoDivY, loopOnceRectTwoDivWidth, loopOnceRectTwoDivHeight);
   fill(resetInk);
+  stroke(blackInk);
   line( loopOnceFirstArrowLineOneDivX1, loopOnceFirstArrowLineOneDivY1, loopOnceFirstArrowLineOneDivX2, loopOnceFirstArrowLineOneDivY2 );
   line( loopOnceFirstArrowLineTwoDivX1, loopOnceFirstArrowLineTwoDivY1, loopOnceFirstArrowLineTwoDivX2, loopOnceFirstArrowLineTwoDivY2 );
   line( loopOnceFirstArrowLineThreeDivX1, loopOnceFirstArrowLineThreeDivY1, loopOnceFirstArrowLineThreeDivX2, loopOnceFirstArrowLineThreeDivY2 );
@@ -985,12 +1005,14 @@ void draw() {
 
   //LOOP FOREVER BUTTON
 
+  stroke(buttonInk);
   rect(loopForeverRectOneDivX, loopOnceRectOneDivY, loopOnceRectOneDivWidth, loopOnceRectOneDivHeight);
   fill(buttonInk);
   rect(loopForeverRectThreeDivX, loopOnceRectThreeDivY, loopOnceRectThreeDivWidth, loopOnceRectThreeDivHeight);
   rect(loopForeverRectFourDivX, loopOnceRectFourDivY, loopOnceRectFourDivWidth, loopOnceRectFourDivHeight);
   rect(loopForeverRectTwoDivX, loopOnceRectTwoDivY, loopOnceRectTwoDivWidth, loopOnceRectTwoDivHeight);
   fill(resetInk);
+  stroke(blackInk);
   line( loopForeverFirstArrowLineOneDivX1, loopForeverFirstArrowLineOneDivY1, loopForeverFirstArrowLineOneDivX2, loopForeverFirstArrowLineOneDivY2 );
   line( loopForeverFirstArrowLineTwoDivX1, loopForeverFirstArrowLineTwoDivY1, loopForeverFirstArrowLineTwoDivX2, loopForeverFirstArrowLineTwoDivY2 );
   line( loopForeverFirstArrowLineThreeDivX1, loopForeverFirstArrowLineThreeDivY1, loopForeverFirstArrowLineThreeDivX2, loopForeverFirstArrowLineThreeDivY2 );
@@ -1008,13 +1030,14 @@ void draw() {
 
   //STOP LOOPING BUTTON
 
+  stroke(buttonInk);
   rect(stopLoopingRectOneDivX, loopOnceRectOneDivY, loopOnceRectOneDivWidth, loopOnceRectOneDivHeight);
   fill(buttonInk);
   rect(stopLoopingRectThreeDivX, loopOnceRectThreeDivY, loopOnceRectThreeDivWidth, loopOnceRectThreeDivHeight);
   rect(stopLoopingRectFourDivX, loopOnceRectFourDivY, loopOnceRectFourDivWidth, loopOnceRectFourDivHeight);
   rect(stopLoopingRectTwoDivX, loopOnceRectTwoDivY, loopOnceRectTwoDivWidth, loopOnceRectTwoDivHeight);
   fill(resetInk);
-
+  stroke(blackInk);
 
   line( stopLoopingFirstArrowLineOneDivX1, stopLoopingFirstArrowLineOneDivY1, stopLoopingFirstArrowLineOneDivX2, stopLoopingFirstArrowLineOneDivY2 );
   line( stopLoopingFirstArrowLineTwoDivX1, stopLoopingFirstArrowLineTwoDivY1, stopLoopingFirstArrowLineTwoDivX2, stopLoopingFirstArrowLineTwoDivY2 );
@@ -1033,9 +1056,12 @@ void draw() {
 
   line( stopLoopingCrossLine1X1, stopLoopingCrossLine1Y1, stopLoopingCrossLine1X2, stopLoopingCrossLine1Y2 );
 
-
-  fill(buttonInk);
-
+  fill(resetInk);
+  triangle(playFinalCountdownDivX1, playFinalCountdownDivY1, playFinalCountdownDivX2, playFinalCountdownDivY2, playFinalCountdownDivX3, playFinalCountdownDivY3);
+  
+  triangle(playInTheEndDivX1, playInTheEndDivY1, playInTheEndDivX2, playInTheEndDivY2, playInTheEndDivX3, playInTheEndDivY3);
+  
+  triangle(playJoinUsForABiteDivX1, playJoinUsForABiteDivY1, playJoinUsForABiteDivX2, playJoinUsForABiteDivY2, playJoinUsForABiteDivX3, playJoinUsForABiteDivY3);
   fill(resetInk);
 
   int appWidth = displayWidth;
