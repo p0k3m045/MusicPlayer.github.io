@@ -260,6 +260,17 @@ void setup() {
   fifteenDivWidth = appWidth * 5 / paperWidth;
   fifteenDivHeight = appHeight * 5 / paperHeight;
 
+  float magnifyingGlassCircleDivX = magnifyingglassimageDivX + magnifyingglassimageDivWidth* 1/3;
+  float magnifyingGlassCircleDivY = magnifyingglassimageDivY + magnifyingglassimageDivWidth* 1/3;
+  float magnifyingGlassCircleDivSize = magnifyingglassimageDivWidth * 1/3;
+  float magnifyingGlassCircleDivSize2 = magnifyingglassimageDivWidth * 1/4;
+
+
+  float magnifyingGlassLineX1 = magnifyingglassimageDivX + magnifyingglassimageDivWidth* 1/2;
+  float magnifyingGlassLineY1 = magnifyingglassimageDivY + magnifyingglassimageDivHeight* 19/32;
+  float magnifyingGlassLineX2 = magnifyingglassimageDivX + magnifyingglassimageDivWidth* 7/8;
+  float magnifyingGlassLineY2 = magnifyingglassimageDivY + magnifyingglassimageDivHeight* 7/8;
+
   float lyricWordsDivX = appWidth * 165 / paperWidth;
   float lyricWordsDivY = appHeight * 45 / paperHeight;
   float lyricWordsDivWidth = appWidth * 105 / paperWidth;
@@ -272,6 +283,7 @@ void setup() {
 
   fill(resetInk);
   rect( recordplayerimageDivX, recordplayerimageDivY, recordplayerimageDivWidth, recordplayerimageDivHeight );
+  println(recordplayerimageDivWidth, recordplayerimageDivHeight);
 
   fill(brownInk);
   rect( uiboxDivX, uiboxDivY, uiboxDivWidth, uiboxDivHeight );
@@ -290,7 +302,7 @@ void setup() {
   fill(brownInk);
   rect( searchbarDivX, searchbarDivY, searchbarDivWidth, searchbarDivHeight );
 
-  fill(resetInk);
+  fill(buttonInk);
   rect( magnifyingglassimageDivX, magnifyingglassimageDivY, magnifyingglassimageDivWidth, magnifyingglassimageDivHeight );
 
   fill(redInk);
@@ -345,6 +357,10 @@ void setup() {
   // rect ( lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight);
 
   fill(resetInk);
+  circle(magnifyingGlassCircleDivX, magnifyingGlassCircleDivY, magnifyingGlassCircleDivSize);
+  fill(buttonInk);
+  circle(magnifyingGlassCircleDivX, magnifyingGlassCircleDivY, magnifyingGlassCircleDivSize2);
+  line(magnifyingGlassLineX1, magnifyingGlassLineY1, magnifyingGlassLineX2, magnifyingGlassLineY2);
 
   float fontSize1 = songtitleDivHeight; //1:1 Font Height to rectHeight
   float fontSize2 = appHeight;
@@ -571,7 +587,7 @@ void setup() {
       imageWidthAdjusted *= 0.99;
       imageHeightAdjusted = imageWidthAdjusted * image2AspectRatio_GreaterOne;
     }
-  };
+  }
 
   //println( float (imageWidth2) / float (imageHeight2) );
   //Ternary Operator
@@ -924,6 +940,7 @@ void draw() {
   float playJoinUsForABiteDivX3 = playnextjoinusforabiteDivX + playnextjoinusforabiteDivWidth*1/4;
   float playJoinUsForABiteDivY3 = playnextjoinusforabiteDivY +  playnextjoinusforabiteDivHeight*3/4;
   //
+
   //
   //
   //
@@ -1058,9 +1075,9 @@ void draw() {
 
   fill(resetInk);
   triangle(playFinalCountdownDivX1, playFinalCountdownDivY1, playFinalCountdownDivX2, playFinalCountdownDivY2, playFinalCountdownDivX3, playFinalCountdownDivY3);
-  
+
   triangle(playInTheEndDivX1, playInTheEndDivY1, playInTheEndDivX2, playInTheEndDivY2, playInTheEndDivX3, playInTheEndDivY3);
-  
+
   triangle(playJoinUsForABiteDivX1, playJoinUsForABiteDivY1, playJoinUsForABiteDivX2, playJoinUsForABiteDivY2, playJoinUsForABiteDivX3, playJoinUsForABiteDivY3);
   fill(resetInk);
 
