@@ -40,6 +40,7 @@ String imagesFolder = "Images";
 String imageName1 = "Join Us For A Bite";
 String imageName2 = "Europe TFC";
 String imageName3 = "Hybrid Theory";
+String imageName4 = "Record Player";
 String fileExension = ".jpg";
 
 //Void
@@ -562,6 +563,8 @@ void setup() {
   String pathway1 = imageDirectory + imageName1 + fileExension;
   String pathway2 = imageDirectory + imageName2 + fileExension;
   String pathway3 = imageDirectory + imageName3 + fileExension;
+  String pathway4 = imageDirectory + imageName4 + fileExension;
+
   //println(pathway);
   //
 
@@ -570,6 +573,7 @@ void setup() {
   int imageWidth2 = 500;
   int imageHeight2 = 500;
   PImage image3 = loadImage( pathway3 );
+  PImage image4 = loadImage( pathway4 );
 
   float image2AspectRatio_GreaterOne = ( imageWidth2 > imageHeight2 ) ? float (imageWidth2) / float (imageHeight2)  : float (imageHeight2) / float (imageWidth2);
   float imageWidthAdjusted = albumcoverimagefinalcountdownDivWidth;
@@ -599,6 +603,8 @@ void setup() {
   image( image1, albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, imageWidthAdjusted+1, imageWidthAdjusted+1 );
   image( image2, albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
   image( image3, albumcoverimageintheendDivX, albumcoverimageintheendDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
+  image( image4, recordplayerimageDivX, recordplayerimageDivY, recordplayerimageDivWidth+1, recordplayerimageDivHeight+1 );
+
 
   //
 }//End Setup
