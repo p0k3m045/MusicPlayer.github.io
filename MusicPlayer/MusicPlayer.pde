@@ -27,6 +27,7 @@ float songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusfora
 float playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight;
 float playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight;
 float playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight, autoplayDivX, autoplayDivY, autoplayDivWidth, autoplayDivHeight;
+float boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight;
 float fontSize2, fontSize3, fontSize4, fontSize5, fontSize6;
 color blackInk, whiteInk, resetInk, brownInk, redInk, greenInk, tanInk, buttonInk, textInk;
 boolean isPaused = true;
@@ -152,10 +153,10 @@ void setup() {
   float magnifyingglassimageDivWidth = appWidth * 6 / paperWidth;
   float magnifyingglassimageDivHeight = appHeight * 6 / paperHeight;
 
-  float boxforxDivX = appWidth * (paperWidth - 10) / paperWidth;
-  float boxforxDivY = appHeight * 0 / paperHeight;
-  float boxforxDivWidth = appWidth * 10 / paperWidth;
-  float boxforxDivHeight = appHeight * 10 / paperHeight;
+  boxforxDivX = appWidth * (paperWidth - 10) / paperWidth;
+  boxforxDivY = appHeight * 0 / paperHeight;
+  boxforxDivWidth = appWidth * 10 / paperWidth;
+  boxforxDivHeight = appHeight * 10 / paperHeight;
 
   xDivX = appWidth * (paperWidth - 8) / paperWidth;
   xDivY = appHeight * 0 / paperHeight;
@@ -628,9 +629,24 @@ void draw() {
 
   fill(resetInk );
 
-if (!playList[currentSong].isPlaying() && !isPaused) {
-  playList[currentSong].play();
-}
+  if (!playList[currentSong].isPlaying() && !isPaused) {
+    if (autoPlay) {
+      // song finished
+      if (playList[currentSong].position() >= playList[currentSong].length()) {
+        playList[currentSong].pause();
+        playList[currentSong].rewind();
+        // next song
+        if (currentSong == numberOfSongs - 1) {
+          currentSong = 0;
+        } else {
+          currentSong++;
+        }
+        playList[currentSong].play();
+      }
+    }
+    playList[currentSong].play();
+  }
+  
   float playSymbolDivX1 = playDivX + playDivWidth*1/4;
   float playSymbolDivY1 = playDivY + playDivHeight*1/4;
   float playSymbolDivX2 = playDivX + playDivWidth*3/4;
@@ -950,7 +966,7 @@ if (!playList[currentSong].isPlaying() && !isPaused) {
   float playJoinUsForABiteDivX3 = playnextjoinusforabiteDivX + playnextjoinusforabiteDivWidth*1/4;
   float playJoinUsForABiteDivY3 = playnextjoinusforabiteDivY + playnextjoinusforabiteDivHeight*3/4;
 
-  //=====================AUTO PLAY=====================//
+  //=====================AUTO PLAY======================//
 
   float toggleCircleInset = autoplayDivWidth*5/32;
 
@@ -1326,6 +1342,10 @@ void mousePressed() {
     } else {
       autoPlay = false;
     }
+  }
+  //X BUTTON
+  if ( mouseX > boxforxDivX && mouseX < boxforxDivX + boxforxDivWidth && mouseY > boxforxDivY && mouseY < boxforxDivY + boxforxDivHeight ) {
+    exit();
   }
 }
 void keyPressed() {
