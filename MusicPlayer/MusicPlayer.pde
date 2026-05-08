@@ -27,12 +27,14 @@ float songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusfora
 float playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight;
 float playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight;
 float playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight, autoplayDivX, autoplayDivY, autoplayDivWidth, autoplayDivHeight;
-float boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight;
+float boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight, lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight;
 float fontSize2, fontSize3, fontSize4, fontSize5, fontSize6;
 color blackInk, whiteInk, resetInk, brownInk, redInk, greenInk, tanInk, buttonInk, textInk;
 boolean isPaused = true;
 boolean isMuted = false;
 boolean autoPlay = false;
+boolean lyricsDiv = false;
+boolean nextUpDiv = true;
 String upArrow = "..";
 String open = "/";
 String musicFolder = "Music";
@@ -198,10 +200,10 @@ void setup() {
   playnextfinalcountdownDivWidth = appWidth * 10 / paperWidth;
   playnextfinalcountdownDivHeight = appHeight * 10 / paperHeight;
 
-  float albumcoverimageintheendDivX = appWidth * 167 / paperWidth;
-  float albumcoverimageintheendDivY = appHeight * 72 / paperHeight;
-  float albumcoverimageintheendDivWidth = appWidth * 20 / paperWidth;
-  float albumcoverimageintheendDivHeight = appHeight * 20 / paperHeight;
+  albumcoverimageintheendDivX = appWidth * 167 / paperWidth;
+  albumcoverimageintheendDivY = appHeight * 72 / paperHeight;
+  albumcoverimageintheendDivWidth = appWidth * 20 / paperWidth;
+  albumcoverimageintheendDivHeight = appHeight * 20 / paperHeight;
 
   songNameintheendDivX = appWidth * 187 / paperWidth;
   songNameintheendDivY = appHeight * 72 / paperHeight;
@@ -218,10 +220,10 @@ void setup() {
   playnextintheendDivWidth = appWidth * 10 / paperWidth;
   playnextintheendDivHeight = appHeight * 10 / paperHeight;
 
-  float albumcoverimagejoinusforabiteDivX = appWidth * 167 / paperWidth;
-  float albumcoverimagejoinusforabiteDivY = appHeight * 97 / paperHeight;
-  float albumcoverimagejoinusforabiteDivWidth = appWidth * 20 / paperWidth;
-  float albumcoverimagejoinusforabiteDivHeight = appHeight * 20 / paperHeight;
+  albumcoverimagejoinusforabiteDivX = appWidth * 167 / paperWidth;
+  albumcoverimagejoinusforabiteDivY = appHeight * 97 / paperHeight;
+  albumcoverimagejoinusforabiteDivWidth = appWidth * 20 / paperWidth;
+  albumcoverimagejoinusforabiteDivHeight = appHeight * 20 / paperHeight;
 
   songNamejoinusforabiteDivX = appWidth * 187 / paperWidth;
   songNamejoinusforabiteDivY = appHeight * 97 / paperHeight;
@@ -238,20 +240,20 @@ void setup() {
   playnextjoinusforabiteDivWidth = appWidth * 10 / paperWidth;
   playnextjoinusforabiteDivHeight = appHeight * 10 / paperHeight;
 
-  float finalcountdownuiboxDivX = appWidth * 165 / paperWidth;
-  float finalcountdownuiboxDivY = appHeight * 45 / paperHeight;
-  float finalcountdownuiboxDivWidth = appWidth * 105 / paperWidth;
-  float finalcountdownuiboxDivHeight = appHeight * 25 / paperHeight;
+  finalcountdownuiboxDivX = appWidth * 165 / paperWidth;
+  finalcountdownuiboxDivY = appHeight * 45 / paperHeight;
+  finalcountdownuiboxDivWidth = appWidth * 105 / paperWidth;
+  finalcountdownuiboxDivHeight = appHeight * 25 / paperHeight;
 
-  float intheenduiboxDivX = appWidth * 165 / paperWidth;
-  float intheenduiboxDivY = appHeight * 70 / paperHeight;
-  float intheenduiboxDivWidth = appWidth * 105 / paperWidth;
-  float intheenduiboxDivHeight = appHeight * 25 / paperHeight;
+  intheenduiboxDivX = appWidth * 165 / paperWidth;
+  intheenduiboxDivY = appHeight * 70 / paperHeight;
+  intheenduiboxDivWidth = appWidth * 105 / paperWidth;
+  intheenduiboxDivHeight = appHeight * 25 / paperHeight;
 
-  float joinusforabiteuiboxDivX = appWidth * 165 / paperWidth;
-  float joinusforabiteuiboxDivY = appHeight * 95 / paperHeight;
-  float joinusforabiteuiboxDivWidth = appWidth * 105 / paperWidth;
-  float joinusforabiteuiboxDivHeight = appHeight * 25 / paperHeight;
+  joinusforabiteuiboxDivX = appWidth * 165 / paperWidth;
+  joinusforabiteuiboxDivY = appHeight * 95 / paperHeight;
+  joinusforabiteuiboxDivWidth = appWidth * 105 / paperWidth;
+  joinusforabiteuiboxDivHeight = appHeight * 25 / paperHeight;
 
   tenDivX = appWidth * 37 / paperWidth;
   tenDivY = appHeight * 175 / paperHeight;
@@ -280,10 +282,10 @@ void setup() {
   autoplayDivWidth = appWidth * 10 / paperWidth;
   autoplayDivHeight = appHeight * 10 / paperHeight;
 
-  float lyricWordsDivX = appWidth * 165 / paperWidth;
-  float lyricWordsDivY = appHeight * 45 / paperHeight;
-  float lyricWordsDivWidth = appWidth * 105 / paperWidth;
-  float lyricWordsDivHeight = appHeight * 155 / paperHeight;
+  lyricWordsDivX = appWidth * 165 / paperWidth;
+  lyricWordsDivY = appHeight * 45 / paperHeight;
+  lyricWordsDivWidth = appWidth * 105 / paperWidth;
+  lyricWordsDivHeight = appHeight * 155 / paperHeight;
 
   //rect( DivX, DivY, DivWidth, DivHeight );
   brownInk = #834503;
@@ -325,46 +327,46 @@ void setup() {
   rect( nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight );
   rect( lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight );
 
-  fill(brownInk );
-  rect( finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight );
-  rect( intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight );
-  rect( joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight );
 
-  fill(resetInk );
-  rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
+  if (lyricsDiv == false && nextUpDiv == true) {
+    fill(brownInk );
+    rect( finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight );
+    rect( intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight );
+    rect( joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight );
 
-  fill(textInk );
-  rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
-  rect( artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight );
+    fill(resetInk );
+    rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
 
-  fill(buttonInk );
-  rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
+    fill(textInk );
+    rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
+    rect( artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight );
 
-  fill(resetInk );
-  rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
+    fill(buttonInk );
+    rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
 
-  fill(textInk );
-  rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
-  rect( artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight );
+    fill(resetInk );
+    rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
 
-  fill(buttonInk );
-  rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
+    fill(textInk );
+    rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
+    rect( artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight );
 
-  fill(resetInk );
-  rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
+    fill(buttonInk );
+    rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
 
-  fill(textInk );
-  rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
-  rect( artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight );
+    fill(resetInk );
+    rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
 
-  fill(buttonInk );
-  rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
+    fill(textInk );
+    rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
+    rect( artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight );
 
+    fill(buttonInk );
+    rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
+  }
   rect( autoplayDivX, autoplayDivY, autoplayDivWidth, autoplayDivHeight );
   //rect( tenDivX, tenDivY, tenDivWidth, tenDivHeight );
   //rect( fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight );
-
-  // rect ( lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight );
 
   fill(resetInk );
   circle(magnifyingGlassCircleDivX, magnifyingGlassCircleDivY, magnifyingGlassCircleDivSize );
@@ -621,6 +623,14 @@ void draw() {
   rect(songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
   fill(blackInk );
 
+  if (lyricsDiv == true && nextUpDiv == false) {
+    fill(brownInk);
+    rect ( lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight );
+    fill(resetInk);
+  }
+
+
+  fill(blackInk);
   if (playListMetaData[currentSong].title().equals("")) {
     text(songName[currentSong], songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
   } else {
@@ -646,7 +656,7 @@ void draw() {
     }
     playList[currentSong].play();
   }
-  
+
   float playSymbolDivX1 = playDivX + playDivWidth*1/4;
   float playSymbolDivY1 = playDivY + playDivHeight*1/4;
   float playSymbolDivX2 = playDivX + playDivWidth*3/4;
@@ -1306,32 +1316,41 @@ void mousePressed() {
 
   //FINAL COUNTDOWN BUTTON
   if ( mouseX > playnextfinalcountdownDivX && mouseX < playnextfinalcountdownDivX + playnextfinalcountdownDivWidth && mouseY > playnextfinalcountdownDivY && mouseY < playnextfinalcountdownDivY + playnextfinalcountdownDivHeight ) {
-    playList[currentSong].pause( );
-    playList[currentSong].rewind( );
+    if (nextUpDiv==true) {
+      playList[currentSong].pause( );
+      playList[currentSong].rewind( );
 
-    currentSong = 0;
+      currentSong = 0;
 
-    playList[currentSong].play( );
+      playList[currentSong].play( );
+      isPaused = false;
+    }
   }
 
   //IN THE END BUTTON
   if ( mouseX > playnextintheendDivX && mouseX < playnextintheendDivX + playnextintheendDivWidth && mouseY > playnextintheendDivY && mouseY < playnextintheendDivY + playnextintheendDivHeight) {
-    playList[currentSong].pause( );
-    playList[currentSong].rewind( );
+    if (nextUpDiv==true) {
+      playList[currentSong].pause( );
+      playList[currentSong].rewind( );
 
-    currentSong = 1;
+      currentSong = 1;
 
-    playList[currentSong].play( );
+      playList[currentSong].play( );
+      isPaused = false;
+    }
   }
 
   //JOIN US FOR A BITE BUTTON
   if ( mouseX > playnextjoinusforabiteDivX && mouseX < playnextjoinusforabiteDivX + playnextjoinusforabiteDivWidth && mouseY > playnextjoinusforabiteDivY && mouseY < playnextjoinusforabiteDivY + playnextjoinusforabiteDivHeight ) {
-    playList[currentSong].pause( );
-    playList[currentSong].rewind( );
+    if (nextUpDiv==true) {
+      playList[currentSong].pause( );
+      playList[currentSong].rewind( );
 
-    currentSong = 2;
+      currentSong = 2;
 
-    playList[currentSong].play( );
+      playList[currentSong].play( );
+      isPaused = false;
+    }
   }
   //AUTOPLAY BUTTON
   if ( mouseX > autoplayDivX && mouseX < autoplayDivX + autoplayDivWidth && mouseY > autoplayDivY && mouseY < autoplayDivY + autoplayDivHeight ) {
@@ -1347,7 +1366,19 @@ void mousePressed() {
   if ( mouseX > boxforxDivX && mouseX < boxforxDivX + boxforxDivWidth && mouseY > boxforxDivY && mouseY < boxforxDivY + boxforxDivHeight ) {
     exit();
   }
+  //TITLE BUTTON
+  //lyricsDiv
+  if ( mouseX > lyricsDivX && mouseX < lyricsDivX + lyricsDivWidth && mouseY > lyricsDivY && mouseY < lyricsDivY + lyricsDivHeight ) {
+    lyricsDiv = true;
+    nextUpDiv = false;
+  }
+  //NEXT UP BUTTON
+  if ( mouseX > nextupDivX && mouseX < nextupDivX + nextupDivWidth && mouseY > nextupDivY && mouseY < nextupDivY + nextupDivHeight ) {
+    lyricsDiv = false;
+    nextUpDiv = true;
+  }
 }
+
 void keyPressed() {
   /* Simple Play
    playList[currentSong].play( );
