@@ -271,7 +271,32 @@ float StopLoopingCrossLine1X1 = DivX+DivWidth*1/16;
 float StopLoopingCrossLine1Y1 = DivY+DivHeight*1/16;
 float StopLoopingCrossLine1X2 = DivX+DivWidth*15/16;
 float StopLoopingCrossLine1Y2 = DivY+DivHeight*15/16;
-
+//
+float playFinalCountdownDivX1 = DivX + DivWidth*1/4;
+float playFinalCountdownDivY1 = DivY +  DivHeight*1/4;
+float playFinalCountdownDivX2 = DivX + DivWidth*3/4;
+float playFinalCountdownDivY2 = DivY +  DivHeight*1/2;
+float playFinalCountdownDivX3 = DivX + DivWidth*1/4;
+float playFinalCountdownDivY3 = DivY +  DivHeight*3/4;
+//
+float playInTheEndDivX1 = DivX + DivWidth*1/4;
+float playInTheEndDivY1 = DivY +  DivHeight*1/4;
+float playInTheEndDivX2 = DivX + DivWidth*3/4;
+float playInTheEndDivY2 = DivY +  DivHeight*1/2;
+float playInTheEndDivX3 = DivX + DivWidth*1/4;
+float playInTheEndDivY3 = DivY +  DivHeight*3/4;
+//
+float playJoinUsForABiteDivX1 = DivX + DivWidth*1/4;
+float playJoinUsForABiteDivY1 = DivY +  DivHeight*1/4;
+float playJoinUsForABiteDivX2 = DivX + DivWidth*3/4;
+float playJoinUsForABiteDivY2 = DivY +  DivHeight*1/2;
+float playJoinUsForABiteDivX3 = DivX + DivWidth*1/4;
+float playJoinUsForABiteDivY3 = DivY +  DivHeight*3/4;
+//
+float magnifyingGlassCircleDivX = DivX + DivWidth* 1/4;
+float magnifyingGlassCircleDivY = DivY + DivWidth* 1/4;
+float magnifyingGlassCircleDivWidth = DivWidth * 1/4;
+float magnifyingGlassCircleDivHeight = DivHeight * 1/4;
 //
 //
 rect( DivX, DivY, DivWidth, DivHeight );
@@ -374,3 +399,82 @@ triangle( StopLoopingSecondArrowTriangleDivX1, StopLoopingSecondArrowTriangleDiv
 
 line( StopLoopingCrossLine1X1, StopLoopingCrossLine1Y1, StopLoopingCrossLine1X2, StopLoopingCrossLine1Y2 );
 */
+
+//circle(magnifyingGlassCircleDivX, magnifyingGlassCircleDivY, magnifyingGlassCircleDivWidth);
+
+//
+// TOGGLE BUTTON VARIABLES
+//
+
+float toggleCircleInset = DivWidth*2/32;
+
+//Outer Capsule
+float toggleCapsuleDivX = DivX + DivWidth*1/8;
+float toggleCapsuleDivY = DivY + DivHeight*5/16;
+float toggleCapsuleDivWidth = DivWidth*3/4;
+float toggleCapsuleDivHeight = DivHeight*3/8;
+float toggleCapsuleCornerDiv = DivHeight*3/16;
+
+//Left Circle
+float toggleCircleLeftDivX = toggleCapsuleDivX + toggleCircleInset;
+float toggleCircleLeftDivY = DivY + DivHeight*1/2;
+float toggleCircleLeftDivDiameter = DivHeight*4/8;
+
+//Right Circle
+float toggleCircleRightDivX = toggleCapsuleDivX + toggleCapsuleDivWidth - toggleCircleInset;
+float toggleCircleRightDivY = DivY + DivHeight*1/2;
+float toggleCircleRightDivDiameter = DivHeight*4/8;
+
+//
+// PAUSE SYMBOL
+//
+float togglePauseLeftDivX = toggleCircleLeftDivX - DivWidth*1/16;
+float togglePauseLeftDivY = DivY + DivHeight*13/32;
+float togglePauseLeftDivWidth = DivWidth*1/24;
+float togglePauseLeftDivHeight = DivHeight*3/16;
+
+float togglePauseRightDivX = toggleCircleLeftDivX + DivWidth*1/32;
+float togglePauseRightDivY = DivY + DivHeight*13/32;
+float togglePauseRightDivWidth = DivWidth*1/24;
+float togglePauseRightDivHeight = DivHeight*3/16;
+
+//
+// PLAY SYMBOL
+//
+float togglePlayTriangleDivX1 = toggleCircleRightDivX - DivWidth*1/24;
+float togglePlayTriangleDivY1 = DivY + DivHeight*13/32;
+
+float togglePlayTriangleDivX2 = toggleCircleRightDivX - DivWidth*1/24;
+float togglePlayTriangleDivY2 = DivY + DivHeight*19/32;
+
+float togglePlayTriangleDivX3 = toggleCircleRightDivX + DivWidth*1/12;
+float togglePlayTriangleDivY3 = DivY + DivHeight*1/2;
+
+//
+// DRAW ONLY ONE OF THESE
+//
+
+//PAUSE TOGGLE BUTTON
+/*
+rect(toggleCapsuleDivX, toggleCapsuleDivY, toggleCapsuleDivWidth, toggleCapsuleDivHeight, toggleCapsuleCornerDiv);
+
+circle(toggleCircleLeftDivX, toggleCircleLeftDivY, toggleCircleLeftDivDiameter);
+
+rect(togglePauseLeftDivX, togglePauseLeftDivY, togglePauseLeftDivWidth, togglePauseLeftDivHeight, DivWidth*1/64);
+rect(togglePauseRightDivX, togglePauseRightDivY, togglePauseRightDivWidth, togglePauseRightDivHeight, DivWidth*1/64);
+*/
+
+//PLAY TOGGLE BUTTON
+
+rect(toggleCapsuleDivX, toggleCapsuleDivY, toggleCapsuleDivWidth, toggleCapsuleDivHeight, toggleCapsuleCornerDiv);
+
+circle(toggleCircleRightDivX, toggleCircleRightDivY, toggleCircleRightDivDiameter);
+
+triangle(
+  togglePlayTriangleDivX1,
+  togglePlayTriangleDivY1,
+  togglePlayTriangleDivX2,
+  togglePlayTriangleDivY2,
+  togglePlayTriangleDivX3,
+  togglePlayTriangleDivY3
+);
