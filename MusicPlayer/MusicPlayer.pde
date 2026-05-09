@@ -24,10 +24,12 @@ float skipfifteenDivX, skipfifteenDivY, skipfifteenDivWidth, skipfifteenDivHeigh
 float songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight, xDivX, xDivY, xDivWidth, xDivHeight, nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight, lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight;
 float artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight, songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight, artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight;
 float songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight, artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight;
-float playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight;
-float playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight;
+float playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight, albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight;
+float playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight, albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight;
 float playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight, autoplayDivX, autoplayDivY, autoplayDivWidth, autoplayDivHeight;
-float boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight, lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight;
+float boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight, lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight, intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight;
+float finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight, joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight;
+float albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight;
 float fontSize2, fontSize3, fontSize4, fontSize5, fontSize6;
 color blackInk, whiteInk, resetInk, brownInk, redInk, greenInk, tanInk, buttonInk, textInk;
 boolean isPaused = true;
@@ -180,10 +182,10 @@ void setup() {
   lyricsDivWidth = appWidth * 35 / paperWidth;
   lyricsDivHeight = appHeight * 10 / paperHeight;
 
-  float albumcoverimagefinalcountdownDivX = appWidth * 167 / paperWidth;
-  float albumcoverimagefinalcountdownDivY = appHeight * 47 / paperHeight;
-  float albumcoverimagefinalcountdownDivWidth = appWidth * 20 / paperWidth;
-  float albumcoverimagefinalcountdownDivHeight = appHeight * 20 / paperHeight;
+  albumcoverimagefinalcountdownDivX = appWidth * 167 / paperWidth;
+  albumcoverimagefinalcountdownDivY = appHeight * 47 / paperHeight;
+  albumcoverimagefinalcountdownDivWidth = appWidth * 20 / paperWidth;
+  albumcoverimagefinalcountdownDivHeight = appHeight * 20 / paperHeight;
 
   songNamefinalcountdownDivX = appWidth * 187 / paperWidth;
   songNamefinalcountdownDivY = appHeight * 47 / paperHeight;
@@ -328,42 +330,7 @@ void setup() {
   rect( lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight );
 
 
-  if (lyricsDiv == false && nextUpDiv == true) {
-    fill(brownInk );
-    rect( finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight );
-    rect( intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight );
-    rect( joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight );
 
-    fill(resetInk );
-    rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
-
-    fill(textInk );
-    rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
-    rect( artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight );
-
-    fill(buttonInk );
-    rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
-
-    fill(resetInk );
-    rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
-
-    fill(textInk );
-    rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
-    rect( artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight );
-
-    fill(buttonInk );
-    rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
-
-    fill(resetInk );
-    rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
-
-    fill(textInk );
-    rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
-    rect( artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight );
-
-    fill(buttonInk );
-    rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
-  }
   rect( autoplayDivX, autoplayDivY, autoplayDivWidth, autoplayDivHeight );
   //rect( tenDivX, tenDivY, tenDivWidth, tenDivHeight );
   //rect( fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight );
@@ -560,6 +527,7 @@ void setup() {
   println("mETA dATA:", playListMetaData[currentSong].title() == null );
   //textFont(font, 10 ); //fixes WHILE loop
 
+
   if (playListMetaData[currentSong].title().equals("")) {
 
     text(songName[currentSong], songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
@@ -618,17 +586,190 @@ void setup() {
 }//End Setup
 
 void draw() {
+  int appHeight = displayHeight;
   textAlign(CENTER, CENTER );
   fill(textInk );
+  textAlign (CENTER, CENTER );
   rect(songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
   fill(blackInk );
+  String imageDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + imagesFolder + open;
+  String pathway1 = imageDirectory + imageName1 + fileExension;
+  String pathway2 = imageDirectory + imageName2 + fileExension;
+  String pathway3 = imageDirectory + imageName3 + fileExension;
+  String pathway4 = imageDirectory + imageName4 + fileExension;
+  PImage image1 = loadImage( pathway1 );
+  PImage image2 = loadImage( pathway2 );
+  int imageWidth2 = 500;
+  int imageHeight2 = 500;
+  PImage image3 = loadImage( pathway3 );
+  PImage image4 = loadImage( pathway4 );
+
+  float fontSize1 = appHeight;
+  float fontSize2 = appHeight;
+  float fontSize4 = appHeight;
+  float fontSize5 = appHeight;
+  float fontSize6 = appHeight;
+  PFont font;
+  String PLBI = "Palatino Linotype Bold Italic";
+  String x = "X";
+  String nextUp = "Next Up";
+  String lyrics = "Lyrics";
+  String TFC = "The Final Countdown";
+  String ITE = "In The End";
+  String JUFAB = "Join Us For A Bite";
+  String europe = "Europe";
+  String linkinPark = "Linkin Park";
+  String JTMusic = "JT Music";
+
+
+  font = createFont(PLBI, fontSize1 );
+
+  //Aspect ratio for "X"
+  float xFontSize = 32;
+  float xdivHeight = xDivHeight;
+  float xAspectRatio = xFontSize / xdivHeight;
+
+  //Aspect ratio for "Next Up"
+  float nextUpFontSize = 41;
+  float nextUpdivHeight = nextupDivHeight;
+  float nextUpAspectRatio = nextUpFontSize / nextUpdivHeight;
+  //Aspect ratio for "Lyrics" is the same as Aspect ratio for "next Up"
+
+  //Aspect ratio for "The Final Countdown"
+  float theFinalCountdownFontSize = 41;
+  float theFinalCountdowndivHeight = songNamefinalcountdownDivHeight;
+  float theFinalCountdownAspectRatio = theFinalCountdownFontSize / theFinalCountdowndivHeight;
+  //Aspect ratio for "In The End" and "Join Us For A Bite" are the same as Aspect ratio for "The Final Countdown"
+
+  //Aspect ratio for "Artists"
+  float artistsFontSize = 20;
+  float artistsdivHeight = artistNameeuropeDivHeight;
+  float artistsAspectRatio = artistsFontSize / artistsdivHeight;
+
+
+  float textAdjustment = 0.9;
+
+
+  //Final Font Sizes
+  fontSize2 = xDivHeight*xAspectRatio * textAdjustment;
+  fontSize4 = nextupDivHeight*nextUpAspectRatio * textAdjustment;
+  fontSize5 = theFinalCountdowndivHeight*theFinalCountdownAspectRatio * textAdjustment;
+  fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;
+
+  //Drawing Text
+  color blackInk = #000000;
+  color whiteInk = #FFFFFF;
+  color resetInk = whiteInk;
+
+  fill(blackInk );
+
+  textAlign(LEFT, CENTER );
+
+  float constantDecrease = 0.99;
+  int iWhile = 0;
+
 
   if (lyricsDiv == true && nextUpDiv == false) {
     fill(brownInk);
     rect ( lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight );
     fill(resetInk);
   }
+  if (lyricsDiv == false && nextUpDiv == true) {
+    fill(brownInk );
+    rect( finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight );
+    rect( intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight );
+    rect( joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight );
 
+    fill(resetInk );
+    rect( albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight );
+
+    fill(textInk );
+    rect( songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
+    rect( artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight );
+
+    fill(buttonInk );
+    rect( playnextfinalcountdownDivX, playnextfinalcountdownDivY, playnextfinalcountdownDivWidth, playnextfinalcountdownDivHeight );
+
+    fill(resetInk );
+    rect( albumcoverimageintheendDivX, albumcoverimageintheendDivY, albumcoverimageintheendDivWidth, albumcoverimageintheendDivHeight );
+
+    fill(textInk );
+    rect( songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
+    rect( artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight );
+
+    fill(buttonInk );
+    rect( playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, playnextintheendDivHeight );
+
+    fill(resetInk );
+    rect( albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, albumcoverimagejoinusforabiteDivWidth, albumcoverimagejoinusforabiteDivHeight );
+
+    fill(textInk );
+    rect( songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
+    rect( artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight );
+
+    fill(buttonInk );
+    rect( playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight );
+    float image2AspectRatio_GreaterOne = ( imageWidth2 > imageHeight2 ) ? float (imageWidth2) / float (imageHeight2) : float (imageHeight2) / float (imageWidth2 );
+    float imageWidthAdjusted = albumcoverimagefinalcountdownDivWidth;
+    float imageHeightAdjusted;
+
+    if ( imageWidth2 >= albumcoverimageintheendDivWidth ) {
+      imageHeightAdjusted = imageWidthAdjusted / image2AspectRatio_GreaterOne;
+      while ( imageHeightAdjusted > albumcoverimageintheendDivHeight) {
+        imageWidthAdjusted *= 0.99;
+        imageHeightAdjusted = imageWidthAdjusted / image2AspectRatio_GreaterOne;
+      }
+    } else {
+      imageHeightAdjusted = imageWidthAdjusted * image2AspectRatio_GreaterOne;
+      while ( imageHeightAdjusted > albumcoverimageintheendDivHeight) {
+        imageWidthAdjusted *= 0.99;
+        imageHeightAdjusted = imageWidthAdjusted * image2AspectRatio_GreaterOne;
+      }
+    }
+
+    if (lyricsDiv == false && nextUpDiv == true) {
+      fill(blackInk);
+      textFont(font, fontSize5 );
+      while (textWidth(TFC) > songNamefinalcountdownDivWidth) {
+        iWhile++;
+        if (iWhile>100) {
+          println ("Infinite WHILE Loop" );
+          exit( );
+        }
+        fontSize5 *= constantDecrease;
+        textFont(font, fontSize5 );
+      }
+      text(TFC, songNamefinalcountdownDivX, songNamefinalcountdownDivY, songNamefinalcountdownDivWidth, songNamefinalcountdownDivHeight );
+
+      textFont(font, fontSize5 );
+      text(ITE, songNameintheendDivX, songNameintheendDivY, songNameintheendDivWidth, songNameintheendDivHeight );
+
+      textFont(font, fontSize5 );
+      text(JUFAB, songNamejoinusforabiteDivX, songNamejoinusforabiteDivY, songNamejoinusforabiteDivWidth, songNamejoinusforabiteDivHeight );
+
+      textFont(font, fontSize6 );
+      text(europe, artistNameeuropeDivX, artistNameeuropeDivY, artistNameeuropeDivWidth, artistNameeuropeDivHeight );
+
+      textFont(font, fontSize6 );
+      text(linkinPark, artistNamelinkinparkDivX, artistNamelinkinparkDivY, artistNamelinkinparkDivWidth, artistNamelinkinparkDivHeight );
+
+      textFont(font, fontSize6 );
+      text(JTMusic, artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight );
+
+      fill(resetInk );
+    }
+
+
+    //println( float (imageWidth2) / float (imageHeight2) );
+    //Ternary Operator
+    println(image2AspectRatio_GreaterOne );
+
+    image( image1, albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, imageWidthAdjusted+1, imageWidthAdjusted+1 );
+    image( image2, albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
+    image( image3, albumcoverimageintheendDivX, albumcoverimageintheendDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
+  }
+
+  textAlign (CENTER, CENTER );
 
   fill(blackInk);
   if (playListMetaData[currentSong].title().equals("")) {
@@ -1184,20 +1325,17 @@ void draw() {
 
   line( stopLoopingCrossLine1X1, stopLoopingCrossLine1Y1, stopLoopingCrossLine1X2, stopLoopingCrossLine1Y2 );
 
-  fill(resetInk );
-  triangle(playFinalCountdownDivX1, playFinalCountdownDivY1, playFinalCountdownDivX2, playFinalCountdownDivY2, playFinalCountdownDivX3, playFinalCountdownDivY3 );
+  if (lyricsDiv == false && nextUpDiv == true) {
+    fill(resetInk );
+    triangle(playFinalCountdownDivX1, playFinalCountdownDivY1, playFinalCountdownDivX2, playFinalCountdownDivY2, playFinalCountdownDivX3, playFinalCountdownDivY3 );
 
-  triangle(playInTheEndDivX1, playInTheEndDivY1, playInTheEndDivX2, playInTheEndDivY2, playInTheEndDivX3, playInTheEndDivY3 );
+    triangle(playInTheEndDivX1, playInTheEndDivY1, playInTheEndDivX2, playInTheEndDivY2, playInTheEndDivX3, playInTheEndDivY3 );
 
-  triangle(playJoinUsForABiteDivX1, playJoinUsForABiteDivY1, playJoinUsForABiteDivX2, playJoinUsForABiteDivY2, playJoinUsForABiteDivX3, playJoinUsForABiteDivY3 );
-  fill(resetInk );
-
+    triangle(playJoinUsForABiteDivX1, playJoinUsForABiteDivY1, playJoinUsForABiteDivX2, playJoinUsForABiteDivY2, playJoinUsForABiteDivX3, playJoinUsForABiteDivY3 );
+    fill(resetInk );
+  }
   int appWidth = displayWidth;
-  int appHeight = displayHeight;
 
-  PFont font;
-  float fontSize1= appHeight;
-  String PLBI = "Palatino Linotype Bold Italic";
   font = createFont(PLBI, fontSize1 );
 
   String ten = "10";
@@ -1209,7 +1347,6 @@ void draw() {
   float tenAspectRatio = tenFontSize / tendivHeight;
   //Aspect ratio for "15" is the same as Aspect ratio for "10"
 
-  float textAdjustment = 0.9;
 
   //fontSize2 = xDivHeight*xAspectRatio * textAdjustment;
   fontSize3 = tenDivHeight*tenAspectRatio * textAdjustment;
@@ -1286,16 +1423,28 @@ void mousePressed() {
 
   //NEXT SONG BUTTON
   if ( mouseX > nextsongDivX && mouseX < nextsongDivX + nextsongDivWidth && mouseY > nextsongDivY && mouseY < nextsongDivY + nextsongDivHeight ) {
-    playList[currentSong].pause( );
-    playList[currentSong].rewind( );
-
-    if (currentSong == numberOfSongs - 1) {
-      currentSong = 0;
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause( );
+      playList[currentSong].rewind( );
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      playList[currentSong].play( );
     } else {
-      currentSong++;
+      //
+      playList[currentSong].rewind( );
+      //
+      if ( currentSong==numberOfSongs-1 ) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      // NEXT will not automatically play the song
+      //song[currentSong].play( );
     }
-    playList[currentSong].play( );
-    isPaused = false;
   }
 
   //LOOP ONCE BUTTON
