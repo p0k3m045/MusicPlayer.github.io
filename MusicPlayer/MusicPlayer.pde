@@ -781,21 +781,28 @@ void draw() {
   fill(resetInk );
 
   if (!playList[currentSong].isPlaying() && !isPaused) {
-    if (autoPlay) {
-      // song finished
-      if (playList[currentSong].position() >= playList[currentSong].length()) {
-        playList[currentSong].pause();
-        playList[currentSong].rewind();
+
+    // detect finished song
+    if (playList[currentSong].position() >= playList[currentSong].length() - 50) {
+
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+
+      if (autoPlay) {
+
         // next song
-        if (currentSong == numberOfSongs - 1) {
+        if (currentSong >= numberOfSongs - 1) {
           currentSong = 0;
         } else {
           currentSong++;
         }
+
         playList[currentSong].play();
+      } else {
+
+        isPaused = true;
       }
     }
-    playList[currentSong].play();
   }
 
   float playSymbolDivX1 = playDivX + playDivWidth*1/4;
