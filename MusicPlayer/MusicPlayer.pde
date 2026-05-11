@@ -29,7 +29,8 @@ float playnextintheendDivX, playnextintheendDivY, playnextintheendDivWidth, play
 float playnextjoinusforabiteDivX, playnextjoinusforabiteDivY, playnextjoinusforabiteDivWidth, playnextjoinusforabiteDivHeight, autoplayDivX, autoplayDivY, autoplayDivWidth, autoplayDivHeight;
 float boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight, lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight, intheenduiboxDivX, intheenduiboxDivY, intheenduiboxDivWidth, intheenduiboxDivHeight;
 float finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight, joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight;
-float albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight;
+float albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight, coveruplyricsDivX, coveruplyricsDivY, coveruplyricsDivWidth, coveruplyricsDivHeight;
+float leftHalfLyricsDivX, leftHalfLyricsDivY, leftHalfLyricsDivWidth, leftHalfLyricsDivHeight, rightHalfLyricsDivX, rightHalfLyricsDivY, rightHalfLyricsDivWidth, rightHalfLyricsDivHeight;
 float fontSize2, fontSize3, fontSize4, fontSize5, fontSize6;
 color blackInk, whiteInk, resetInk, brownInk, redInk, greenInk, tanInk, buttonInk, textInk;
 boolean isPaused = true;
@@ -289,6 +290,18 @@ void setup() {
   lyricWordsDivWidth = appWidth * 105 / paperWidth;
   lyricWordsDivHeight = appHeight * 155 / paperHeight;
 
+  coveruplyricsDivX = joinusforabiteuiboxDivX;
+  coveruplyricsDivY = joinusforabiteuiboxDivY + joinusforabiteuiboxDivHeight;
+  coveruplyricsDivWidth = joinusforabiteuiboxDivWidth;
+  coveruplyricsDivHeight = nextupandlyricsboxDivHeight - (joinusforabiteuiboxDivHeight * 4);
+
+  rightHalfLyricsDivX = (lyricWordsDivX + lyricWordsDivWidth*1/2) + 10;
+  rightHalfLyricsDivY = lyricWordsDivY + 10;
+  rightHalfLyricsDivWidth = lyricWordsDivWidth*1/2 - 20;
+  rightHalfLyricsDivHeight = lyricWordsDivHeight - 20;
+
+
+
   //rect( DivX, DivY, DivWidth, DivHeight );
   brownInk = #834503;
   fill(brownInk );
@@ -329,7 +342,7 @@ void setup() {
   rect( nextupDivX, nextupDivY, nextupDivWidth, nextupDivHeight );
   rect( lyricsDivX, lyricsDivY, lyricsDivWidth, lyricsDivHeight );
 
-
+  //rect(leftHalfLyricsDivX, leftHalfLyricsDivY, leftHalfLyricsDivWidth, leftHalfLyricsDivHeight);
 
   rect( autoplayDivX, autoplayDivY, autoplayDivWidth, autoplayDivHeight );
   //rect( tenDivX, tenDivY, tenDivWidth, tenDivHeight );
@@ -609,6 +622,7 @@ void draw() {
   float fontSize4 = appHeight;
   float fontSize5 = appHeight;
   float fontSize6 = appHeight;
+  float fontSize7 = appHeight;
   PFont font;
   String PLBI = "Palatino Linotype Bold Italic";
   String x = "X";
@@ -620,6 +634,29 @@ void draw() {
   String europe = "Europe";
   String linkinPark = "Linkin Park";
   String JTMusic = "JT Music";
+  String songLyrics = "";
+  String songLyricsRight = "";
+
+  leftHalfLyricsDivX = lyricWordsDivX + 10;
+  leftHalfLyricsDivY = rightHalfLyricsDivY;
+  if (currentSong == 2) {
+    leftHalfLyricsDivWidth = lyricWordsDivWidth - 20;
+  } else {
+    leftHalfLyricsDivWidth = rightHalfLyricsDivWidth;
+  }
+  leftHalfLyricsDivHeight = lyricWordsDivHeight - 20;
+
+  if (currentSong == 0) {
+    songLyrics = "(Ten, nine) \n(Eight, seven, six, five) \n(Four, three, two, one)  \n\nWe're leavin' together \nBut still it's farewell \nAnd maybe we'll come back \nTo Earth, who can tell? \nI guess there is no one to blame \nWe're leaving ground (leaving ground) \nWill things ever be the same again?  \n\nIt's the final countdown \nThe final countdown  \n\nOh \nWe're headin' for Venus (Venus) \nAnd still we stand tall \n'Cause maybe they've seen us \nAnd welcome us all, yeah \nWith so many light years to go \nAnd things to be found (to be found) \nI'm sure that we all miss her so  \n\nIt's the final countdown \nThe final countdown \nThe final countdown (final countdown) \n(Oh) \nOh  \n\nThe final countdown, oh \n\nIt's the final countdown \nThe final countdown \nThe final countdown (final countdown) \n(Oh)  \n\nIt's the final countdown \nWe're leavin' together \n(The final countdown) \nWe'll all miss her so \nIt's the final countdown (final countdown) \n(Oh) \nIt's the final countdown \nYeah";
+  }
+  if (currentSong == 1) {
+    songLyrics = "in the \nend";
+  }
+  if (currentSong == 2) {
+    songLyrics = "\nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  \n\nCan't wait to meet you \nSo join the animatronic family \nWe open real soon \nTry your best to hold onto sanity  \n\nCome get to know me \nAnd you won't wanna leave after tonight \nDown here, we're lonely \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \n\nYou've been through 20 long, frightful nights \nYou've seen their faces, felt all their bites \nYou know our show is so far from over (over) \nAnd Freddy told us you're an organ donor  \n\nAll eyes are on you \nWe can walk you through our dark fantasy \nLearn what we've gone through \nWe can teach you to laugh at tragedy  \n\nYou thought the nightmares ended back at Freddy's \nWe're all still right here, so let's get friendly\n\nWe're feeling festive \nJoin the party, we'll try hard not to bite \nAnger is restless \nDon't hold it against us, we're alright\n\nThe fun is starting \nA celebration that lasts eternally \nI'm always watching \nBecause somebody purple murdered me (purple murdered me) \n\nWe'll be found down deep underground \nWhat have I done to deserve this damnation? \nWho knows if you're the one to blame? \n'Cause we don'teven know your name \nBut you're here now, and we've got temptations";
+    songLyricsRight = "\nWe're only playing \nJust wanted to make a few friends\nYou plan on staying?\nWhen you're with us, the party never ends  \n\nYou might look at me, and think you're going crazy \nI lost it long ago, you're not alone, baby  \n\nCan't wait to meet you \nSo join the animatronic family \nWe open real soon \nTry your best to hold onto sanity\n\nCome get to know me \nAnd you won't wanna leave after tonight \nDown here, we're lonely \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  \n\nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  ";
+  }
+
 
 
   font = createFont(PLBI, fontSize1 );
@@ -646,6 +683,11 @@ void draw() {
   float artistsdivHeight = artistNameeuropeDivHeight;
   float artistsAspectRatio = artistsFontSize / artistsdivHeight;
 
+  //Aspect ratio for "Song Lyrics"
+  float lyricsFontSize = 11;
+  float lyricwordsdivHeight = lyricWordsDivHeight;
+  float lyricWordsAspectRatio = lyricsFontSize / lyricwordsdivHeight;
+
 
   float textAdjustment = 0.9;
 
@@ -655,6 +697,8 @@ void draw() {
   fontSize4 = nextupDivHeight*nextUpAspectRatio * textAdjustment;
   fontSize5 = theFinalCountdowndivHeight*theFinalCountdownAspectRatio * textAdjustment;
   fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;
+  fontSize7 = lyricwordsdivHeight*lyricWordsAspectRatio * textAdjustment;
+
 
   //Drawing Text
   color blackInk = #000000;
@@ -663,16 +707,27 @@ void draw() {
 
   fill(blackInk );
 
-  textAlign(LEFT, CENTER );
+  textAlign(LEFT, TOP );
 
   float constantDecrease = 0.99;
   int iWhile = 0;
 
 
+
   if (lyricsDiv == true && nextUpDiv == false) {
+
     fill(brownInk);
     rect ( lyricWordsDivX, lyricWordsDivY, lyricWordsDivWidth, lyricWordsDivHeight );
-    fill(resetInk);
+    fill(textInk);
+    rect(leftHalfLyricsDivX, leftHalfLyricsDivY, leftHalfLyricsDivWidth, leftHalfLyricsDivHeight);
+    fill(blackInk);
+    textFont(font, fontSize7);
+    text(songLyrics, leftHalfLyricsDivX + 5, leftHalfLyricsDivY, leftHalfLyricsDivWidth, leftHalfLyricsDivHeight);
+
+    if ( currentSong == 2) {
+      fill(blackInk);
+      text(songLyricsRight, rightHalfLyricsDivX, rightHalfLyricsDivY, rightHalfLyricsDivWidth, rightHalfLyricsDivHeight);
+    }
   }
   if (lyricsDiv == false && nextUpDiv == true) {
     fill(brownInk );
@@ -756,6 +811,8 @@ void draw() {
       textFont(font, fontSize6 );
       text(JTMusic, artistNamejtmusicDivX, artistNamejtmusicDivY, artistNamejtmusicDivWidth, artistNamejtmusicDivHeight );
 
+      fill(brownInk);
+      rect(coveruplyricsDivX, coveruplyricsDivY, coveruplyricsDivWidth, coveruplyricsDivHeight);
       fill(resetInk );
     }
 
@@ -771,6 +828,7 @@ void draw() {
 
   textAlign (CENTER, CENTER );
 
+  textFont(font, fontSize2);
   fill(blackInk);
   if (playListMetaData[currentSong].title().equals("")) {
     text(songName[currentSong], songtitleDivX, songtitleDivY, songtitleDivWidth, songtitleDivHeight );
