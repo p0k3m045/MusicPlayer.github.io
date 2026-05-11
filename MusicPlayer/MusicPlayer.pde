@@ -863,7 +863,7 @@ void draw() {
       playList[currentSong].pause();
       playList[currentSong].rewind();
 
-      if (autoPlay) {
+      if (autoPlay == true) {
 
         // next song
         if (currentSong == 2) {
