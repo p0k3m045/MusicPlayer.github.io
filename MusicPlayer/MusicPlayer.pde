@@ -855,6 +855,7 @@ void draw() {
   fill(resetInk );
 
   if (!playList[currentSong].isPlaying() && !isPaused) {
+    playList[currentSong].play();
 
     // detect finished song
     if (playList[currentSong].position() >= playList[currentSong].length() - 50) {
@@ -865,7 +866,7 @@ void draw() {
       if (autoPlay) {
 
         // next song
-        if (currentSong >= numberOfSongs - 1) {
+        if (currentSong == 2) {
           currentSong = 0;
         } else {
           currentSong++;
@@ -1041,7 +1042,7 @@ void draw() {
   float loopOnceRectTwoDivX = looponceDivX+looponceDivWidth*1/4;
   float loopOnceRectTwoDivY = loopOnceFirstArrowLineOneDivY1+(looponceDivHeight*1/16 );
   float loopOnceRectTwoDivWidth = loopforeverDivWidth*8/16;
-  
+
   float loopOnceRectThreeDivX = loopOnceFirstArrowLineOneDivX2;
   float loopOnceRectThreeDivY = loopOnceFirstArrowLineOneDivY2;
   float loopOnceRectThreeDivWidth = looponceDivWidth*3/16;
