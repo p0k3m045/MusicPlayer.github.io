@@ -858,7 +858,7 @@ void draw() {
     playList[currentSong].play();
 
     // detect finished song
-    if (playList[currentSong].position() >= playList[currentSong].length() - 50) {
+    if (playList[currentSong].position() >= playList[currentSong].length() - 50) { // -50 to make more precise
 
       playList[currentSong].pause();
       playList[currentSong].rewind();
