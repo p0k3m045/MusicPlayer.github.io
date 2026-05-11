@@ -1,4 +1,4 @@
-//Static Music
+//Dynamic Music
 
 //Library - Minim
 import ddf.minim.*;
