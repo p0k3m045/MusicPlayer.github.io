@@ -38,6 +38,7 @@ boolean isMuted = false;
 boolean autoPlay = false;
 boolean lyricsDiv = false;
 boolean nextUpDiv = true;
+boolean wasPlaying = false;
 String upArrow = "..";
 String open = "/";
 String musicFolder = "Music";
@@ -598,7 +599,7 @@ void setup() { //start setup
   //
 }//End Setup
 
-void draw() {
+void draw() { //start draw
   int appHeight = displayHeight;
   textAlign(CENTER, CENTER );
   fill(textInk );
@@ -854,7 +855,7 @@ void draw() {
 
   fill(resetInk );
 
-  if (!playList[currentSong].isPlaying() && !isPaused) {
+  if (playList[currentSong].isPlaying()==true && isPaused==false) {
     playList[currentSong].play();
 
     // detect finished song
