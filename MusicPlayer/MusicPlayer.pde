@@ -51,7 +51,7 @@ String imageName4 = "Record Player";
 String fileExension = ".jpg";
 
 //Void
-void setup() {
+void setup() { //start setup
   fullScreen( );
   tanInk = #D1B95B;
   background(tanInk );
