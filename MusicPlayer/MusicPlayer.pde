@@ -639,7 +639,7 @@ void draw() {
 
   leftHalfLyricsDivX = lyricWordsDivX + 10;
   leftHalfLyricsDivY = rightHalfLyricsDivY;
-  if (currentSong == 2) {
+  if (currentSong > 0) {
     leftHalfLyricsDivWidth = lyricWordsDivWidth - 20;
   } else {
     leftHalfLyricsDivWidth = rightHalfLyricsDivWidth;
@@ -650,8 +650,9 @@ void draw() {
     songLyrics = "(Ten, nine) \n(Eight, seven, six, five) \n(Four, three, two, one)  \n\nWe're leavin' together \nBut still it's farewell \nAnd maybe we'll come back \nTo Earth, who can tell? \nI guess there is no one to blame \nWe're leaving ground (leaving ground) \nWill things ever be the same again?  \n\nIt's the final countdown \nThe final countdown  \n\nOh \nWe're headin' for Venus (Venus) \nAnd still we stand tall \n'Cause maybe they've seen us \nAnd welcome us all, yeah \nWith so many light years to go \nAnd things to be found (to be found) \nI'm sure that we all miss her so  \n\nIt's the final countdown \nThe final countdown \nThe final countdown (final countdown) \n(Oh) \nOh  \n\nThe final countdown, oh \n\nIt's the final countdown \nThe final countdown \nThe final countdown (final countdown) \n(Oh)  \n\nIt's the final countdown \nWe're leavin' together \n(The final countdown) \nWe'll all miss her so \nIt's the final countdown (final countdown) \n(Oh) \nIt's the final countdown \nYeah";
   }
   if (currentSong == 1) {
-    songLyrics = "in the \nend";
-  }
+    songLyrics = "\nIt starts with one \nOne thing, I don't know why\nIt doesn't even matter how hard you try\nKeep that in mind, I designed this rhyme to explain in due time\nAll I know time is a valuable thing\nWatch it fly by as the pendulum swings\nWatch it count down to the end of the day, the clock ticks life away\n\nIt's so unreal, didn't look out below\nWatch the time go right out the window\nTryna hold on, d-didn't even know\nI wasted it all just to watch you go\n\nI kept everything inside\nAnd even though I tried, it all fell apart\nWhat it meant to me will eventually be a memory of a time when\n\nI tried so hard and got so far\nBut in the end, it doesn't even matter\nI had to fall to lose it all\nBut in the end, it doesn't even matter\n\nOne thing, I don't know why\nIt doesn't even matter how hard you try\nKeep that in mind, I designed this rhyme to remind myself how I tried so hard\nIn spite of the way you were mockin' me, actin' like I was part of your property\nRememberin' all the times you fought with me\n\nI'm surprised it got so far\nThings aren't the way they were before\nYou wouldn't even recognize me anymore\nNot that you knew me back then, but it all comes back to me in the end\n\nYou kept everything inside\nAnd even though I tried, it all fell apart\nWhat it meant to me will eventually be a memory of a time when\n\nI tried so hard and got so far\nBut in the end, it doesn't even matter\nI had to fall to lose it all\nBut in the end, it doesn't even matter";
+    songLyricsRight = "\nI've put my trust in you\nPushed as far as I can go\nFor all this, there's only one thing you should know\nI've put my trust in you\nPushed as far as I can go\nFor all this, there's only one thing you should know\n\nI tried so hard and got so far\nBut in the end, it doesn't even matter\nI had to fall to lose it all\nBut in the end, it doesn't even matter";
+}
   if (currentSong == 2) {
     songLyrics = "\nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  \n\nCan't wait to meet you \nSo join the animatronic family \nWe open real soon \nTry your best to hold onto sanity  \n\nCome get to know me \nAnd you won't wanna leave after tonight \nDown here, we're lonely \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \n\nYou've been through 20 long, frightful nights \nYou've seen their faces, felt all their bites \nYou know our show is so far from over (over) \nAnd Freddy told us you're an organ donor  \n\nAll eyes are on you \nWe can walk you through our dark fantasy \nLearn what we've gone through \nWe can teach you to laugh at tragedy  \n\nYou thought the nightmares ended back at Freddy's \nWe're all still right here, so let's get friendly\n\nWe're feeling festive \nJoin the party, we'll try hard not to bite \nAnger is restless \nDon't hold it against us, we're alright\n\nThe fun is starting \nA celebration that lasts eternally \nI'm always watching \nBecause somebody purple murdered me (purple murdered me) \n\nWe'll be found down deep underground \nWhat have I done to deserve this damnation? \nWho knows if you're the one to blame? \n'Cause we don'teven know your name \nBut you're here now, and we've got temptations";
     songLyricsRight = "\nWe're only playing \nJust wanted to make a few friends\nYou plan on staying?\nWhen you're with us, the party never ends  \n\nYou might look at me, and think you're going crazy \nI lost it long ago, you're not alone, baby  \n\nCan't wait to meet you \nSo join the animatronic family \nWe open real soon \nTry your best to hold onto sanity\n\nCome get to know me \nAnd you won't wanna leave after tonight \nDown here, we're lonely \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  \n\nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  ";
@@ -684,7 +685,12 @@ void draw() {
   float artistsAspectRatio = artistsFontSize / artistsdivHeight;
 
   //Aspect ratio for "Song Lyrics"
-  float lyricsFontSize = 11;
+    float lyricsFontSize;
+if(currentSong == 0) {
+   lyricsFontSize = 10.8;
+} else {
+  lyricsFontSize = 11;
+}
   float lyricwordsdivHeight = lyricWordsDivHeight;
   float lyricWordsAspectRatio = lyricsFontSize / lyricwordsdivHeight;
 
@@ -724,7 +730,7 @@ void draw() {
     textFont(font, fontSize7);
     text(songLyrics, leftHalfLyricsDivX + 5, leftHalfLyricsDivY, leftHalfLyricsDivWidth, leftHalfLyricsDivHeight);
 
-    if ( currentSong == 2) {
+    if ( currentSong > 0) {
       fill(blackInk);
       text(songLyricsRight, rightHalfLyricsDivX, rightHalfLyricsDivY, rightHalfLyricsDivWidth, rightHalfLyricsDivHeight);
     }
