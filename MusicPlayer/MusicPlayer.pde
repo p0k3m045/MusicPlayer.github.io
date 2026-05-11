@@ -617,12 +617,15 @@ void draw() {
   PImage image3 = loadImage( pathway3 );
   PImage image4 = loadImage( pathway4 );
 
+  float loopOnceRectTwoDivHeight = loopforeverDivHeight*6/16;
+
   float fontSize1 = appHeight;
   float fontSize2 = appHeight;
   float fontSize4 = appHeight;
   float fontSize5 = appHeight;
   float fontSize6 = appHeight;
   float fontSize7 = appHeight;
+  float fontSize8 = appHeight;
   PFont font;
   String PLBI = "Palatino Linotype Bold Italic";
   String x = "X";
@@ -636,6 +639,7 @@ void draw() {
   String JTMusic = "JT Music";
   String songLyrics = "";
   String songLyricsRight = "";
+  String one = "1";
 
   leftHalfLyricsDivX = lyricWordsDivX + 10;
   leftHalfLyricsDivY = rightHalfLyricsDivY;
@@ -652,7 +656,7 @@ void draw() {
   if (currentSong == 1) {
     songLyrics = "\nIt starts with one \n\nOne thing, I don't know why\nIt doesn't even matter how hard you try\nKeep that in mind, I designed this rhyme to explain in due time\nAll I know time is a valuable thing\nWatch it fly by as the pendulum swings\nWatch it count down to the end of the day, the clock ticks life away\n\nIt's so unreal, didn't look out below\nWatch the time go right out the window\nTryna hold on, d-didn't even know\nI wasted it all just to watch you go\n\nI kept everything inside\nAnd even though I tried, it all fell apart\nWhat it meant to me will eventually be a memory of a time when\n\nI tried so hard and got so far\nBut in the end, it doesn't even matter\nI had to fall to lose it all\nBut in the end, it doesn't even matter\n\nOne thing, I don't know why\nIt doesn't even matter how hard you try\nKeep that in mind, I designed this rhyme to remind myself how I tried so hard\nIn spite of the way you were mockin' me, actin' like I was part of your property\nRememberin' all the times you fought with me\n\nI'm surprised it got so far\nThings aren't the way they were before\nYou wouldn't even recognize me anymore\nNot that you knew me back then, but it all comes back to me in the end\n\nYou kept everything inside\nAnd even though I tried, it all fell apart\nWhat it meant to me will eventually be a memory of a time when\n\nI tried so hard and got so far\nBut in the end, it doesn't even matter\nI had to fall to lose it all\nBut in the end, it doesn't even matter";
     songLyricsRight = "\nI've put my trust in you\nPushed as far as I can go\nFor all this, there's only one thing you should know\nI've put my trust in you\nPushed as far as I can go\nFor all this, there's only one thing you should know\n\nI tried so hard and got so far\nBut in the end, it doesn't even matter\nI had to fall to lose it all\nBut in the end, it doesn't even matter";
-}
+  }
   if (currentSong == 2) {
     songLyrics = "\nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  \n\nCan't wait to meet you \nSo join the animatronic family \nWe open real soon \nTry your best to hold onto sanity  \n\nCome get to know me \nAnd you won't wanna leave after tonight \nDown here, we're lonely \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \n\nYou've been through 20 long, frightful nights \nYou've seen their faces, felt all their bites \nYou know our show is so far from over (over) \nAnd Freddy told us you're an organ donor  \n\nAll eyes are on you \nWe can walk you through our dark fantasy \nLearn what we've gone through \nWe can teach you to laugh at tragedy  \n\nYou thought the nightmares ended back at Freddy's \nWe're all still right here, so let's get friendly\n\nWe're feeling festive \nJoin the party, we'll try hard not to bite \nAnger is restless \nDon't hold it against us, we're alright\n\nThe fun is starting \nA celebration that lasts eternally \nI'm always watching \nBecause somebody purple murdered me (purple murdered me) \n\nWe'll be found down deep underground \nWhat have I done to deserve this damnation? \nWho knows if you're the one to blame? \n'Cause we don'teven know your name \nBut you're here now, and we've got temptations";
     songLyricsRight = "\nWe're only playing \nJust wanted to make a few friends\nYou plan on staying?\nWhen you're with us, the party never ends  \n\nYou might look at me, and think you're going crazy \nI lost it long ago, you're not alone, baby  \n\nCan't wait to meet you \nSo join the animatronic family \nWe open real soon \nTry your best to hold onto sanity\n\nCome get to know me \nAnd you won't wanna leave after tonight \nDown here, we're lonely \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  \n\nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite) \nAnd we would love you to join us for a bite (join us for a, join us for a bite)  ";
@@ -684,13 +688,19 @@ void draw() {
   float artistsdivHeight = artistNameeuropeDivHeight;
   float artistsAspectRatio = artistsFontSize / artistsdivHeight;
 
+  //Aspect ratio for "One"
+  float oneFontSize = 20;
+  float onedivHeight = loopOnceRectTwoDivHeight;
+  float oneAspectRatio = oneFontSize / onedivHeight;
+
+
   //Aspect ratio for "Song Lyrics"
-    float lyricsFontSize;
-if(currentSong == 0) {
-   lyricsFontSize = 10.8;
-} else {
-  lyricsFontSize = 11;
-}
+  float lyricsFontSize;
+  if (currentSong == 0) {
+    lyricsFontSize = 10.8;
+  } else {
+    lyricsFontSize = 11;
+  }
   float lyricwordsdivHeight = lyricWordsDivHeight;
   float lyricWordsAspectRatio = lyricsFontSize / lyricwordsdivHeight;
 
@@ -704,7 +714,7 @@ if(currentSong == 0) {
   fontSize5 = theFinalCountdowndivHeight*theFinalCountdownAspectRatio * textAdjustment;
   fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;
   fontSize7 = lyricwordsdivHeight*lyricWordsAspectRatio * textAdjustment;
-
+  fontSize8 = onedivHeight*oneAspectRatio * textAdjustment;
 
   //Drawing Text
   color blackInk = #000000;
@@ -1031,7 +1041,7 @@ if(currentSong == 0) {
   float loopOnceRectTwoDivX = looponceDivX+looponceDivWidth*1/4;
   float loopOnceRectTwoDivY = loopOnceFirstArrowLineOneDivY1+(looponceDivHeight*1/16 );
   float loopOnceRectTwoDivWidth = loopforeverDivWidth*8/16;
-  float loopOnceRectTwoDivHeight = loopforeverDivHeight*6/16;
+  
   float loopOnceRectThreeDivX = loopOnceFirstArrowLineOneDivX2;
   float loopOnceRectThreeDivY = loopOnceFirstArrowLineOneDivY2;
   float loopOnceRectThreeDivWidth = looponceDivWidth*3/16;
@@ -1418,7 +1428,6 @@ if(currentSong == 0) {
   float tenAspectRatio = tenFontSize / tendivHeight;
   //Aspect ratio for "15" is the same as Aspect ratio for "10"
 
-
   //fontSize2 = xDivHeight*xAspectRatio * textAdjustment;
   fontSize3 = tenDivHeight*tenAspectRatio * textAdjustment;
   //fontSize4 = nextupDivHeight*nextUpAspectRatio * textAdjustment;
@@ -1434,6 +1443,9 @@ if(currentSong == 0) {
 
   textFont(font, fontSize3 );
   text(fifteen, fifteenDivX, fifteenDivY, fifteenDivWidth, fifteenDivHeight );
+
+  textFont(font, fontSize8 );
+  text(one, loopOnceRectTwoDivX, loopOnceRectTwoDivY, loopOnceRectTwoDivWidth, loopOnceRectTwoDivHeight );
 
 
   if (isPaused) {
