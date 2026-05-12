@@ -489,7 +489,7 @@ void setup() { //start setup
     playList[ i ] = minim.loadFile( file );
     playListMetaData[i] = playList[i].getMetaData( );
     //CAUTION; not currentSong var
-    println(currentSong );
+    //println(currentSong );
   }
 
   file = soundEffectsDirectory + soundEffect + fileExtention;
@@ -498,18 +498,18 @@ void setup() { //start setup
   for ( int i = 0; i<numberOfSongs; i++) {
     if ( playList[i]==null ) {
       println("The Play List or Sound Effects did not load properly" );
-      printArray(playList );
+      //printArray(playList );
       //exit( );
     }
     if ( playListMetaData[i]==null ) {
       println("The Play List or Sound Effects did not load properly" );
-      printArray(playList );
+      //printArray(playList );
       //exit( );
     }
   }
   if ( soundEffects[currentSong]==null ) { //ERROR, play list is NULL
     println("The Play List or Sound Effects did not load properly" );
-    printArray(soundEffects );
+    //printArray(soundEffects );
     exit( );
   }
 
@@ -875,7 +875,6 @@ void draw() { //start draw
 
         playList[currentSong].play();
       } else {
-
         isPaused = true;
       }
     }
@@ -1473,8 +1472,7 @@ void draw() { //start draw
 
 void mousePressed() {
 
-  soundEffects[0].rewind( );
-  soundEffects[0].play( );
+
 
   //PLAY BUTTON
   if ( mouseX > playDivX && mouseX < playDivX + playDivWidth && mouseY > playDivY && mouseY < playDivY + playDivHeight ) {
@@ -1611,6 +1609,8 @@ void mousePressed() {
     lyricsDiv = false;
     nextUpDiv = true;
   }
+  soundEffects[0].rewind( );
+  soundEffects[0].play( );
 }
 
 void keyPressed() {
