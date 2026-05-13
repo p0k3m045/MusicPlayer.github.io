@@ -690,7 +690,7 @@ void draw(  ) { //start draw
   float artistsAspectRatio = artistsFontSize / artistsdivHeight;
 
   //Aspect ratio for "One"
-  float oneFontSize = 20;
+  float oneFontSize = 15;
   float onedivHeight = loopOnceRectTwoDivHeight;
   float oneAspectRatio = oneFontSize / onedivHeight;
 
@@ -1259,7 +1259,7 @@ void draw(  ) { //start draw
     rect( toggleCapsuleDivX, toggleCapsuleDivY, toggleCapsuleDivWidth, toggleCapsuleDivHeight, toggleCapsuleCornerDiv );
     circle( toggleCircleRightDivX, toggleCircleRightDivY, toggleCircleRightDivDiameter );
 
-    triangle( 
+    triangle(
       togglePlayTriangleDivX1,
       togglePlayTriangleDivY1,
       togglePlayTriangleDivX2,
@@ -1445,6 +1445,7 @@ void draw(  ) { //start draw
   text( one, loopOnceRectTwoDivX, loopOnceRectTwoDivY, loopOnceRectTwoDivWidth, loopOnceRectTwoDivHeight );
 
 
+  //Light buttons
   if ( isPaused ) {
     fill( #0C4800 );
     rect( greenlightDivX, greenlightDivY, greenlightDivWidth, greenlightDivHeight );
