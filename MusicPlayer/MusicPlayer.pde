@@ -855,22 +855,18 @@ void draw() { //start draw
 
   fill(resetInk );
 
-  if (playList[currentSong].isPlaying()==true && isPaused==false) {
-    playList[currentSong].play();
+  if (isPaused == false) {
 
     // detect finished song
-    if (playList[currentSong].position() >= playList[currentSong].length() - 50) { // -50 to make more precise
+    if (playList[currentSong].isPlaying() == false) {
 
-      playList[currentSong].pause();
       playList[currentSong].rewind();
 
       if (autoPlay == true) {
+        currentSong++;
 
-        // next song
-        if (currentSong == 2) {
+        if (currentSong >= numberOfSongs) {
           currentSong = 0;
-        } else {
-          currentSong++;
         }
 
         playList[currentSong].play();
