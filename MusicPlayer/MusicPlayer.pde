@@ -31,6 +31,7 @@ float boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight, lyricWordsDiv
 float finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight, joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight;
 float albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight, coveruplyricsDivX, coveruplyricsDivY, coveruplyricsDivWidth, coveruplyricsDivHeight;
 float leftHalfLyricsDivX, leftHalfLyricsDivY, leftHalfLyricsDivWidth, leftHalfLyricsDivHeight, rightHalfLyricsDivX, rightHalfLyricsDivY, rightHalfLyricsDivWidth, rightHalfLyricsDivHeight;
+float keyboardShortcutsDivX, keyboardShortcutsDivY, keyboardShortcutsDivWidth, keyboardShortcutsDivHeight;
 float fontSize2, fontSize3, fontSize4, fontSize5, fontSize6;
 color blackInk, whiteInk, resetInk, brownInk, redInk, greenInk, tanInk, buttonInk, textInk;
 boolean isPaused = true;
@@ -38,7 +39,7 @@ boolean isMuted = false;
 boolean autoPlay = false;
 boolean lyricsDiv = false;
 boolean nextUpDiv = true;
-boolean wasPlaying = false;
+boolean keyBoardShortcuts = true;
 String upArrow = "..";
 String open = "/";
 String musicFolder = "Music";
@@ -301,7 +302,10 @@ void setup(  ) { //start setup
   rightHalfLyricsDivWidth = lyricWordsDivWidth*1/2 - 20;
   rightHalfLyricsDivHeight = lyricWordsDivHeight - 20;
 
-
+  keyboardShortcutsDivX = appWidth * 51 / paperWidth;
+  keyboardShortcutsDivY = appHeight * 195 / paperHeight;
+  keyboardShortcutsDivWidth = appWidth * 48 / paperWidth;
+  keyboardShortcutsDivHeight = appHeight * 10 / paperHeight;
 
   //rect( DivX, DivY, DivWidth, DivHeight );
   brownInk = #834503;
@@ -627,6 +631,7 @@ void draw(  ) { //start draw
   float fontSize6 = appHeight;
   float fontSize7 = appHeight;
   float fontSize8 = appHeight;
+  float fontSize9 = appHeight;
   PFont font;
   String PLBI = "Palatino Linotype Bold Italic";
   String x = "X";
@@ -641,6 +646,14 @@ void draw(  ) { //start draw
   String songLyrics = "";
   String songLyricsRight = "";
   String one = "1";
+  String kShortcut = "";
+
+  if (keyBoardShortcuts == true) {
+    kShortcut = "Keyboard shortcuts: ON";
+  } else {
+    kShortcut = "Keyboard shortcuts: OFF";
+  }
+
 
   leftHalfLyricsDivX = lyricWordsDivX + 10;
   leftHalfLyricsDivY = rightHalfLyricsDivY;
@@ -694,6 +707,10 @@ void draw(  ) { //start draw
   float onedivHeight = loopOnceRectTwoDivHeight;
   float oneAspectRatio = oneFontSize / onedivHeight;
 
+  //Aspect ratio for "Keyboard shortcuts"
+  float shortcutFontSize = 30;
+  float shortcutdivHeight = keyboardShortcutsDivHeight;
+  float shortcutAspectRatio = shortcutFontSize / shortcutdivHeight;
 
   //Aspect ratio for "Song Lyrics"
   float lyricsFontSize;
@@ -716,6 +733,7 @@ void draw(  ) { //start draw
   fontSize6 = artistsdivHeight*artistsAspectRatio * textAdjustment;
   fontSize7 = lyricwordsdivHeight*lyricWordsAspectRatio * textAdjustment;
   fontSize8 = onedivHeight*oneAspectRatio * textAdjustment;
+  fontSize9 = shortcutdivHeight*shortcutAspectRatio * textAdjustment;
 
   //Drawing Text
   color blackInk = #000000;
@@ -724,12 +742,24 @@ void draw(  ) { //start draw
 
   fill( blackInk );
 
-  textAlign( LEFT, TOP );
+  textAlign( CENTER, TOP );
 
   float constantDecrease = 0.99;
   int iWhile = 0;
 
+  float keyboardShortcutsX1 = keyboardShortcutsDivX + keyboardShortcutsDivWidth * 1/16;
+  float keyboardShortcutsY1 = keyboardShortcutsDivY + keyboardShortcutsDivHeight * 3/4;
+  float keyboardShortcutsX2 = keyboardShortcutsDivX + keyboardShortcutsDivWidth * 15/16;
+  float keyboardShortcutsY2 = keyboardShortcutsDivY + keyboardShortcutsDivHeight * 3/4;
 
+  textFont ( font, fontSize9 );
+  fill(buttonInk);
+  rect( keyboardShortcutsDivX, keyboardShortcutsDivY, keyboardShortcutsDivWidth, keyboardShortcutsDivHeight );
+  fill(blackInk);
+  text ( kShortcut, keyboardShortcutsDivX, keyboardShortcutsDivY, keyboardShortcutsDivWidth, keyboardShortcutsDivHeight );
+  line ( keyboardShortcutsX1, keyboardShortcutsY1, keyboardShortcutsX2, keyboardShortcutsY2 );
+
+  textAlign( LEFT, TOP );
 
   if ( lyricsDiv == true && nextUpDiv == false ) {
 
@@ -1608,170 +1638,183 @@ void mousePressed(  ) {
   }
   soundEffects[0].rewind(  );
   soundEffects[0].play(  );
+
+
+  //KEYBOARD SHORCUTS BUTTON
+  if ( mouseX > keyboardShortcutsDivX && mouseX < keyboardShortcutsDivX + keyboardShortcutsDivWidth && mouseY > keyboardShortcutsDivY && mouseY < keyboardShortcutsDivY + keyboardShortcutsDivHeight ) {
+    if (keyBoardShortcuts == false) {
+      keyBoardShortcuts = true;
+    } else {
+      keyBoardShortcuts = false;
+    }
+  }
 }
 
+
 void keyPressed(  ) {
-  /* Simple Play
-   playList[currentSong].play(  );
-   currentSong++;
-   */
-  //
-  /* Key Board Short Cuts ... learning what the Music Buttons could be
-   Note: CAP Lock with ||
-   if ( key==? || key==? ); //'' only
-   -
-   if ( key==CODED || keyCode==SpecialKey ); //Special Keys abriviated CAPS
-   -
-   All Music Player Features are built out of these Minim AudioPlayer(  ) functions
-   .isPlaying(  )
-   .isMuted(  )
-   .loop( 0 ), parameter is number of iterations after play
-   .loop(  ), parameter is infinite interations
-   .play(  ), parameter is built-in skip ( milli-seconds or crystal-time )
-   .pause(  )
-   .rewind(  )
-   .skip(  )
-   .unmute(  )
-   .mute(  )
-   -
-   Lesson Music Button Features based on single, double, and spamming taps
-   - Play
-   - Pause
-   - Stop
-   - Loop Once
-   - Loop Infinite
-   - Fast Forward
-   - Fast Rewind
-   - Mute
-   - Next Song
-   - Previous Song
-   - Shuffle
-   -
-   - Advanced Buttons & Combinations
-   - Play-Pause-Stop
-   - Auto Play
-   - Random Song
-   */
-  //if ( key=='P' || key=='p' ) playList[currentSong].play(  ); //Simple Play, no double tap possible
-  //
-  if ( key=='P' || key=='p' ) {//Simple Play, double tap possible
-    playList[currentSong].play(  );
-    isPaused=false;
-  }
-
-
-  /* Note: double tap is automatic rewind, no pause
-   Symbol is two triangles
-   This changes what the button might become after it is pressed
-   */
-  if ( key=='O' || key=='o' ) {
-    if ( playList[currentSong].isPlaying(  ) ) {
-      playList[currentSong].pause(  );
-      isPaused = true;
-    } else {
-      playList[currentSong].play(  );
-      isPaused = false;
-    }
-  }
-  //if ( key=='S' || key=='s' ) song[currentSong].pause(  ); //Simple Stop, no double taps
-  //
-  if ( key=='S' || key=='s' ) {
-    if ( playList[currentSong].isPlaying(  ) ) {
-      playList[currentSong].pause(  );
-      playList[currentSong].rewind(  );
-      isPaused = true;
-    } else {
-      playList[currentSong].play(  );
-      isPaused = false;
-    }
-  }
-  if ( key=='L' || key=='l' ) playList[currentSong].loop( 1 ); // Loop ONCE: Plays, then plays again, then stops & rewinds
-  if ( key=='K' || key=='k' ) playList[currentSong].loop(  ); // Loop Infinitely //Parameter: BLANK or -1
-  if ( key=='F' || key=='f' ) playList[currentSong].skip( 15000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
-  if ( key=='R' || key=='r' ) playList[currentSong].skip( -10000 ); // Fast Reverse & Play //Parameter: negative numbers
-  if ( key=='W' || key=='w' ) { // MUTE
+  if (keyBoardShortcuts == true) {
+    /* Simple Play
+     playList[currentSong].play(  );
+     currentSong++;
+     */
     //
-    //MUTE Behaviour: stops electricty to speakers, does not stop file
-    //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
-    //ERROR: if song near end of file, user will not know song is at the end
-    //Known ERROR: once song plays, MUTE acts like it doesn't work
-    if ( playList[currentSong].isMuted(  ) ) {
-      //ERROR: song might not be playing
-      //CATCH: ask .isPlaying(  ) or !.isPlaying(  )
-      playList[currentSong].unmute(  );
-      isMuted=false;
-    } else {
-      //Possible ERROR: Might rewind the song
-      playList[currentSong].mute(  );
-      isMuted=true;
-    }
-  }
-  if ( keyCode==ESC ) exit(  ); // QUIT // UP
-  if ( key=='Q' || key=='q' ) exit(  ); // QUIT
-  //
-  if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
-    if ( playList[currentSong].isPlaying(  ) ) {
-      playList[currentSong].pause(  );
-      playList[currentSong].rewind(  );
-      //
-      if ( currentSong==numberOfSongs-1 ) {
-        currentSong = 0;
-      } else {
-        currentSong++;
-      }
+    /* Key Board Short Cuts ... learning what the Music Buttons could be
+     Note: CAP Lock with ||
+     if ( key==? || key==? ); //'' only
+     -
+     if ( key==CODED || keyCode==SpecialKey ); //Special Keys abriviated CAPS
+     -
+     All Music Player Features are built out of these Minim AudioPlayer(  ) functions
+     .isPlaying(  )
+     .isMuted(  )
+     .loop( 0 ), parameter is number of iterations after play
+     .loop(  ), parameter is infinite interations
+     .play(  ), parameter is built-in skip ( milli-seconds or crystal-time )
+     .pause(  )
+     .rewind(  )
+     .skip(  )
+     .unmute(  )
+     .mute(  )
+     -
+     Lesson Music Button Features based on single, double, and spamming taps
+     - Play
+     - Pause
+     - Stop
+     - Loop Once
+     - Loop Infinite
+     - Fast Forward
+     - Fast Rewind
+     - Mute
+     - Next Song
+     - Previous Song
+     - Shuffle
+     -
+     - Advanced Buttons & Combinations
+     - Play-Pause-Stop
+     - Auto Play
+     - Random Song
+     */
+    //if ( key=='P' || key=='p' ) playList[currentSong].play(  ); //Simple Play, no double tap possible
+    //
+    if ( key=='P' || key=='p' ) {//Simple Play, double tap possible
       playList[currentSong].play(  );
-    } else {
-      //
-      playList[currentSong].rewind(  );
-      //
-      if ( currentSong==numberOfSongs-1 ) {
-        currentSong = 0;
-      } else {
-        currentSong++;
-      }
-      // NEXT will not automatically play the song
-      //song[currentSong].play(  );
+      isPaused=false;
     }
-  }
-  if ( key=='B' || key=='b' ) { // PREVIOUS
-    if ( playList[currentSong].isPlaying(  ) ) {
-      playList[currentSong].pause(  );
-      playList[currentSong].rewind(  );
 
-      if ( currentSong==0 ) {
-        currentSong = numberOfSongs-1;
-      } else {
-        currentSong--;
-      }
-      playList[currentSong].play(  );
-    } else {
-      playList[currentSong].rewind(  );
 
-      if ( currentSong==0 ) {
-        currentSong = numberOfSongs-1;
+    /* Note: double tap is automatic rewind, no pause
+     Symbol is two triangles
+     This changes what the button might become after it is pressed
+     */
+    if ( key=='O' || key=='o' ) {
+      if ( playList[currentSong].isPlaying(  ) ) {
+        playList[currentSong].pause(  );
+        isPaused = true;
       } else {
-        currentSong--;
+        playList[currentSong].play(  );
+        isPaused = false;
       }
-      // does not auto-play if previously not playing
     }
-  }
-  //
-  if ( key=='Y' || key=='y' ) {
-    if ( playList[currentSong].isPlaying(  ) )
-    {
-      playList[currentSong].pause(  );
-      playList[currentSong].rewind(  );
+    //if ( key=='S' || key=='s' ) song[currentSong].pause(  ); //Simple Stop, no double taps
+    //
+    if ( key=='S' || key=='s' ) {
+      if ( playList[currentSong].isPlaying(  ) ) {
+        playList[currentSong].pause(  );
+        playList[currentSong].rewind(  );
+        isPaused = true;
+      } else {
+        playList[currentSong].play(  );
+        isPaused = false;
+      }
     }
-    currentSong = int( random( numberOfSongs ) ); //random( 0, numberOfSongs )}
-  }
-  //
-  //if ( key=='S' || key=='s' ); // Shuffle - PLAY ( Random )
-  //Note: will randomize the currentSong number
-  //Caution: random(  ) is used very often
-  //Question: how does truncating decimals affect returning random(  ) floats
-  /*
+    if ( key=='L' || key=='l' ) playList[currentSong].loop( 1 ); // Loop ONCE: Plays, then plays again, then stops & rewinds
+    if ( key=='K' || key=='k' ) playList[currentSong].loop(  ); // Loop Infinitely //Parameter: BLANK or -1
+    if ( key=='F' || key=='f' ) playList[currentSong].skip( 15000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
+    if ( key=='R' || key=='r' ) playList[currentSong].skip( -10000 ); // Fast Reverse & Play //Parameter: negative numbers
+    if ( key=='W' || key=='w' ) { // MUTE
+      //
+      //MUTE Behaviour: stops electricty to speakers, does not stop file
+      //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
+      //ERROR: if song near end of file, user will not know song is at the end
+      //Known ERROR: once song plays, MUTE acts like it doesn't work
+      if ( playList[currentSong].isMuted(  ) ) {
+        //ERROR: song might not be playing
+        //CATCH: ask .isPlaying(  ) or !.isPlaying(  )
+        playList[currentSong].unmute(  );
+        isMuted=false;
+      } else {
+        //Possible ERROR: Might rewind the song
+        playList[currentSong].mute(  );
+        isMuted=true;
+      }
+    }
+    if ( keyCode==ESC ) exit(  ); // QUIT // UP
+    if ( key=='Q' || key=='q' ) exit(  ); // QUIT
+    //
+    if ( key=='N' || key=='n' ) { // NEXT //See .txt for starter hint
+      if ( playList[currentSong].isPlaying(  ) ) {
+        playList[currentSong].pause(  );
+        playList[currentSong].rewind(  );
+        //
+        if ( currentSong==numberOfSongs-1 ) {
+          currentSong = 0;
+        } else {
+          currentSong++;
+        }
+        playList[currentSong].play(  );
+      } else {
+        //
+        playList[currentSong].rewind(  );
+        //
+        if ( currentSong==numberOfSongs-1 ) {
+          currentSong = 0;
+        } else {
+          currentSong++;
+        }
+        // NEXT will not automatically play the song
+        //song[currentSong].play(  );
+      }
+    }
+    if ( key=='B' || key=='b' ) { // PREVIOUS
+      if ( playList[currentSong].isPlaying(  ) ) {
+        playList[currentSong].pause(  );
+        playList[currentSong].rewind(  );
+
+        if ( currentSong==0 ) {
+          currentSong = numberOfSongs-1;
+        } else {
+          currentSong--;
+        }
+        playList[currentSong].play(  );
+      } else {
+        playList[currentSong].rewind(  );
+
+        if ( currentSong==0 ) {
+          currentSong = numberOfSongs-1;
+        } else {
+          currentSong--;
+        }
+        // does not auto-play if previously not playing
+      }
+    }
+    //
+    if ( key=='Y' || key=='y' ) {
+      if ( playList[currentSong].isPlaying(  ) )
+      {
+        playList[currentSong].pause(  );
+        playList[currentSong].rewind(  );
+      }
+      currentSong = int( random( numberOfSongs ) ); //random( 0, numberOfSongs )}
+    }
+    //
+    //if ( key=='S' || key=='s' ); // Shuffle - PLAY ( Random )
+    //Note: will randomize the currentSong number
+    //Caution: random(  ) is used very often
+    //Question: how does truncating decimals affect returning random(  ) floats
+    /*
  if ( key=='' || key=='' ); // Play-Pause-STOP //Advanced, beyond single buttons
-   - need to have basic GUI complete first
-   */
-  //
-}//End Key Pressed
+     - need to have basic GUI complete first
+     */
+    //
+  }//End Key Pressed
+}
