@@ -40,6 +40,7 @@ boolean autoPlay = false;
 boolean lyricsDiv = false;
 boolean nextUpDiv = true;
 boolean keyBoardShortcuts = true;
+boolean loopOnce = false;
 String upArrow = "..";
 String open = "/";
 String musicFolder = "Music";
@@ -896,12 +897,21 @@ void draw(  ) { //start draw
         currentSong++;
 
         if ( currentSong >= numberOfSongs ) {
+
           currentSong = 0;
         }
-
         playList[currentSong].play(  );
       } else {
-        isPaused = true;
+
+        if ( loopOnce == true ) {
+
+          playList[currentSong].loop( 1 );
+          loopOnce = false;
+        
+      } else {
+
+          isPaused = true;
+        }
       }
     }
   }
@@ -1559,7 +1569,7 @@ void mousePressed(  ) {
 
   //LOOP ONCE BUTTON
   if ( mouseX > looponceDivX && mouseX < looponceDivX + looponceDivWidth && mouseY > looponceDivY && mouseY < looponceDivY + looponceDivHeight ) {
-    playList[currentSong].loop( 1 );
+    loopOnce = true;
   }
 
   //LOOP FOREVER BUTTON
