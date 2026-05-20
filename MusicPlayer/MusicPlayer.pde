@@ -31,7 +31,7 @@ float boxforxDivX, boxforxDivY, boxforxDivWidth, boxforxDivHeight, lyricWordsDiv
 float finalcountdownuiboxDivX, finalcountdownuiboxDivY, finalcountdownuiboxDivWidth, finalcountdownuiboxDivHeight, joinusforabiteuiboxDivX, joinusforabiteuiboxDivY, joinusforabiteuiboxDivWidth, joinusforabiteuiboxDivHeight;
 float albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, albumcoverimagefinalcountdownDivWidth, albumcoverimagefinalcountdownDivHeight, coveruplyricsDivX, coveruplyricsDivY, coveruplyricsDivWidth, coveruplyricsDivHeight;
 float leftHalfLyricsDivX, leftHalfLyricsDivY, leftHalfLyricsDivWidth, leftHalfLyricsDivHeight, rightHalfLyricsDivX, rightHalfLyricsDivY, rightHalfLyricsDivWidth, rightHalfLyricsDivHeight;
-float keyboardShortcutsDivX, keyboardShortcutsDivY, keyboardShortcutsDivWidth, keyboardShortcutsDivHeight;
+float keyboardShortcutsDivX, keyboardShortcutsDivY, keyboardShortcutsDivWidth, keyboardShortcutsDivHeight, hoverOverDivX, hoverOverDivY, hoverOverDivWidth, hoverOverDivHeight;
 float fontSize2, fontSize3, fontSize4, fontSize5, fontSize6;
 color blackInk, whiteInk, resetInk, brownInk, redInk, greenInk, tanInk, buttonInk, textInk;
 boolean isPaused = true;
@@ -304,9 +304,14 @@ void setup(  ) { //start setup
   rightHalfLyricsDivHeight = lyricWordsDivHeight - 20;
 
   keyboardShortcutsDivX = appWidth * 51 / paperWidth;
-  keyboardShortcutsDivY = appHeight * 195 / paperHeight;
+  keyboardShortcutsDivY = appHeight * 192 / paperHeight;
   keyboardShortcutsDivWidth = appWidth * 48 / paperWidth;
   keyboardShortcutsDivHeight = appHeight * 10 / paperHeight;
+
+  hoverOverDivX = appWidth * 0 / paperWidth;
+  hoverOverDivY = appHeight - (appHeight * 7 / paperHeight);
+  hoverOverDivWidth = appWidth * 99 / paperWidth;
+  hoverOverDivHeight = appHeight * 7 / paperHeight;
 
   //rect( DivX, DivY, DivWidth, DivHeight );
   brownInk = #834503;
@@ -359,6 +364,7 @@ void setup(  ) { //start setup
   fill( buttonInk );
   circle( magnifyingGlassCircleDivX, magnifyingGlassCircleDivY, magnifyingGlassCircleDivSize2 );
   line( magnifyingGlassLineX1, magnifyingGlassLineY1, magnifyingGlassLineX2, magnifyingGlassLineY2 );
+
 
   float fontSize1 = songtitleDivHeight; //1:1 Font Height to rectHeight
   float fontSize2 = appHeight;
@@ -606,6 +612,8 @@ void setup(  ) { //start setup
 
 void draw(  ) { //start draw
   int appHeight = displayHeight;
+  fill( textInk );
+  rect( hoverOverDivX, hoverOverDivY, hoverOverDivWidth, hoverOverDivHeight );
   textAlign( CENTER, CENTER );
   fill( textInk );
   textAlign ( CENTER, CENTER );
@@ -633,6 +641,7 @@ void draw(  ) { //start draw
   float fontSize7 = appHeight;
   float fontSize8 = appHeight;
   float fontSize9 = appHeight;
+  float fontSize10 = appHeight;
   PFont font;
   String PLBI = "Palatino Linotype Bold Italic";
   String x = "X";
@@ -648,6 +657,7 @@ void draw(  ) { //start draw
   String songLyricsRight = "";
   String one = "1";
   String kShortcut = "";
+  String hoverOver = "";
 
   if (keyBoardShortcuts == true) {
     kShortcut = "Keyboard shortcuts: ON";
@@ -677,6 +687,42 @@ void draw(  ) { //start draw
     songLyricsRight = "\nWe're only playing \nJust wanted to make a few friends\nYou plan on staying?\nWhen you're with us, the party never ends  \n\nYou might look at me, and think you're going crazy \nI lost it long ago, you're not alone, baby  \n\nCan't wait to meet you \nSo join the animatronic family \nWe open real soon \nTry your best to hold onto sanity\n\nCome get to know me \nAnd you won't wanna leave after tonight \nDown here, we're lonely \nAnd we would love you to join us for a bite ( join us for a, join us for a bite )  \n\nAnd we would love you to join us for a bite ( join us for a, join us for a bite ) \nAnd we would love you to join us for a bite ( join us for a, join us for a bite ) \nAnd we would love you to join us for a bite ( join us for a, join us for a bite ) \nAnd we would love you to join us for a bite ( join us for a, join us for a bite )  ";
   }
 
+  if ( mouseX > playDivX && mouseX < playDivX + playDivWidth && mouseY > playDivY && mouseY < playDivY + playDivHeight ) {
+    hoverOver = "Play";
+  }
+
+  if ( mouseX > pauseDivX && mouseX < pauseDivX + pauseDivWidth && mouseY > pauseDivY && mouseY < pauseDivY + pauseDivHeight ) {
+    hoverOver = "Pause";
+  }
+
+  if ( mouseX > rewindtenDivX && mouseX < rewindtenDivX + rewindtenDivWidth && mouseY > rewindtenDivY && mouseY < rewindtenDivY + rewindtenDivHeight ) {
+    hoverOver = "Rewind ten seconds";
+  }
+
+  if ( mouseX > skipfifteenDivX && mouseX < skipfifteenDivX + skipfifteenDivWidth && mouseY > skipfifteenDivY && mouseY < skipfifteenDivY + skipfifteenDivHeight ) {
+    hoverOver = "Skip fifteen seconds";
+  }
+
+  if ( mouseX > restartDivX && mouseX < restartDivX + restartDivWidth && mouseY > restartDivY && mouseY < restartDivY + restartDivHeight ) {
+    hoverOver = "Restart song";
+  }
+
+
+  if ( mouseX > nextsongDivX && mouseX < nextsongDivX + nextsongDivWidth && mouseY > nextsongDivY && mouseY < nextsongDivY + nextsongDivHeight ) {
+    hoverOver = "Skip song";
+  }
+
+  if ( mouseX > DivX && mouseX < DivX + DivWidth && mouseY > DivY && mouseY < DivY + DivHeight ) {
+    hoverOver = "";
+  }
+
+  if ( mouseX > DivX && mouseX < DivX + DivWidth && mouseY > DivY && mouseY < DivY + DivHeight ) {
+    hoverOver = "";
+  }
+
+  if ( mouseX > DivX && mouseX < DivX + DivWidth && mouseY > DivY && mouseY < DivY + DivHeight ) {
+    hoverOver = "";
+  }
 
 
   font = createFont( PLBI, fontSize1 );
@@ -713,6 +759,11 @@ void draw(  ) { //start draw
   float shortcutdivHeight = keyboardShortcutsDivHeight;
   float shortcutAspectRatio = shortcutFontSize / shortcutdivHeight;
 
+  //Aspect ratio for "Hover Over"
+  float hoverOverFontSize = 25;
+  float hoveroverdivHeight = hoverOverDivHeight;
+  float hoverOverAspectRatio = hoverOverFontSize / hoveroverdivHeight;
+
   //Aspect ratio for "Song Lyrics"
   float lyricsFontSize;
   if ( currentSong == 0 ) {
@@ -735,6 +786,7 @@ void draw(  ) { //start draw
   fontSize7 = lyricwordsdivHeight*lyricWordsAspectRatio * textAdjustment;
   fontSize8 = onedivHeight*oneAspectRatio * textAdjustment;
   fontSize9 = shortcutdivHeight*shortcutAspectRatio * textAdjustment;
+  fontSize10 = hoveroverdivHeight*hoverOverAspectRatio * textAdjustment;
 
   //Drawing Text
   color blackInk = #000000;
@@ -754,9 +806,9 @@ void draw(  ) { //start draw
   float keyboardShortcutsY2 = keyboardShortcutsDivY + keyboardShortcutsDivHeight * 3/4;
 
   textFont ( font, fontSize9 );
-  fill(buttonInk);
+  fill( buttonInk );
   rect( keyboardShortcutsDivX, keyboardShortcutsDivY, keyboardShortcutsDivWidth, keyboardShortcutsDivHeight );
-  fill(blackInk);
+  fill( blackInk );
   text ( kShortcut, keyboardShortcutsDivX, keyboardShortcutsDivY, keyboardShortcutsDivWidth, keyboardShortcutsDivHeight );
   line ( keyboardShortcutsX1, keyboardShortcutsY1, keyboardShortcutsX2, keyboardShortcutsY2 );
 
@@ -862,12 +914,29 @@ void draw(  ) { //start draw
       fill( brownInk );
       rect( coveruplyricsDivX, coveruplyricsDivY, coveruplyricsDivWidth, coveruplyricsDivHeight );
       fill( resetInk );
-    }
 
+      if ( mouseX > playnextjoinusforabiteDivX && mouseX < playnextjoinusforabiteDivX + playnextjoinusforabiteDivWidth && mouseY > playnextjoinusforabiteDivY && mouseY < playnextjoinusforabiteDivY + playnextjoinusforabiteDivHeight ) {
+        hoverOver = "Play Join Us For A Bite";
+      }
+
+      if ( mouseX > playnextfinalcountdownDivX && mouseX < playnextfinalcountdownDivX + playnextfinalcountdownDivWidth && mouseY > playnextfinalcountdownDivY && mouseY < playnextfinalcountdownDivY + playnextfinalcountdownDivHeight ) {
+        hoverOver = "Play The Final Countdown";
+      }
+
+      if ( mouseX > playnextintheendDivX && mouseX < playnextintheendDivX + playnextintheendDivWidth && mouseY > playnextintheendDivY && mouseY < playnextintheendDivY + playnextintheendDivHeight ) {
+        hoverOver = "Play In The End";
+      }
+    }
+    fill(blackInk);
+
+    textFont ( font, fontSize10 );
+    text( hoverOver, hoverOverDivX, hoverOverDivY, hoverOverDivWidth, hoverOverDivHeight );
+
+    fill(resetInk);
 
     //println( float ( imageWidth2 ) / float ( imageHeight2 ) );
     //Ternary Operator
-    println( image2AspectRatio_GreaterOne );
+    //println( image2AspectRatio_GreaterOne );
 
     image( image1, albumcoverimagejoinusforabiteDivX, albumcoverimagejoinusforabiteDivY, imageWidthAdjusted+1, imageWidthAdjusted+1 );
     image( image2, albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
@@ -900,15 +969,16 @@ void draw(  ) { //start draw
 
           currentSong = 0;
         }
+
         playList[currentSong].play(  );
       } else {
+        isPaused = true;
 
         if ( loopOnce == true ) {
 
           playList[currentSong].loop( 1 );
           loopOnce = false;
-        
-      } else {
+        } else {
 
           isPaused = true;
         }
@@ -1569,6 +1639,7 @@ void mousePressed(  ) {
 
   //LOOP ONCE BUTTON
   if ( mouseX > looponceDivX && mouseX < looponceDivX + looponceDivWidth && mouseY > looponceDivY && mouseY < looponceDivY + looponceDivHeight ) {
+    playList[currentSong].loop( 1 );
     loopOnce = true;
   }
 
