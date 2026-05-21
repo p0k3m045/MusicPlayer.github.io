@@ -946,12 +946,7 @@ void draw(  ) { //start draw
         hoverOver = "Play In The End";
       }
     }
-    fill(blackInk);
 
-    textFont ( font, fontSize10 );
-    text( hoverOver, hoverOverDivX, hoverOverDivY, hoverOverDivWidth, hoverOverDivHeight );
-
-    fill(resetInk);
 
     //println( float ( imageWidth2 ) / float ( imageHeight2 ) );
     //Ternary Operator
@@ -961,6 +956,13 @@ void draw(  ) { //start draw
     image( image2, albumcoverimagefinalcountdownDivX, albumcoverimagefinalcountdownDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
     image( image3, albumcoverimageintheendDivX, albumcoverimageintheendDivY, imageWidthAdjusted+1, imageHeightAdjusted+1 );
   }
+
+  fill(blackInk);
+
+  textFont ( font, fontSize10 );
+  text( hoverOver, hoverOverDivX, hoverOverDivY, hoverOverDivWidth, hoverOverDivHeight );
+
+  fill(resetInk);
 
   textAlign ( CENTER, CENTER );
 
