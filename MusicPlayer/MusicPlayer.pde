@@ -310,7 +310,7 @@ void setup(  ) { //start setup
 
   hoverOverDivX = appWidth * 0 / paperWidth;
   hoverOverDivY = appHeight - (appHeight * 7 / paperHeight);
-  hoverOverDivWidth = appWidth * 99 / paperWidth;
+  hoverOverDivWidth = appWidth * 75 / paperWidth;
   hoverOverDivHeight = appHeight * 7 / paperHeight;
 
   //rect( DivX, DivY, DivWidth, DivHeight );
@@ -704,7 +704,7 @@ void draw(  ) { //start draw
   }
 
   if ( mouseX > restartDivX && mouseX < restartDivX + restartDivWidth && mouseY > restartDivY && mouseY < restartDivY + restartDivHeight ) {
-    hoverOver = "Restart song";
+    hoverOver = "Stop song";
   }
 
 
@@ -712,18 +712,37 @@ void draw(  ) { //start draw
     hoverOver = "Skip song";
   }
 
-  if ( mouseX > DivX && mouseX < DivX + DivWidth && mouseY > DivY && mouseY < DivY + DivHeight ) {
-    hoverOver = "";
+  if ( mouseX > looponceDivX && mouseX < looponceDivX + looponceDivWidth && mouseY > looponceDivY && mouseY < looponceDivY + looponceDivHeight ) {
+    hoverOver = "Loop once";
   }
 
-  if ( mouseX > DivX && mouseX < DivX + DivWidth && mouseY > DivY && mouseY < DivY + DivHeight ) {
-    hoverOver = "";
+  if ( mouseX > loopforeverDivX && mouseX < loopforeverDivX + loopforeverDivWidth && mouseY > loopforeverDivY && mouseY < loopforeverDivY + loopforeverDivHeight ) {
+    hoverOver = "Loop forever";
   }
 
-  if ( mouseX > DivX && mouseX < DivX + DivWidth && mouseY > DivY && mouseY < DivY + DivHeight ) {
-    hoverOver = "";
+  if ( mouseX > stopLoopingDivX && mouseX < stopLoopingDivX + stopLoopingDivWidth && mouseY > stopLoopingDivY && mouseY < stopLoopingDivY + stopLoopingDivHeight ) {
+    hoverOver = "Stop looping";
   }
 
+  if ( mouseX > autoplayDivX && mouseX < autoplayDivX + autoplayDivWidth && mouseY > autoplayDivY && mouseY < autoplayDivY + autoplayDivHeight ) {
+    hoverOver = "Auto play";
+  }
+
+  if ( mouseX > lyricsDivX && mouseX < lyricsDivX + lyricsDivWidth && mouseY > lyricsDivY && mouseY < lyricsDivY + lyricsDivHeight ) {
+    hoverOver = "Lyrics";
+  }
+
+  if ( mouseX > nextupDivX && mouseX < nextupDivX + nextupDivWidth && mouseY > nextupDivY && mouseY < nextupDivY + nextupDivHeight ) {
+    hoverOver = "Next up";
+  }
+
+  if ( mouseX > boxforxDivX && mouseX < boxforxDivX + boxforxDivWidth && mouseY > boxforxDivY && mouseY < boxforxDivY + boxforxDivHeight ) {
+    hoverOver = "Exit";
+  }
+
+  if ( mouseX > keyboardShortcutsDivX && mouseX < keyboardShortcutsDivX + keyboardShortcutsDivWidth && mouseY > keyboardShortcutsDivY && mouseY < keyboardShortcutsDivY + keyboardShortcutsDivHeight ) {
+    hoverOver = "Keyboard shortcuts toggle";
+  }
 
   font = createFont( PLBI, fontSize1 );
 
@@ -1651,7 +1670,10 @@ void mousePressed(  ) {
   //STOP LOOPING BUTTON
   if ( mouseX > stopLoopingDivX && mouseX < stopLoopingDivX + stopLoopingDivWidth && mouseY > stopLoopingDivY && mouseY < stopLoopingDivY + stopLoopingDivHeight ) {
     playList[currentSong].pause(  );
-    playList[currentSong].play(  );
+
+    if ( isPaused == false) {
+      playList[currentSong].play(  );
+    }
   }
 
   //FINAL COUNTDOWN BUTTON
